@@ -1,0 +1,110 @@
+{
+  "id": "image",
+  "type": "SharedSlice",
+  "name": "Image",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Full Width",
+      "description": "Default",
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format",
+      "docURL": "...",
+      "version": "initial",
+      "primary": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "spacing": {
+          "type": "Select",
+          "config": {
+            "label": "Section spacing",
+            "placeholder": "",
+            "options": [
+              "standard",
+              "compact",
+              "none",
+              "none-above",
+              "none-below"
+            ],
+            "default_value": "standard"
+          }
+        },
+        "width": {
+          "type": "Select",
+          "config": {
+            "label": "Content width",
+            "placeholder": "",
+            "options": [
+              "standard",
+              "narrow",
+              "full"
+            ],
+            "default_value": "standard"
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "twoUp",
+      "name": "Two Up",
+      "description": "Default",
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format",
+      "docURL": "...",
+      "version": "initial",
+      "primary": {
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "spacing": {
+          "type": "Select",
+          "config": {
+            "label": "Section spacing",
+            "placeholder": "",
+            "options": [
+              "standard",
+              "compact",
+              "none",
+              "none-above",
+              "none-below"
+            ],
+            "default_value": "standard"
+          }
+        },
+        "width": {
+          "type": "Select",
+          "config": {
+            "label": "Content width",
+            "placeholder": "",
+            "options": [
+              "standard",
+              "narrow",
+              "full"
+            ],
+            "default_value": "standard"
+          }
+        },
+        "second_image": {
+          "type": "Image",
+          "config": {
+            "label": "Second image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ],
+  "description": "Image"
+}

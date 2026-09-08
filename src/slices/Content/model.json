@@ -1,0 +1,400 @@
+{
+  "id": "content",
+  "type": "SharedSlice",
+  "name": "Content",
+  "description": "Content",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Text Only",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "Optional short label above the heading"
+          }
+        },
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": "Section heading"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Content",
+            "placeholder": "Editorial content",
+            "allowTargetBlank": true,
+            "multi": "paragraph,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,list-item,o-list-item"
+          }
+        },
+        "ctas": {
+          "type": "Group",
+          "config": {
+            "label": "Calls to action",
+            "repeat": true,
+            "fields": {
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "Label",
+                  "placeholder": "Button label"
+                }
+              },
+              "link": {
+                "type": "Link",
+                "config": {
+                  "label": "Link",
+                  "placeholder": "Optional call to action",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false,
+                  "variants": [
+                    "Primary",
+                    "Secondary",
+                    "Outline"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "spacing": {
+          "type": "Select",
+          "config": {
+            "label": "Section spacing",
+            "placeholder": "Choose space above and below this section",
+            "options": [
+              "standard",
+              "compact",
+              "none",
+              "none-above",
+              "none-below"
+            ],
+            "default_value": "standard"
+          }
+        },
+        "width": {
+          "type": "Select",
+          "config": {
+            "label": "Content width",
+            "placeholder": "Choose the maximum content width",
+            "options": [
+              "standard",
+              "narrow",
+              "full"
+            ],
+            "default_value": "standard"
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "centeredText",
+      "name": "Centered Text",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "Optional short label above the heading"
+          }
+        },
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": "Section heading"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Content",
+            "placeholder": "Editorial content",
+            "allowTargetBlank": true,
+            "multi": "paragraph,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,list-item,o-list-item"
+          }
+        },
+        "ctas": {
+          "type": "Group",
+          "config": {
+            "label": "Calls to action",
+            "repeat": true,
+            "fields": {
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "Label",
+                  "placeholder": "Button label"
+                }
+              },
+              "link": {
+                "type": "Link",
+                "config": {
+                  "label": "Link",
+                  "placeholder": "Optional call to action",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false,
+                  "variants": [
+                    "Primary",
+                    "Secondary",
+                    "Outline"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "spacing": {
+          "type": "Select",
+          "config": {
+            "label": "Section spacing",
+            "placeholder": "Choose space above and below this section",
+            "options": [
+              "standard",
+              "compact",
+              "none",
+              "none-above",
+              "none-below"
+            ],
+            "default_value": "standard"
+          }
+        },
+        "width": {
+          "type": "Select",
+          "config": {
+            "label": "Content width",
+            "placeholder": "Choose the maximum content width",
+            "options": [
+              "standard",
+              "narrow",
+              "full"
+            ],
+            "default_value": "standard"
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "imageRight",
+      "name": "Image Right",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "Optional short label above the heading"
+          }
+        },
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": "Section heading"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Content",
+            "placeholder": "Editorial content",
+            "allowTargetBlank": true,
+            "multi": "paragraph,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,list-item,o-list-item"
+          }
+        },
+        "ctas": {
+          "type": "Group",
+          "config": {
+            "label": "Calls to action",
+            "repeat": true,
+            "fields": {
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "Label",
+                  "placeholder": "Button label"
+                }
+              },
+              "link": {
+                "type": "Link",
+                "config": {
+                  "label": "Link",
+                  "placeholder": "Optional call to action",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false,
+                  "variants": [
+                    "Primary",
+                    "Secondary",
+                    "Outline"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "spacing": {
+          "type": "Select",
+          "config": {
+            "label": "Section spacing",
+            "placeholder": "Choose space above and below this section",
+            "options": [
+              "standard",
+              "compact",
+              "none",
+              "none-above",
+              "none-below"
+            ],
+            "default_value": "standard"
+          }
+        },
+        "width": {
+          "type": "Select",
+          "config": {
+            "label": "Content width",
+            "placeholder": "Choose the maximum content width",
+            "options": [
+              "standard",
+              "narrow",
+              "full"
+            ],
+            "default_value": "standard"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "imageLeft",
+      "name": "Image Left",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "Optional short label above the heading"
+          }
+        },
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": "Section heading"
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Content",
+            "placeholder": "Editorial content",
+            "allowTargetBlank": true,
+            "multi": "paragraph,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,list-item,o-list-item"
+          }
+        },
+        "ctas": {
+          "type": "Group",
+          "config": {
+            "label": "Calls to action",
+            "repeat": true,
+            "fields": {
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "Label",
+                  "placeholder": "Button label"
+                }
+              },
+              "link": {
+                "type": "Link",
+                "config": {
+                  "label": "Link",
+                  "placeholder": "Optional call to action",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false,
+                  "variants": [
+                    "Primary",
+                    "Secondary",
+                    "Outline"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "spacing": {
+          "type": "Select",
+          "config": {
+            "label": "Section spacing",
+            "placeholder": "Choose space above and below this section",
+            "options": [
+              "standard",
+              "compact",
+              "none",
+              "none-above",
+              "none-below"
+            ],
+            "default_value": "standard"
+          }
+        },
+        "width": {
+          "type": "Select",
+          "config": {
+            "label": "Content width",
+            "placeholder": "Choose the maximum content width",
+            "options": [
+              "standard",
+              "narrow",
+              "full"
+            ],
+            "default_value": "standard"
+          }
+        },
+        "image": {
+          "type": "Image",
+          "config": {
+            "label": "Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

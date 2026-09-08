@@ -1,0 +1,189 @@
+{
+  "id": "video",
+  "type": "SharedSlice",
+  "name": "Video",
+  "variations": [
+    {
+      "id": "default",
+      "name": "YouTube",
+      "description": "Default",
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format",
+      "docURL": "...",
+      "version": "initial",
+      "primary": {
+        "youtube_id": {
+          "type": "Text",
+          "config": {
+            "label": "YouTube video ID",
+            "placeholder": ""
+          }
+        },
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Accessible title",
+            "placeholder": ""
+          }
+        },
+        "spacing": {
+          "type": "Select",
+          "config": {
+            "label": "Section spacing",
+            "placeholder": "",
+            "options": [
+              "standard",
+              "compact",
+              "none",
+              "none-above",
+              "none-below"
+            ],
+            "default_value": "standard"
+          }
+        },
+        "width": {
+          "type": "Select",
+          "config": {
+            "label": "Content width",
+            "placeholder": "",
+            "options": [
+              "standard",
+              "narrow",
+              "full"
+            ],
+            "default_value": "standard"
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "uploadedVideo",
+      "name": "Uploaded Video",
+      "description": "Default",
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format",
+      "docURL": "...",
+      "version": "initial",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Accessible title",
+            "placeholder": ""
+          }
+        },
+        "spacing": {
+          "type": "Select",
+          "config": {
+            "label": "Section spacing",
+            "placeholder": "",
+            "options": [
+              "standard",
+              "compact",
+              "none",
+              "none-above",
+              "none-below"
+            ],
+            "default_value": "standard"
+          }
+        },
+        "width": {
+          "type": "Select",
+          "config": {
+            "label": "Content width",
+            "placeholder": "",
+            "options": [
+              "standard",
+              "narrow",
+              "full"
+            ],
+            "default_value": "standard"
+          }
+        },
+        "video_file": {
+          "type": "Link",
+          "config": {
+            "label": "Video file",
+            "placeholder": "",
+            "select": "media",
+            "allowText": true
+          }
+        },
+        "poster": {
+          "type": "Image",
+          "config": {
+            "label": "Poster image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "externalVideo",
+      "name": "External Video",
+      "description": "Default",
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format",
+      "docURL": "...",
+      "version": "initial",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Accessible title",
+            "placeholder": ""
+          }
+        },
+        "spacing": {
+          "type": "Select",
+          "config": {
+            "label": "Section spacing",
+            "placeholder": "",
+            "options": [
+              "standard",
+              "compact",
+              "none",
+              "none-above",
+              "none-below"
+            ],
+            "default_value": "standard"
+          }
+        },
+        "width": {
+          "type": "Select",
+          "config": {
+            "label": "Content width",
+            "placeholder": "",
+            "options": [
+              "standard",
+              "narrow",
+              "full"
+            ],
+            "default_value": "standard"
+          }
+        },
+        "poster": {
+          "type": "Image",
+          "config": {
+            "label": "Poster image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "video_url": {
+          "type": "Link",
+          "config": {
+            "label": "Video URL",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
+          }
+        }
+      },
+      "items": {}
+    }
+  ],
+  "description": "Video"
+}

@@ -1,0 +1,346 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"value": "nation",
+				"type": "Text"
+			},
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "interest",
+				"type": "Text"
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Sit qui do dolore velit dolore."
+						}
+					}
+				]
+			},
+			"ctas": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"key": "fff9a7c8-82ea-4a74-bf02-13038825533b",
+						"value": [
+							[
+								"label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "quarter",
+									"type": "Text"
+								}
+							],
+							[
+								"link",
+								{
+									"key": "26e81560-8bbf-4bd3-9817-9c1253d2c5a9",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://slicemachine.dev",
+										"text": "mix",
+										"variant": "Outline"
+									}
+								}
+							]
+						]
+					}
+				]
+			},
+			"spacing": {
+				"__TYPE__": "FieldContent",
+				"value": "standard",
+				"type": "Select"
+			},
+			"width": {
+				"__TYPE__": "FieldContent",
+				"value": "standard",
+				"type": "Select"
+			}
+		},
+		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "centeredText",
+		"primary": {
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"value": "given",
+				"type": "Text"
+			},
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "bear",
+				"type": "Text"
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Excepteur duis officia nostrud ipsum mollit reprehenderit esse occaecat cupidatat Lorem quis dolore tempor. Sit esse sunt elit magna. Magna consectetur ipsum nisi ullamco."
+						}
+					}
+				]
+			},
+			"ctas": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"key": "9bc4d617-93c5-48b5-9dbb-9d4d17aab0ad",
+						"value": [
+							[
+								"label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "into",
+									"type": "Text"
+								}
+							],
+							[
+								"link",
+								{
+									"key": "3a44285c-65df-4aec-8d99-3ff583ace57e",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://slicemachine.dev",
+										"text": "desk",
+										"variant": "Primary"
+									}
+								}
+							]
+						]
+					}
+				]
+			},
+			"spacing": {
+				"__TYPE__": "FieldContent",
+				"value": "standard",
+				"type": "Select"
+			},
+			"width": {
+				"__TYPE__": "FieldContent",
+				"value": "standard",
+				"type": "Select"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"key": "1dbeb664-559f-456a-8e5d-17716682dbf2",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "imageRight",
+		"primary": {
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"value": "famous",
+				"type": "Text"
+			},
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "pet",
+				"type": "Text"
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Enim elit proident elit. Nulla mollit magna tempor Lorem voluptate exercitation sunt ipsum consectetur dolor voluptate irure ea est velit. Cupidatat reprehenderit deserunt pariatur sunt pariatur cillum magna est."
+						}
+					}
+				]
+			},
+			"ctas": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"key": "f253490a-51a5-434b-ba18-a6a0409697f7",
+						"value": [
+							[
+								"label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "list",
+									"type": "Text"
+								}
+							],
+							[
+								"link",
+								{
+									"key": "68b460bb-0116-4a1b-9666-a2509d665b88",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://slicemachine.dev",
+										"text": "first",
+										"variant": "Outline"
+									}
+								}
+							]
+						]
+					}
+				]
+			},
+			"spacing": {
+				"__TYPE__": "FieldContent",
+				"value": "standard",
+				"type": "Select"
+			},
+			"width": {
+				"__TYPE__": "FieldContent",
+				"value": "standard",
+				"type": "Select"
+			},
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+					"width": 5616,
+					"height": 3744
+				},
+				"width": 5616,
+				"height": 3744,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+				"alt": "got",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"key": "19b83f42-be22-4f46-bcf7-69f5f3815945",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "imageLeft",
+		"primary": {
+			"eyebrow": {
+				"__TYPE__": "FieldContent",
+				"value": "kill",
+				"type": "Text"
+			},
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "safe",
+				"type": "Text"
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Minim deserunt elit ullamco consequat et."
+						}
+					}
+				]
+			},
+			"ctas": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"key": "143a5740-d470-4ff1-8aee-1b995e521212",
+						"value": [
+							[
+								"label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "discuss",
+									"type": "Text"
+								}
+							],
+							[
+								"link",
+								{
+									"key": "3b64471c-8a7f-4d15-854d-fc8665b7bfd9",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://slicemachine.dev",
+										"text": "who",
+										"variant": "Outline"
+									}
+								}
+							]
+						]
+					}
+				]
+			},
+			"spacing": {
+				"__TYPE__": "FieldContent",
+				"value": "none-below",
+				"type": "Select"
+			},
+			"width": {
+				"__TYPE__": "FieldContent",
+				"value": "standard",
+				"type": "Select"
+			},
+			"image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72",
+					"width": 4010,
+					"height": 4010
+				},
+				"width": 4010,
+				"height": 4010,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72",
+				"alt": "drive",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"key": "ae230dcd-97de-4cf5-922e-7281d7e7c4f6",
+				"value": []
+			}
+		]
+	}
+]

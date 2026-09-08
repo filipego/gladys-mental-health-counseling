@@ -1,0 +1,153 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"youtube_id": {
+				"__TYPE__": "FieldContent",
+				"value": "excited",
+				"type": "Text"
+			},
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "official",
+				"type": "Text"
+			},
+			"spacing": {
+				"__TYPE__": "FieldContent",
+				"value": "standard",
+				"type": "Select"
+			},
+			"width": {
+				"__TYPE__": "FieldContent",
+				"value": "narrow",
+				"type": "Select"
+			}
+		},
+		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "uploadedVideo",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "political",
+				"type": "Text"
+			},
+			"spacing": {
+				"__TYPE__": "FieldContent",
+				"value": "standard",
+				"type": "Select"
+			},
+			"width": {
+				"__TYPE__": "FieldContent",
+				"value": "standard",
+				"type": "Select"
+			},
+			"video_file": {
+				"key": "ca9fd69f-01d8-44bd-89d3-ad7fde64483b",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "FileLink",
+					"id": "mock_Media_link",
+					"kind": "file",
+					"name": "mock_name",
+					"url": "https://source.unsplash.com/daily",
+					"size": "0",
+					"text": "colony"
+				}
+			},
+			"poster": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab",
+					"width": 12288,
+					"height": 16384
+				},
+				"width": 12288,
+				"height": 16384,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab",
+				"alt": "community",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"key": "c5b7f505-271a-47a8-9849-a81ae4c833e3",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "externalVideo",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "gun",
+				"type": "Text"
+			},
+			"spacing": {
+				"__TYPE__": "FieldContent",
+				"value": "none",
+				"type": "Select"
+			},
+			"width": {
+				"__TYPE__": "FieldContent",
+				"value": "standard",
+				"type": "Select"
+			},
+			"poster": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c",
+					"width": 3424,
+					"height": 3424
+				},
+				"width": 3424,
+				"height": 3424,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c",
+				"alt": "chapter",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"video_url": {
+				"__TYPE__": "LinkContent",
+				"key": "46ca7b60-457a-469d-b6d2-74c52bc01ccc",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io",
+					"text": "nuts"
+				}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"key": "339f3b38-9a6c-4af2-80d4-051ce1462db5",
+				"value": []
+			}
+		]
+	}
+]

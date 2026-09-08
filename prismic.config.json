@@ -1,0 +1,20 @@
+{
+  "repositoryName": "mental-health-counseling",
+  "libraries": [
+    "./src/slices"
+  ],
+  "routes": [
+    {
+      "type": "home",
+      "path": "/home"
+    },
+    {
+      "type": "page",
+      "path": "/:uid"
+    },
+    {
+      "type": "settings",
+      "path": "/settings"
+    }
+  ]
+}
