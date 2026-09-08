@@ -2,7 +2,7 @@
 
 ## Connection
 
-The project is connected to the Prismic repository `mental-health-counseling` through `slicemachine.config.json`.
+Gladys Henriquez's site is connected to the Prismic repository `mental-health-counseling` through `slicemachine.config.json`.
 
 ```json
 {
@@ -34,7 +34,7 @@ Slice Machine runs at `http://localhost:9999`. The Next.js slice simulator runs 
 
 ## Model and Slice Rules
 
-- Treat local Slice Machine at `http://localhost:9999` as the source of truth for this starter's custom types and shared slices.
+- Treat local Slice Machine at `http://localhost:9999` as the source of truth for this site's custom types and shared slices.
 - Create and edit models with `npm run slicemachine`, review the generated changes locally, then use Slice Machine's Push action to publish them to the repository.
 - Do not use the cloud Type Builder to edit the same model while local changes are pending. Do not use “Pull to local” unless intentionally replacing the local model with the published cloud schema.
 - Never hand-edit JSON under `customtypes/`.
@@ -109,7 +109,7 @@ The active mappings are:
 - Its slice zone currently references a `hero` shared slice.
 - Shared presentational components are available in `src/app/components`, including `Bounded`, `Heading`, `PrismicLink`, `ButtonLink`, and `PrismicRichText`.
 - The generated local registry contains Hero, Content, Image, and Video.
-- Content has Text Only, Centered Text, Image Right, and Image Left variations. It shares the same editor-facing eyebrow, H2 heading, Rich Text body, optional CTA group, Section spacing, and Content width controls as the rest of the starter. Its image-side variations add one dedicated Image field.
+- Content has Text Only, Centered Text, Image Right, and Image Left variations. It shares the same editor-facing eyebrow, H2 heading, Rich Text body, optional CTA group, Section spacing, and Content width controls as the rest of the site. Its image-side variations add one dedicated Image field.
 - Image has Full Width and Two Up variations.
 - Video has YouTube, Uploaded Video, and External Video variations.
 - Hero has Centered, Split, and Minimal variations. Hero headings render as H2, and its repeatable CTA links expose Primary, Secondary, and Outline variants.
@@ -128,4 +128,4 @@ Preserve these routes and the client integration unless an intentional architect
 
 ## Repository Changes
 
-If reconnecting this starter to another Prismic repository, use the official Slice Machine initializer or supported Slice Machine workflow. Confirm the target account and repository before replacing `repositoryName`, then synchronize models and regenerate types. Do not guess CLI syntax; inspect current command help first.
+If reconnecting Gladys's site to another Prismic repository, use the official Slice Machine initializer or supported Slice Machine workflow. Confirm the target account and repository before replacing `repositoryName`, then synchronize models and regenerate types. Do not guess CLI syntax; inspect current command help first.

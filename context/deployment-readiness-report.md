@@ -2,7 +2,7 @@
 
 ## Current Status
 
-The starter builds successfully and is suitable as a development foundation. It is not yet a finished Prismic website because the homepage still renders the default Next.js content.
+The Gladys Henriquez site is a development foundation with its page structure and content plan documented. It is not yet ready for deployment: the final visual direction and Prismic content are still pending, and the current production build has a remote Prismic link-resolver error for the `home` and `page` types.
 
 ## Configuration
 
@@ -15,7 +15,7 @@ No database or Supabase environment variables are used.
 
 ## Before a Project Deployment
 
-- [ ] Confirm the deployment should use `mental-health-counseling` or intentionally reconnect it.
+- [x] Confirm the deployment should use the `mental-health-counseling` repository.
 - [ ] Confirm all deployed Prismic page types and slices are synchronized.
 - [ ] Confirm the route resolver matches the deployed routes.
 - [ ] Confirm the required Prismic documents are published.

@@ -2,7 +2,17 @@
 
 ## Purpose
 
-This repository is a minimal Studio In The Box starter for content-driven websites built with Next.js and Prismic CMS. It provides a clean framework scaffold and the standard Prismic integration without imposing a client product, design system, database, authentication flow, or business domain.
+This repository is the content-driven website for Gladys Henriquez, a New York mental health counselor. It uses Next.js and Prismic CMS to present her therapy and parent-support services for parents, teens, and adults, with a clear path to request a free consultation.
+
+The site is intentionally being built from a clean technical foundation. Visual direction, imagery, and project-specific styling will be defined separately from the content and architecture documented here.
+
+## Project Content
+
+- Primary audience: parents concerned about their children, followed by teens and adults seeking therapy.
+- Main pages: Home, About Gladys, Therapy & Support, and Get Started.
+- Core action: “Request a free consultation,” leading to `/get-started#consultation`.
+- Service details: in-person sessions in New York City, telehealth where available, English and Spanish sessions, fees starting at $200, and private insurance information.
+- Content requirements: plain-language descriptions of parent support, teen therapy, adult therapy, approaches, session options, consultation flow, FAQs, privacy, and the emergency notice.
 
 ## Current Foundation
 
@@ -49,9 +59,10 @@ The local slice library contains complete Hero, Content, Image, and Video models
 
 Add any of these only when a concrete project requirement calls for them.
 
-## Starter Success Criteria
+## Website Success Criteria
 
-- The application stays easy to specialize for a new Prismic website.
+- Visitors can quickly understand who Gladys works with and how to request a consultation.
+- The application keeps content easy to update in Prismic as Gladys confirms service and practice details.
 - Content models and slices remain synchronized through Slice Machine.
 - Prismic queries use the centralized client.
 - New project assumptions are documented only after they become real requirements.

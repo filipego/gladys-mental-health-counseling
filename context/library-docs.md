@@ -23,7 +23,7 @@ Check `package.json` for exact installed versions. Use official documentation fo
 - `enableAutoPreviews()` is already configured in the centralized client.
 - Use the local `PrismicRichText` wrapper for all Rich Text fields. It centralizes the `components` map instead of relying on Prismic's unstyled defaults.
 - `PrismicLink` is the shared Next-aware inline-link primitive. `ButtonLink` builds on it for CTA presentation.
-- The starter deliberately supports typography, lists, code blocks, and inline links in Rich Text only. It suppresses H1, image, and embed nodes; media will use dedicated components later.
+- The site deliberately supports typography, lists, code blocks, and inline links in Rich Text only. It suppresses H1, image, and embed nodes; media uses dedicated components.
 - `LazyYouTubePlayer` is a Client Component for dedicated YouTube ID fields. It uses a native lazy-loading iframe, includes an accessible title, and owns provider-specific URL parameters. `LazyVideo` renders uploaded and external MP4 sources with controls, a Prismic poster image, and metadata-only preload.
 
 ## Slice Machine
@@ -36,14 +36,14 @@ Check `package.json` for exact installed versions. Use official documentation fo
 ## Tailwind CSS
 
 - Tailwind CSS 4 is configured through `@import "tailwindcss"` in `src/app/globals.css`.
-- Generic semantic starter colors live in `src/app/globals.css`; they are intentionally ready to be replaced by project-specific tokens.
+- Generic semantic colors currently live in `src/app/globals.css`; they are intentionally ready to be replaced by Gladys's selected visual direction.
 - Keep styling simple and local until reusable patterns emerge.
 
 ## ESLint and TypeScript
 
 - ESLint uses `eslint-config-next` through `eslint.config.mjs`.
 - TypeScript runs in strict mode.
-- `tsx` runs the starter's Node test suite through `npm test`.
+- `tsx` runs the site's Node test suite through `npm test`.
 
 ## Dependency Policy
 

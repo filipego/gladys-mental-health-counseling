@@ -114,7 +114,7 @@ Do not introduce tokens or secrets until a feature requires them. If private Pri
 
 ## Invariants
 
-1. The repository name remains `mental-health-counseling` unless the starter is intentionally reconnected.
+1. The repository name remains `mental-health-counseling` unless Gladys's site is intentionally reconnected to another Prismic repository.
 2. Prismic clients are created through `src/prismicio.ts`.
 3. Route resolver entries match real Prismic types and Next.js routes.
 4. Model JSON and generated types are changed through Slice Machine.

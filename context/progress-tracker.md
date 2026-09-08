@@ -2,11 +2,11 @@
 
 ## Current Status
 
-**Phase:** Starter foundation complete
+**Phase:** Gladys website definition complete; implementation pending
 
-**Last completed:** Added and pushed the reusable Content slice with four editorial layout variations.
+**Last completed:** Documented Gladys Henriquez's audiences, four-page structure, service content, consultation flow, and publication checks in `planning/website-content.md`.
 
-**Next:** Add representative Content slice entries to the test page and visually verify all four variations alongside the existing slices.
+**Next:** Model the four planned pages in Prismic, then implement and verify their content before choosing the visual direction.
 
 ## Completed
 
@@ -35,9 +35,9 @@
 
 ## Current Limitations
 
-- No project-specific visual system or component library has been established.
+- No project-specific visual system or component library has been established; visual direction is intentionally deferred.
 - Slice screenshots and representative repository content have not been added yet.
-- The shared colors are deliberately generic starter tokens and still need project-specific art direction.
+- The shared colors are deliberately generic tokens and still need Gladys-specific art direction.
 
 ## Upcoming
 
@@ -47,7 +47,7 @@
 
 ## Decisions
 
-- This starter is Next.js plus Prismic only.
+- This site is Next.js plus Prismic only.
 - Supabase is not part of the architecture.
 - Authentication, databases, storage, UI libraries, and other services will be added only when required.
 - Content models remain owned by Slice Machine.

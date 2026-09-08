@@ -2,9 +2,9 @@
 
 ## Principle
 
-Keep this a small, reusable Next.js and Prismic foundation. Add product behavior one complete, verifiable workflow at a time.
+Keep Gladys's counseling site focused and content-led. Add one complete, verifiable visitor workflow at a time, starting with the pages and consultation path defined in `planning/website-content.md`.
 
-## Phase 1: Starter Foundation
+## Phase 1: Technical Foundation
 
 **Status: complete**
 
@@ -14,7 +14,7 @@ Keep this a small, reusable Next.js and Prismic foundation. Add product behavior
 - Existing `home` custom type synchronized.
 - Preview, exit-preview, revalidation, and simulator routes generated.
 - Lint, TypeScript, production build, application routes, and Slice Machine smoke-tested.
-- Shared layout, typography, link, CTA, and Rich Text primitives established for future slices.
+- Shared layout, typography, link, CTA, and Rich Text primitives established for the counseling site.
 
 ## Phase 2: First Prismic-Rendered Page
 
@@ -27,16 +27,16 @@ Keep this a small, reusable Next.js and Prismic foundation. Add product behavior
 5. [x] Apply Prismic SEO metadata to both route types.
 6. [x] Generate static parameters for published repeatable Page UIDs.
 
-## Phase 3: Project Specialization
+## Phase 3: Gladys Website Build
 
-Use this phase only after a real client project defines its requirements.
+Use the content plan in `planning/website-content.md` as the working product brief. Keep unconfirmed credentials, fees, availability, privacy procedures, and telehealth details clearly marked until Gladys confirms them.
 
-1. Document the product, audience, routes, and content structure in `project-overview.md`.
-2. Model only the required page types and slices in Slice Machine.
+1. Model the four required pages and only the slices needed for their content.
+2. Add the planned Home, About Gladys, Therapy & Support, and Get Started content in Prismic.
 3. Implement slices with accessible, responsive React components.
    - Use `Bounded`, `Heading`, `PrismicRichText`, and `ButtonLink` where their roles apply.
-4. Add dependencies or services only when a concrete feature needs them.
-5. Update architecture and library guidance when the system changes.
+4. Add the consultation request workflow only after the receiving service, privacy handling, and fallback contact route are confirmed.
+5. Define visual direction and replace generic styling after references are selected.
 6. Track delivered work and next steps in `progress-tracker.md`.
 
 ## Feature Checklist
