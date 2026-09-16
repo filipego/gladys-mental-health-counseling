@@ -27,12 +27,12 @@ export function Heading({
   return (
     <Comp
       className={clsx(
-        "font-sans font-semibold tracking-tight",
-        size === "xl" && "text-4xl lg:text-8xl",
-        size === "lg" && "text-3xl lg:text-7xl",
-        size === "md" && "text-2xl lg:text-5xl",
-        size === "sm" && "text-2xl lg:text-4xl",
-        size === "xs" && "text-lg lg:text-xl",
+        "font-heading font-medium tracking-[-0.035em] text-balance",
+        size === "xl" && "text-[clamp(38px,4.1vw,54px)] leading-[1.09]",
+        size === "lg" && "text-[clamp(30px,3vw,38px)] leading-[1.17]",
+        size === "md" && "text-[clamp(26px,3.1vw,45px)] leading-[1.07]",
+        size === "sm" && "text-[clamp(22px,2.2vw,32px)] leading-[1.1]",
+        size === "xs" && "text-[clamp(18px,1.55vw,21px)] leading-[1.2]",
         color === "default" && "text-foreground",
         color === "muted" && "text-muted-foreground",
         color === "primary" && "text-primary",

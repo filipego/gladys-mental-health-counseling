@@ -1,0 +1,74 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "visit",
+				"type": "Text"
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Minim esse mollit do consequat ea ad officia anim anim exercitation exercitation est consequat. Anim sunt ipsum qui officia. Eiusmod deserunt officia minim."
+						}
+					}
+				]
+			},
+			"link": {
+				"key": "f96280ea-00be-4e80-b27e-2ffef2607c88",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev",
+					"text": "thus"
+				}
+			}
+		},
+		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "twoColumns",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "present",
+				"type": "Text"
+			},
+			"left_body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Occaecat magna occaecat ut irure duis ea irure Lorem eu consectetur velit minim. Deserunt ipsum consectetur excepteur reprehenderit. Sint ex cupidatat aute qui sunt ut occaecat consectetur."
+						}
+					}
+				]
+			},
+			"right_body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Deserunt nostrud irure Lorem non sint in occaecat id occaecat quis pariatur cupidatat non consequat. Duis quis ullamco fugiat sunt laboris consequat."
+						}
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"key": "4155d030-9f89-432c-934c-93e826ddb068",
+				"value": []
+			}
+		]
+	}
+]

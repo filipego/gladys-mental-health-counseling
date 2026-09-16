@@ -1,0 +1,45 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "grew",
+				"type": "Text"
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Elit id elit eiusmod adipisicing ipsum qui cillum culpa ullamco est et."
+						}
+					}
+				]
+			},
+			"link": {
+				"key": "801fcb4b-45a3-4c7a-bb50-b7d1089091e5",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com",
+					"text": "strike"
+				}
+			},
+			"helper_text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nisi eiusmod consectetur eiusmod velit nulla occaecat."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

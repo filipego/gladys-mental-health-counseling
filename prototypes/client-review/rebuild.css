@@ -1,0 +1,545 @@
+/* Prototype refinements; changes are scoped to their approved variant. */
+.about h2,.parents h2,.who h2,.sessions h2{font-weight:560;letter-spacing:-.035em}
+.about-copy p,.parents-body p,.audience-description p{line-height:1.7}
+.about{padding-bottom:96px}
+.about-panel{border-radius:16px;gap:64px}
+.about-photo{height:560px}
+.about-copy h2{font-size:40px;max-width:460px}
+.about-copy>.text-link{margin-top:24px}
+.credentials{margin-top:36px;padding-top:0}
+.parents{padding-bottom:96px;gap:96px}
+.parents h2{font-size:42px;line-height:1.14}
+.parents-title .text-link{margin-top:24px}
+.who{padding-block:80px 96px}
+.section-heading{margin-bottom:48px}
+.section-heading h2,.sessions-heading{font-size:44px;line-height:1.12}
+.section-heading p{max-width:250px}
+.audience-title h3{font-weight:550}
+.row-image{filter:none;clip-path:none!important;object-position:center;border-radius:8px}
+.audience-description p{font-size:15px}
+.audience-description .text-link{margin-top:8px;min-height:44px}
+.sessions{padding-bottom:96px}
+.sessions-heading{margin:0 0 40px;max-width:620px}
+.sessions-panel{padding:0;border-radius:16px;overflow:hidden;gap:0;align-items:stretch}
+.session-facts{padding:40px 48px}
+.invitation{padding:40px 48px;border:0;display:flex;align-items:flex-start}
+.invitation-copy{width:100%}
+.invitation h3{font-size:34px;font-weight:550;max-width:480px;margin-bottom:20px}
+.invitation p{max-width:48ch}
+.invitation .actions{margin-top:28px}
+.session-facts dl>div:first-child{border-top:0;padding-top:0}
+.session-facts>.text-link{margin-top:20px}
+.site-footer{padding-top:48px}
+.variant-4 .site-footer{padding-bottom:40px}
+.footer-main{grid-template-columns:1.3fr 1fr 1fr;gap:72px;padding-bottom:48px;align-items:start}
+.footer-identity p{margin:0;max-width:330px}
+.footer-nav{gap:4px}
+.footer-nav a{width:100%;justify-content:space-between;border-bottom:1px solid #d7d0c9;padding-block:8px}
+.footer-location{padding:0}
+.footer-location p{margin-bottom:16px}
+.footer-signature,.variant-5 .footer-signature,.variant-6 .footer-signature{font-size:clamp(48px,8.1vw,112px);line-height:1.08;font-weight:500;letter-spacing:-.04em;max-width:none;margin:0;padding:24px 0 40px}
+.footer-bottom{gap:64px}
+/* 4 — Open, image-bearing rows and one horizontally composed closing section. */
+.variant-4 .about-panel{grid-template-columns:1fr 1.05fr;padding:40px}
+.variant-4 .parents{margin-bottom:0;background:transparent;border-radius:0;grid-template-columns:1fr 1fr;gap:64px;color:var(--ink)}
+.variant-4 .parents p,.variant-4 .parents a{color:inherit}
+.variant-4 .parents h2{font-size:38px}
+.variant-4 .parents-body p{font-size:15px}
+.variant-4 .who{border:0}
+.variant-4 .audience-row{grid-template-columns:200px 260px 1fr;gap:48px;padding:32px 0;align-items:center}
+.variant-4 .row-image{height:200px}
+.variant-4 .audience-title h3{font-size:34px}
+.variant-4 .audience-row:hover .audience-title h3,.variant-4 .audience-row:focus-within .audience-title h3{color:var(--wine)}
+.variant-4 .sessions-panel{display:block}
+.variant-4 .session-facts{padding:40px 40px 28px}
+.variant-4 dl{display:grid;grid-template-columns:1fr 1.15fr .7fr 1.35fr;gap:32px}
+.variant-4 dl>div{display:block;border:0;border-left:1px solid #d7d0c9;padding:0 0 0 24px}
+.variant-4 dl>div:first-child{border:0;padding:0}
+.variant-4 dt{font-size:15px;margin-bottom:12px}
+.variant-4 dd{font-size:14px}
+.variant-4 .invitation{border-top:1px solid #d7d0c9;padding:40px}
+.variant-4 .invitation-copy{display:grid;grid-template-columns:1fr 1fr;column-gap:64px}
+.variant-4 .invitation h3{grid-row:1/4;margin:0;max-width:430px;font-size:38px}
+.variant-4 .invitation p{margin-bottom:0}
+.variant-4 .invitation .actions{margin-top:24px}
+.variant-4 .invitation .helper{margin-top:12px}
+/* V4 refinement: stone introduction band; section padding comes from --chapter below. */
+.variant-4 .about{
+ width:100%;
+ margin:0;
+ background:var(--stone);
+}
+.variant-4 .about-panel{
+ width:min(1200px,calc(100% - 96px));
+ margin-inline:auto;
+ padding:0;
+ gap:72px;
+ border-radius:0;
+ background:transparent;
+}
+.variant-4 .about-photo{
+ height:620px;
+ border-radius:0;
+}
+.variant-4 .about-copy{padding-block:0}
+.variant-4 .parents-body{max-width:56ch}
+.variant-4 .who{margin:0}
+/* 5 — Portrait-led introduction and a photographic three-column audience spread. */
+.variant-5 .about-panel{padding:0 0 0 56px;gap:72px;grid-template-columns:1fr 1fr;overflow:hidden}
+.variant-5 .about-copy{padding-block:48px}
+.variant-5 .about-photo{height:100%;min-height:620px;border-radius:0}
+.variant-5 .about-photo img{object-position:50% 25%}
+.variant-5 .parents{grid-template-columns:1fr 1fr;gap:100px;padding-block:8px 80px}
+.variant-5 .parents-body{column-count:1;max-width:56ch}
+.variant-5 .parents-body p{font-size:16px}
+.variant-5 .who{padding-block:56px 88px}
+.variant-5 .audience-list{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.variant-5 .audience-row{display:flex;flex-direction:column;align-items:stretch;gap:0;border:0;padding:0}
+.variant-5 .row-image{order:-1;height:340px;border-radius:8px;margin-bottom:28px}
+.variant-5 .audience-title{margin-bottom:16px}
+.variant-5 .audience-title h3{font-size:32px}
+.variant-5 .audience-description{display:flex;flex-direction:column;flex:1}
+.variant-5 .audience-description p{flex:1;margin-bottom:8px}
+.variant-5 .audience-description a{align-self:start}
+.variant-5 .sessions{padding-bottom:80px}
+.variant-5 .sessions-heading{max-width:none;padding-top:32px;border-top:1px solid var(--line)}
+.variant-5 .sessions-panel{background:var(--stone);border:0;border-radius:16px;padding:0;gap:0;grid-template-columns:1fr 1fr}
+.variant-5 .session-facts{padding:48px}
+.variant-5 .invitation{padding:48px;border:0;background:var(--wine);color:var(--paper)}
+.variant-5 .invitation-copy{display:flex;flex-direction:column}
+.variant-5 .invitation h3{font-size:42px;max-width:440px}
+.variant-5 .invitation p{color:var(--paper)}
+.variant-5 .invitation .actions{margin-top:auto;padding-top:32px}
+.variant-5 .invitation .button{background:var(--paper);color:var(--ink)}
+.variant-5 .invitation .helper{margin-top:16px;margin-bottom:0}
+.variant-5 .site-footer{background:var(--paper);border-top:1px solid var(--line);padding-top:40px}
+.variant-5 .footer-main{grid-template-columns:1.2fr 1fr 1fr}
+.variant-5 .footer-signature{color:var(--wine);padding-top:8px}
+/* 6 — A fixed audience photograph with accessible row selection. */
+.variant-6 .about-panel{grid-template-columns:.9fr 1.1fr;border-radius:16px;gap:64px}
+.variant-6 .about-photo{min-height:600px}
+.variant-6 .about-copy{padding:48px 48px 48px 0}
+.variant-6 .parents{padding:8px 0 80px;gap:104px}
+.variant-6 .parents-title h2{font-size:42px}
+.variant-6 .who{border:0;background:var(--stone);padding:48px;border-radius:16px;margin-bottom:88px}
+.variant-6 .section-heading{margin-bottom:40px}
+.variant-6 .audiences{grid-template-columns:1fr 1.15fr;gap:48px;align-items:stretch}
+.variant-6 .audience-preview{position:relative;top:auto;height:auto;min-height:570px;border-radius:8px}
+.variant-6 .audience-preview img{object-position:50% 50%}
+.variant-6 .audience-row{padding:24px 0;gap:12px;border-color:#d7d0c9}
+.variant-6 .audience-row:first-child{padding-top:0;border-top:0}
+.variant-6 .audience-row:last-child{padding-bottom:0;border-bottom:0}
+.variant-6 .audience-row.active{background:transparent}
+.variant-6 .audience-title h3{font-size:30px}
+.variant-6 .audience-row.active .audience-title{color:var(--wine)}
+.variant-6 .audience-title>svg{width:24px;height:24px}
+.variant-6 .sessions-panel{grid-template-columns:1fr 1fr;background:transparent;padding:0;gap:72px;border-radius:0}
+.variant-6 .session-facts{padding:0}
+.variant-6 .invitation{padding:0 0 0 48px;border-left:1px solid var(--line)}
+.variant-6 .invitation h3{font-size:42px}
+.variant-6 .invitation .actions{margin-top:32px}
+.variant-6 .site-footer{background:var(--wine);border:0;color:var(--paper)}
+.variant-6 .site-footer p,.variant-6 .footer-bottom>div{color:var(--paper)}
+.variant-6 .site-footer a:hover{color:var(--paper);text-decoration:underline;text-underline-offset:6px}
+.variant-6 .footer-nav a,.variant-6 .footer-bottom{border-color:#987780}
+.variant-6 .site-footer a:focus-visible{outline-color:var(--paper)}
+@media(max-width:1100px) and (min-width:761px){
+ .about-panel,.variant-4 .about-panel,.variant-5 .about-panel{gap:32px;padding:32px}
+ .about-copy h2{font-size:34px}
+ .variant-5 .about-copy{padding:0}
+ .variant-4 .audience-row{grid-template-columns:150px 200px 1fr;gap:32px}
+ .variant-4 .row-image{height:180px}
+ .variant-5 .row-image{height:260px}
+ .variant-4 .parents,.variant-6 .who{padding:36px}
+ .variant-6 .audiences{gap:32px}
+ .variant-5 .invitation,.variant-5 .session-facts{padding:32px}
+ .variant-5 .invitation h3,.variant-6 .invitation h3{font-size:34px}
+ .variant-6 .sessions-panel{gap:40px}
+ .variant-6 .about-panel{gap:32px}
+ .variant-6 .about-copy{padding:32px 32px 32px 0}
+ .footer-main,.variant-5 .footer-main,.variant-6 .footer-main{gap:32px}
+}
+@media(max-width:760px){
+ .about,.who,.sessions{padding-bottom:56px}
+ .about-panel,.variant-4 .about-panel,.variant-5 .about-panel,.variant-6 .about-panel{display:flex;flex-direction:column;padding:24px;gap:28px}
+ .about-photo,.variant-5 .about-photo,.variant-6 .about-photo{width:100%;height:380px;min-height:0;border-radius:8px}
+ .about-copy,.variant-5 .about-copy,.variant-6 .about-copy{padding:0}
+ .about-copy h2{font-size:32px}
+ .parents,.variant-5 .parents,.variant-6 .parents{padding:0 0 56px;gap:24px;grid-template-columns:1fr}
+ .parents h2,.variant-4 .parents h2,.variant-6 .parents-title h2{font-size:32px}
+ .variant-4 .parents{padding:32px 24px;margin-bottom:0;gap:24px;grid-template-columns:1fr}
+ .variant-4 .parents-body p{font-size:15px}
+ .who,.variant-5 .who{padding-top:48px}
+ .section-heading{margin-bottom:28px}
+ .section-heading h2,.sessions-heading{font-size:34px}
+ .variant-4 .audience-row{grid-template-columns:1fr;gap:20px;padding:28px 0}
+ .variant-4 .row-image{grid-row:2;height:240px}
+ .variant-4 .audience-title h3{font-size:30px}
+ .variant-5 .audience-list{grid-template-columns:1fr;gap:40px}
+ .variant-5 .row-image{height:320px;margin-bottom:24px}
+ .variant-5 .audience-title{margin-bottom:12px;align-self:stretch}
+ .sessions-heading{margin-bottom:28px}
+ .variant-4 .session-facts,.variant-5 .session-facts{padding:28px 24px}
+ .variant-4 dl{grid-template-columns:1fr;gap:20px}
+ .variant-4 dl>div{border:0;border-top:1px solid #d7d0c9;padding:20px 0 0}
+ .variant-4 dt{margin-bottom:8px}
+ .variant-4 .invitation,.variant-5 .invitation,.variant-6 .invitation{padding:28px 24px;border-left:0}
+ .variant-4 .invitation-copy{display:block}
+ .variant-4 .invitation h3{margin-bottom:20px;font-size:32px}
+ .variant-5 .sessions-panel,.variant-6 .sessions-panel{grid-template-columns:1fr;gap:0}
+ .variant-5 .invitation h3,.variant-6 .invitation h3{font-size:32px}
+ .variant-5 .sessions{padding-bottom:56px}
+ .variant-6 .who{padding:28px 24px;margin-bottom:56px}
+ .variant-6 .audiences{grid-template-columns:1fr;gap:0}
+ .variant-6 .audience-preview{display:none}
+ .variant-6 .audience-row{grid-template-columns:1fr;padding:28px 0;gap:20px}
+ .variant-6 .row-image{display:block;grid-row:2;height:230px}
+ .variant-6 .audience-description{grid-column:1}
+ .variant-6 .session-facts{padding:0 0 28px}
+ .variant-6 .invitation{background:var(--stone);border-radius:12px}
+ .footer-main,.variant-5 .footer-main,.variant-6 .footer-main{grid-template-columns:1fr 1fr;gap:28px;padding-bottom:24px}
+ .footer-identity{grid-column:1/-1}
+ .footer-main p{font-size:12px}
+ .footer-nav a{font-size:13px}
+ .footer-signature,.variant-5 .footer-signature,.variant-6 .footer-signature{font-size:clamp(38px,9.8vw,68px);padding:20px 0 32px}
+ .footer-bottom{gap:24px}
+}
+@media(max-width:760px){
+ .variant-4 .about{
+  margin:64px 0 96px;
+  padding:0;
+ }
+ .variant-4 .about-panel{
+  width:calc(100% - 40px);
+  margin-inline:auto;
+  padding:0;
+  gap:0;
+  background:transparent;
+ }
+ .variant-4 .about-photo{
+  height:380px;
+  border-radius:0;
+ }
+ .variant-4 .about-copy{
+  padding:40px 0 48px;
+ }
+ .variant-4 .parents{
+  width:calc(100% - 40px);
+  margin:0 auto;
+  gap:24px;
+ }
+ .variant-4 .who{padding-bottom:88px}
+}
+/* V4 spacing and link calibration. Section rhythm is set later via --chapter. */
+.variant-4 .credentials{
+ margin-top:40px;
+ padding-top:0;
+ border-top:0;
+}
+.variant-4 .credentials p{
+ font-size:12px;
+ line-height:1.45;
+ letter-spacing:.01em;
+ color:var(--muted);
+ max-width:none;
+ margin:0;
+}
+.variant-4 .credentials p+p{margin-top:2px}
+.variant-4 .section-heading{margin-bottom:32px}
+.variant-4 .audience-list{display:grid;gap:48px}
+.variant-4 .audience-row{
+ padding:0;
+ border:0;
+}
+.variant-4 .audience-row:last-child{border-bottom:0}
+/* Section links deliberately match v1: black at rest, a fine underline, wine only on hover. */
+.variant-4 main > section:not(.hero) .text-link{
+ min-height:auto;
+ gap:10px;
+ padding-bottom:6px;
+ border-bottom:1px solid #DDD8D2;
+ color:var(--ink);
+}
+.variant-4 main > section:not(.hero) .text-link:hover{
+ color:var(--wine);
+ border-color:var(--wine);
+}
+.variant-4 main > section:not(.hero) .text-link svg{transform:none}
+@media(max-width:760px){
+ .variant-4 .about-copy{padding:0}
+ .variant-4 .parents{gap:24px}
+ .variant-4 .section-heading{margin-bottom:28px}
+ .variant-4 .audience-list{gap:40px}
+ .variant-4 .audience-row{padding:0}
+}
+/* V4: section separation, internal grouping, and v1's original section labels. */
+.variant-4{
+ --column-gap:72px;
+ /* Same chapter rhythm as About: half on each edge of every section. */
+ --chapter:clamp(96px,15vw,224px);
+}
+.variant-4 main > section.hero,
+.variant-4 main > section.about,
+.variant-4 main > section.parents,
+.variant-4 main > section.who,
+.variant-4 main > section.sessions{
+ padding-block:calc(var(--chapter) / 2);
+ margin-block:0;
+}
+/* Closing section: bottom matches About consultation. */
+.variant-4 main > section.sessions{
+ padding-bottom:clamp(80px,8vw,124px);
+}
+.variant-4 .section-label{
+ font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+ color:#6E6862;margin-bottom:clamp(36px,4.5vw,64px);
+ font-weight:400;line-height:1.6;
+}
+.variant-4 .section-heading{align-items:start}
+.variant-4 .section-heading .section-label{margin-bottom:0}
+/* Homepage hero type matches About opening. Buttons and helper stay as-is. */
+.variant-4 .hero{
+ --heading-gap:clamp(40px,5vw,76px);
+ --gutter:clamp(40px,5vw,88px);
+ --measure:52ch;
+ display:grid;
+ grid-template-columns:minmax(0,1fr) clamp(320px,35vw,520px);
+ gap:var(--gutter);
+ align-items:center;
+}
+.variant-4 .hero h1{
+ font-size:clamp(31px,3.5vw,50px);
+ line-height:1.01;
+ letter-spacing:-.04em;
+ font-weight:540;
+ max-width:none;
+ margin:0 0 var(--heading-gap);
+}
+.variant-4 .hero .hero-body{margin-top:0;max-width:none}
+.variant-4 .hero .hero-body .lead{
+ font-size:clamp(17px,1.55vw,21px);
+ line-height:1.42;
+ letter-spacing:-.02em;
+ color:var(--ink);
+ max-width:42ch;
+ margin:0 0 32px;
+}
+.variant-4 .hero .hero-body p:not(.lead),
+.variant-4 .hero .hero-body p:last-child{
+ font-size:15px;
+ line-height:1.7;
+ margin:0 0 20px;
+ max-width:52ch;
+ color:var(--body);
+ text-wrap:pretty;
+}
+.variant-4 .hero .hero-body p:last-child{margin-bottom:0}
+.variant-4 .hero-art{
+ aspect-ratio:auto;
+ border-radius:0;
+ height:clamp(520px,50vw,700px);
+}
+.variant-4 .about{margin:0}
+.variant-4 .about>.section-label{width:min(1200px,calc(100% - 96px));margin-inline:auto}
+.variant-4 .about-panel{
+ padding:0;
+ gap:var(--column-gap);
+ align-items:stretch;
+}
+.variant-4 .about-photo{
+ height:auto;
+ align-self:stretch;
+ /* Full-bleed top and bottom of the stone band, like About’s aside portraits. */
+ margin-block:calc(var(--chapter) / -2);
+ overflow:hidden;
+ background:var(--stone);
+}
+.variant-4 .about-photo img{
+ height:100%;
+ width:100%;
+ object-fit:cover;
+ object-position:50% 28%;
+}
+.variant-4 .about-copy{
+ padding:0;
+ align-self:center;
+}
+.variant-4 .about-copy > p{
+ font-size:15px;
+ line-height:1.7;
+ max-width:52ch;
+ margin:0 0 20px;
+ color:var(--body);
+ text-wrap:pretty;
+}
+.variant-4 .about-copy > p:last-of-type{margin-bottom:0}
+.variant-4 .about-copy .credentials p{
+ font-size:12px;
+ line-height:1.45;
+ letter-spacing:.01em;
+ color:var(--muted);
+ max-width:none;
+ margin:0;
+}
+.variant-4 .about-copy .credentials p:first-child{
+ font-size:14px;
+ font-weight:600;
+ color:var(--ink);
+ letter-spacing:-.01em;
+ margin-bottom:8px;
+}
+.variant-4 .about-copy .credentials p + p{margin-top:2px}
+.variant-4 .about-copy .credentials p:first-child + p{margin-top:0}
+.variant-4 .parents{
+ grid-template-columns:1fr 1.05fr;
+ column-gap:var(--column-gap);row-gap:0;
+ margin:0 auto;
+ background:transparent;
+ border-radius:0;
+ color:var(--ink);
+}
+.variant-4 .parents p,.variant-4 .parents a{color:inherit}
+.variant-4 .parents h2{font-size:38px}
+.variant-4 .parents>.section-label{grid-column:1/-1}
+.variant-4 .parents-body p:last-of-type{margin-bottom:24px}
+.variant-4 .who{
+ width:100%;
+ background:transparent;
+ margin:0;
+ /* Full-bleed rules: above (from parents) and below (into sessions). */
+ border-top:1px solid var(--line);
+ border-bottom:1px solid var(--line);
+}
+.variant-4 .sessions-panel{background:transparent;border-radius:0}
+.variant-4 .session-facts{padding:0 0 40px}
+.variant-4 .invitation{padding:40px 0 0}
+/* Section heading gap + line-height match About; sizes stay homepage’s. */
+.variant-4{--heading-gap:clamp(40px,5vw,76px)}
+.variant-4 .about-copy h2,
+.variant-4 .parents h2,
+.variant-4 .section-heading h2,
+.variant-4 .sessions-heading,
+.variant-4 .closing-5 .invitation h3{
+ line-height:1.07;
+ letter-spacing:-.04em;
+ font-weight:540;
+ margin-bottom:var(--heading-gap);
+}
+.variant-4 .about-copy h2{
+ font-size:40px;
+ margin-bottom:var(--heading-gap);
+}
+.variant-4 .parents h2{font-size:38px}
+.variant-4 .section-heading h2,
+.variant-4 .sessions-heading{font-size:44px}
+.variant-4 .section-heading{
+ display:flex;
+ flex-direction:row;
+ align-items:flex-start;
+ justify-content:space-between;
+ gap:32px;
+ margin-bottom:0;
+ /* Same --heading-gap as About: from bottom of this row (the right
+    paragraph) down to the audience content. Padding so it can’t collapse. */
+ padding-bottom:var(--heading-gap);
+}
+.variant-4 .section-heading h2{margin-bottom:0}
+.variant-4 .section-heading p{
+ margin:0;
+ max-width:250px;
+}
+.variant-4 .closing-5 .sessions-heading{margin-bottom:var(--heading-gap)}
+.variant-4 .closing-5 .invitation h3{
+ font-size:42px;
+ margin:0 0 var(--heading-gap);
+ max-width:440px;
+}
+.variant-4 .audience-list{gap:64px}
+.variant-4 .audience-row:hover .audience-title h3,
+.variant-4 .audience-row:focus-within .audience-title h3{color:var(--ink)}
+.variant-4 .footer-main{grid-template-columns:1fr 320px;gap:72px}
+.variant-4 .footer-location{grid-column:1}
+.variant-4 .footer-nav{grid-column:2}
+.variant-4 .footer-bottom{grid-template-columns:1fr 1.05fr;column-gap:72px;row-gap:80px}
+.variant-4 .footer-bottom .footer-identity{grid-column:auto;display:block}
+.variant-4 .footer-bottom .footer-identity p{font-size:12px;line-height:1.7;margin:0;color:var(--muted);max-width:380px}
+.variant-4 .footer-copyright{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;margin:0;padding:0}
+.variant-4 .header-band{border-bottom:1px solid var(--line)}
+.variant-4 .site-header{border-bottom:0}
+/* Same review switcher on Home and About: text-width pills, not fixed squares. */
+.variant-4 .prototype-switcher{
+ background:rgba(253,252,252,.86);
+ backdrop-filter:blur(10px);
+ box-shadow:0 8px 28px -12px rgba(23,19,15,.3);
+}
+.variant-4 .prototype-switcher a{
+ width:auto;
+ min-width:40px;
+ padding-inline:12px;
+ white-space:nowrap;
+}
+/* V5's two-column sessions composition, inside V4's existing content rails. */
+.variant-4 .closing-5 .sessions-heading{max-width:none;padding-top:32px;border-top:0}
+.variant-4 .closing-5 .sessions-panel{display:grid;grid-template-columns:1fr 1fr;background:var(--stone);border-radius:16px;padding:0;gap:0;align-items:stretch}
+.variant-4 .closing-5 .session-facts{padding:48px;display:flex;flex-direction:column}
+.variant-4 .closing-5 .session-facts > .text-link{
+ margin-top:auto;
+ border-bottom:0;
+}
+.variant-4 .closing-5 dl{display:block}
+.variant-4 .closing-5 dl>div{display:grid;grid-template-columns:94px 1fr;gap:16px;border:0;border-top:1px solid #ddd7d1;padding:18px 0;align-items:start}
+.variant-4 .closing-5 dl>div:first-child{border:0;padding-top:0}
+.variant-4 .closing-5 dt{font-size:13px;margin:0}
+.variant-4 .closing-5 .invitation{padding:48px;border:0;background:var(--wine);color:var(--paper);align-items:stretch}
+.variant-4 .closing-5 .invitation-copy{display:flex;flex-direction:column;flex:1;min-height:100%}
+.variant-4 .closing-5 .invitation h3{max-width:440px;margin-top:0}
+.variant-4 .closing-5 .invitation p{color:var(--paper);margin-bottom:18px}
+.variant-4 .closing-5 .invitation .actions{margin-top:auto;padding-top:32px}
+.variant-4 .closing-5 .invitation .button{background:var(--paper);color:var(--ink)}
+.variant-4 .closing-5 .invitation .helper{margin-top:16px;margin-bottom:0;padding-inline-start:22px}
+/* Hero helper aligns with the button label, not the pill edge. */
+.variant-4 .hero .helper{padding-inline-start:22px}
+@media(max-width:1100px){
+ .variant-4 .closing-5 .session-facts,.variant-4 .closing-5 .invitation{padding:32px}
+ .variant-4 .closing-5 .invitation h3{font-size:34px}
+}
+@media(min-width:761px) and (max-width:1100px){
+ .variant-4{--column-gap:40px}
+}
+@media(max-width:1100px){
+ .variant-4 .hero{grid-template-columns:minmax(0,1fr);gap:36px;align-items:start}
+ .variant-4 .hero-art{height:min(58vh,440px);min-height:0}
+}
+@media(max-width:760px){
+ .variant-4 .about{margin:0}
+ .variant-4 .about>.section-label{width:calc(100% - 40px)}
+ .variant-4 .about-panel{gap:36px}
+ .variant-4 .about-photo{
+  height:min(58vh,440px);
+  align-self:auto;
+  margin-block:0;
+ }
+ .variant-4 .about-copy{padding:0;align-self:auto}
+ .variant-4 .parents{
+  grid-template-columns:1fr;
+  gap:28px;
+  margin:0 auto;
+  width:calc(100% - 40px);
+  padding-inline:0;
+ }
+ .variant-4 .parents>.section-label{margin-bottom:8px}
+ .variant-4 .section-heading{margin-bottom:0;padding-bottom:var(--heading-gap)}
+ .variant-4 .audience-list{gap:56px}
+ .variant-4 .sessions-heading{margin-bottom:var(--heading-gap)}
+ .variant-4 .section-heading h2,.variant-4 .sessions-heading{font-size:32px}
+ .variant-4 .about-copy h2{font-size:32px}
+ .variant-4 .closing-5 .invitation h3{font-size:32px}
+ .variant-4 .footer-main{grid-template-columns:1fr;gap:24px}
+ .variant-4 .footer-nav{grid-column:1}
+ .variant-4 .footer-bottom{grid-template-columns:1fr;row-gap:48px;column-gap:0}
+ .variant-4 .site-footer{padding-bottom:40px}
+ .variant-4 .closing-5 .sessions-panel{grid-template-columns:1fr}
+ .variant-4 .closing-5 .session-facts,.variant-4 .closing-5 .invitation{padding:28px 24px}
+ .variant-4 .closing-5 .session-facts > .text-link{margin-top:20px}
+ .variant-4 .closing-5 .invitation h3{font-size:32px}
+}

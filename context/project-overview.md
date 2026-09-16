@@ -4,7 +4,7 @@
 
 This repository is the content-driven website for Gladys Henriquez, a New York mental health counselor. It uses Next.js and Prismic CMS to present her therapy and parent-support services for parents, teens, and adults, with a clear path to request a free consultation.
 
-The site is intentionally being built from a clean technical foundation. Visual direction, imagery, and project-specific styling will be defined separately from the content and architecture documented here.
+The site uses the approved static prototypes in `prototypes/pages/` as its visual source of truth. The shared Inter typography, paper/blush/wine palette, page bounds, buttons, header, and footer are documented in `context/design-system.md`. The prototype-derived Hero is implemented and its published content is live on Home, About, Therapy & Support, and Get Started; remaining page sections continue to be implemented incrementally.
 
 ## Project Content
 
@@ -24,6 +24,7 @@ The site is intentionally being built from a clean technical foundation. Visual 
 - A synchronized non-repeatable `home` custom type.
 - A local slice registry containing Hero, Content, Image, and Video.
 - Shared slice primitives for section bounds, headings, links, CTA links, and Rich Text.
+- A fully Prismic-backed global site shell whose header and footer copy and links come only from the published Settings singleton.
 - Lazy YouTube and TikTok components for dedicated provider-ID fields.
 
 ## Current Routes
@@ -43,9 +44,10 @@ The site is intentionally being built from a clean technical foundation. Visual 
 - Local model library: `customtypes/`
 - Local slice library: `src/slices/`
 - Current custom type: `home`
+- Global singleton custom type: `settings`
 - Current local slices: Hero, Content, Image, Video
 
-The local slice library contains complete Hero, Content, Image, and Video models and React renderers. Hero provides Centered, Split, and Minimal layouts; Content provides Text Only, Centered Text, Image Right, and Image Left editorial layouts; Image provides Full Width and Two Up; Video provides YouTube, uploaded-media, and external-link sources. Continue to change their models through local Slice Machine rather than hand-editing model JSON.
+The local slice library contains complete Hero, Content, Image, and Video models and React renderers. Hero provides exactly two layouts: Homepage Hero and Inner Page Hero. Content provides Text Only, Centered Text, Image Right, and Image Left editorial layouts; Image provides Full Width and Two Up; Video provides YouTube, uploaded-media, and external-link sources. The `settings` singleton owns editable global navigation and footer content. Continue to change all models through local Slice Machine rather than hand-editing model JSON.
 
 ## Deliberately Not Included
 
@@ -54,7 +56,7 @@ The local slice library contains complete Hero, Content, Image, and Video models
 - File storage or upload infrastructure.
 - A component library or shared UI wrapper system.
 - Forms, tables, charts, global state, or notifications.
-- Client-specific routes, copy, content models, or design tokens.
+- A completed client-specific page design and consultation workflow.
 - Rich Text image or video embeds. TikTok and YouTube use dedicated components; images will use a dedicated component when added.
 
 Add any of these only when a concrete project requirement calls for them.

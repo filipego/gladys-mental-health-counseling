@@ -35,52 +35,52 @@ export function PrismicRichText({
     // outside this component, and editorial content starts at H2.
     heading1: () => null,
     heading2: ({ children, key }) => (
-      <Heading as="h2" className="mb-5 mt-10 first:mt-0" key={key} size="md">
+      <Heading as="h2" className="rich-text__heading rich-text__heading--2" key={key} size="md">
         {children}
       </Heading>
     ),
     heading3: ({ children, key }) => (
-      <Heading as="h3" className="mb-4 mt-8 first:mt-0" key={key} size="sm">
+      <Heading as="h3" className="rich-text__heading rich-text__heading--3" key={key} size="sm">
         {children}
       </Heading>
     ),
     heading4: ({ children, key }) => (
-      <Heading as="h4" className="mb-3 mt-7 first:mt-0" key={key} size="xs">
+      <Heading as="h4" className="rich-text__heading rich-text__heading--4" key={key} size="xs">
         {children}
       </Heading>
     ),
     heading5: ({ children, key }) => (
-      <Heading as="h5" className="mb-3 mt-6 first:mt-0" key={key} size="xs">
+      <Heading as="h5" className="rich-text__heading rich-text__heading--5" key={key} size="xs">
         {children}
       </Heading>
     ),
     heading6: ({ children, key }) => (
-      <Heading as="h6" className="mb-3 mt-6 first:mt-0" key={key} size="xs">
+      <Heading as="h6" className="rich-text__heading rich-text__heading--6" key={key} size="xs">
         {children}
       </Heading>
     ),
     paragraph: ({ children, key }) => (
-      <p className="mb-5 text-base leading-7 text-foreground last:mb-0" key={key}>
+      <p className="rich-text__paragraph" key={key}>
         {children}
       </p>
     ),
     list: ({ children, key }) => (
-      <ul className="mb-5 list-disc space-y-2 pl-6 marker:text-primary" key={key}>
+      <ul className="rich-text__list rich-text__list--unordered" key={key}>
         {children}
       </ul>
     ),
     oList: ({ children, key }) => (
-      <ol className="mb-5 list-decimal space-y-2 pl-6 marker:text-primary" key={key}>
+      <ol className="rich-text__list rich-text__list--ordered" key={key}>
         {children}
       </ol>
     ),
     listItem: ({ children, key }) => (
-      <li className="pl-1 leading-7" key={key}>
+      <li className="rich-text__list-item" key={key}>
         {children}
       </li>
     ),
     oListItem: ({ children, key }) => (
-      <li className="pl-1 leading-7" key={key}>
+      <li className="rich-text__list-item" key={key}>
         {children}
       </li>
     ),
@@ -100,10 +100,7 @@ export function PrismicRichText({
       </PrismicLink>
     ),
     preformatted: ({ children, key }) => (
-      <pre
-        className="mb-6 overflow-x-auto rounded-lg bg-secondary p-4 font-mono text-sm leading-6 text-inverse"
-        key={key}
-      >
+      <pre className="rich-text__preformatted" key={key}>
         <code>{children}</code>
       </pre>
     ),

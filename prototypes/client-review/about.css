@@ -1,0 +1,297 @@
+/* About compositions. Header, footer, palette and controls stay inherited from Home v4. */
+
+.about-demo{
+ scrollbar-width:thin;
+ scrollbar-color:#D3CCC4 var(--paper);
+ caret-color:var(--wine);
+}
+
+.about-content{
+ /* Capped at 88px: at 96px the two split columns come out 552px, just
+    under the measure, which made those paragraphs 3px short of every
+    other one on the page. */
+ --gutter:clamp(40px,5vw,88px);
+ --chapter:clamp(96px,15vw,224px);
+ /* The distance from any heading to the content under it, page title
+    included, so the two can never drift apart. */
+ --heading-gap:clamp(40px,5vw,76px);
+ /* Narrower than the narrowest column any paragraph sits in, so this
+    is what sets the line length everywhere rather than the grid. At
+    62ch the columns were clipping first and every block came out a
+    different width: 624, 563, 662. */
+ --measure:52ch;
+ --field:#17130F;
+ --on-field:#E9E2DA;
+ --on-field-quiet:#AEA398;
+ --on-wine:#F2E7E8;
+ /* One accent tint for the statement on either tonal band. */
+ --on-band-statement:#E9C7CE;
+}
+
+/* ── Rhythm ──────────────────────────────────────────────────────
+   Every section contributes half a chapter on each side, so the
+   distance between any two sections is the same number whether the
+   boundary is paper to paper or paper to a tonal band. */
+
+.about-content>section{padding-block:calc(var(--chapter) / 2)}
+.about-content>.consultation{padding-bottom:clamp(80px,8vw,124px)}
+
+/* ── Type scale ─────────────────────────────────────────────────
+   The page title now carries more weight than the footer signature,
+   and section headings are set at a size their full-width position
+   can actually support. */
+
+.about-content h1{
+ font-size:clamp(46px,6.6vw,96px);
+ line-height:1.01;
+ letter-spacing:-.04em;
+ font-weight:540;
+ max-width:none;
+ margin:0 0 var(--heading-gap);
+}
+.about-content h1 span{display:block}
+
+/* One size for every section heading on the page. A heading opening
+   a chapter, a heading beside a portrait and the closing heading are
+   all doing the same job, so they are all set the same. */
+.about-content h2{
+ font-size:clamp(26px,3.1vw,45px);
+ line-height:1.07;
+ letter-spacing:-.04em;
+ font-weight:540;
+ max-width:24ch;
+ margin:0 0 var(--heading-gap);
+}
+
+/* The gap under a heading is roughly three and a half times the gap
+   between two paragraphs, so the heading clearly belongs above the
+   whole block rather than to the first paragraph of it. */
+.about-content p{
+ font-size:15px;
+ line-height:1.7;
+ margin:0 0 20px;
+ max-width:var(--measure);
+ color:var(--body);
+ /* Keeps a paragraph from ending on a single stranded word. */
+ text-wrap:pretty;
+}
+.about-content p:last-child{margin-bottom:0}
+
+.about-content .lead{
+ font-size:clamp(17px,1.55vw,21px);
+ line-height:1.42;
+ letter-spacing:-.02em;
+ color:var(--ink);
+ max-width:42ch;
+}
+
+.about-content .credential{
+ font-size:15px;
+ line-height:1.6;
+ color:var(--muted);
+ max-width:none;
+ margin-top:22px;
+}
+
+/* One sentence lifted out of the reading column at its own scale.
+   Its weight comes from size, colour and the space around it. */
+.about-content .statement{
+ font-size:clamp(24px,2.3vw,32px);
+ line-height:1.32;
+ letter-spacing:-.025em;
+ color:var(--wine);
+ max-width:24ch;
+ margin:0;
+}
+
+/* ── Section shape ──────────────────────────────────────────────
+   The heading always sits on top at full width. Nothing is squeezed
+   into a narrow column beside a deeper one. */
+
+.about-content .section-body{
+ display:grid;
+ grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);
+ gap:var(--gutter);
+ align-items:start;
+}
+.about-content .section-body.split{grid-template-columns:repeat(2,minmax(0,1fr))}
+/* The reading columns carry no measure of their own. A `ch` here
+   resolves against the inherited 16px rather than the paragraph's
+   17px, so the wrapper would clip the paragraph 32px early. */
+
+/* A portrait beside its own copy. The columns are the same halves the
+   two-column reading sections use, so this copy starts on the same
+   line as the right-hand column of the section above it. */
+.about-content .aside-grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:var(--gutter);
+ align-items:start;
+}
+/* The portrait runs the full height of the band, past the section
+   padding at both ends, while the copy keeps that padding. Its height
+   follows the copy, so it can never hang past the end of the text. */
+.about-content .aside-grid .portrait{
+ height:auto;
+ align-self:stretch;
+ margin-block:calc(var(--chapter) / -2);
+}
+
+.about-content .band-stone{background:var(--stone)}
+
+/* The wine already carries the closing panel on the home page. It is
+   used on a text-only chapter: against a photograph the band fought
+   the image instead of holding it. */
+.about-content .band-wine{background:var(--wine);color:var(--on-wine)}
+.about-content .band-wine h2{color:var(--paper)}
+.about-content .band-wine p{color:var(--on-wine)}
+/* The statement is normally set in wine, which would disappear here. */
+.about-content .band-wine .statement{color:var(--on-band-statement)}
+
+.about-content .band-field{background:var(--field);color:var(--on-field)}
+.about-content .band-field h2,.about-content .band-field p{color:var(--on-field)}
+.about-content .band-field .statement{color:var(--on-band-statement)}
+.about-content .band-field .caption{color:var(--on-field-quiet)}
+
+.about-content .portrait{overflow:hidden;background:var(--stone)}
+.about-content .portrait img{object-position:50% 28%}
+
+.about-content .caption{
+ font-size:12px;
+ line-height:1.6;
+ color:var(--muted);
+ margin:14px 0 0;
+ max-width:34ch;
+}
+
+/* ── Closing invitation ─────────────────────────────────────────
+   No rule. Like every other boundary on the page, this one is a
+   change of ground. */
+/* The right column is the width of the footer's link column, which is
+   a constant 320px, so the button and its helper start on the same
+   line as "About Gladys" below rather than hugging the right edge. */
+.about-content .consultation>.wrap{
+ display:grid;
+ grid-template-columns:minmax(0,1fr) 320px;
+ gap:var(--gutter);
+ align-items:start;
+}
+/* Drop the button to the first line of the paragraph (past the h2 + gap). */
+.about-content .consultation>.wrap>div:last-child{
+ padding-top:calc(clamp(26px,3.1vw,45px) * 1.07 + var(--heading-gap));
+}
+.about-content .consultation .button{
+ padding:18px 30px;
+ min-height:58px;
+ font-size:15px;
+ white-space:nowrap;
+}
+.about-content .consultation .helper{margin-top:16px;padding-inline-start:30px}
+
+/* ── 1 · Portrait ───────────────────────────────────────────────
+   Introduction beside a tall standing portrait, then full-width
+   chapters, a stone context band and a photographed background. */
+
+/* The introduction is centred against the portrait. The photograph
+   is only a little taller than the copy, so this reads as optical
+   centring rather than the copy being pushed down the column. */
+.portrait-study .opening{
+ display:grid;
+ /* 35vw rather than 40vw: it reaches the same 520px on a wide screen
+    but leaves the copy column above the measure on a small laptop. */
+ grid-template-columns:minmax(0,1fr) clamp(320px,35vw,520px);
+ gap:var(--gutter);
+ align-items:center;
+}
+/* Sized so her name stays on one line inside this column. */
+.portrait-study h1{font-size:clamp(31px,3.5vw,50px)}
+.portrait-study .opening-copy .lead{margin:0 0 32px}
+.portrait-study .opening .portrait{height:clamp(520px,50vw,700px)}
+
+/* ── 2 · Editorial ──────────────────────────────────────────────
+   The title set across the page above everything else, and one
+   chapter inverted onto a dark field to change the rhythm. */
+
+.editorial-study .opening h1{max-width:15ch}
+.editorial-study .opening-copy .lead{margin-bottom:26px}
+
+/* ── 3 · Column ─────────────────────────────────────────────────
+   Kept for reference; not part of the current direction. */
+
+.column-study .opening{
+ display:flex;
+ align-items:flex-end;
+ justify-content:space-between;
+ gap:var(--gutter);
+}
+.column-study .reading-rail{padding-right:var(--gutter)}
+.column-study .reading-rail .portrait{height:clamp(380px,40vw,470px)}
+.column-study .reading-rail .text-link{margin-top:22px}
+.column-study .reading{
+ display:grid;
+ grid-template-columns:clamp(260px,26vw,340px) minmax(0,1fr);
+ align-items:start;
+}
+.column-study .article{max-width:70ch}
+.column-study .article p{font-size:18px;line-height:1.8;max-width:none}
+.column-study .article .lead{font-size:clamp(21px,1.95vw,27px);line-height:1.45;max-width:none;margin-bottom:30px}
+.column-study .article section{margin-top:clamp(52px,5.4vw,84px)}
+.column-study .article h2{font-size:clamp(28px,2.7vw,38px);margin-bottom:28px}
+.column-study .consultation{background:var(--stone)}
+
+.prototype-destination{max-width:700px;margin:100px auto;padding:32px}
+.prototype-destination p{margin-block:24px}
+
+/* Review chrome, not a proposed component: it should never be
+   mistaken for page content where it overlaps. */
+.about-demo .prototype-switcher{
+ background:rgba(253,252,252,.86);
+ backdrop-filter:blur(10px);
+ box-shadow:0 8px 28px -12px rgba(23,19,15,.3);
+}
+.about-demo .prototype-switcher a{width:auto;min-width:40px;padding-inline:12px;white-space:nowrap}
+
+/* Below this the two reading columns get narrower than the measure,
+   which would make those paragraphs shorter than every other one on
+   the page. They stack instead. */
+@media(max-width:1280px){
+ .about-content .section-body,
+ .about-content .section-body.split,
+ .about-content .aside-grid{grid-template-columns:minmax(0,1fr);gap:40px}
+ .about-content .statement{max-width:30ch}
+ /* Stacked, the portrait becomes a wide band and stops bleeding. */
+ .about-content .aside-grid .portrait{
+  height:min(58vh,440px);
+  align-self:auto;
+  margin-block:0;
+ }
+ .about-content .aside-grid .portrait img{object-position:50% 10%}
+}
+
+/* The chapter gap stays on its own clamp at every width; it is the
+   one measurement that should never be quietly reduced. */
+/* Below this a portrait beside copy squeezes the copy under the
+   measure, so the portrait goes above it as a wide band instead. */
+@media(max-width:1100px){
+ .portrait-study .opening,
+ .column-study .reading,
+ .about-content .consultation>.wrap{grid-template-columns:minmax(0,1fr);gap:36px}
+ .portrait-study .opening{align-items:start}
+ .about-content .consultation>.wrap{align-items:start}
+
+ /* Portraits become wide bands here; recentre the crop on her face
+    rather than keeping the tall-frame offset. */
+ .about-content .portrait img{object-position:50% 10%}
+ .portrait-study .opening .portrait{height:min(58vh,440px);min-height:0}
+ .column-study .opening{display:block}
+ .column-study .reading-rail{padding-right:0}
+ .column-study .article{max-width:70ch}
+}
+
+@media(max-width:600px){
+ .about-content{--measure:none}
+ .about-content p{font-size:15px;margin-bottom:18px}
+ .column-study .article p{font-size:17px;line-height:1.76}
+ .about-content .lead,.about-content h2,.about-content .statement{max-width:none}
+ .about-content .consultation .button{width:100%}
+}

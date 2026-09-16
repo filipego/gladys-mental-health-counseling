@@ -1,6 +1,7 @@
 import type { PrismicNextLinkProps } from "@prismicio/next";
 import clsx from "clsx";
 
+import { ArrowIcon } from "./ArrowIcon";
 import { PrismicLink } from "./PrismicLink";
 
 /** Values used by the matching Prismic CTA style select field. */
@@ -9,6 +10,7 @@ export type ButtonVariant = "primary" | "secondary" | "outline";
 export type ButtonLinkProps = PrismicNextLinkProps & {
   variant?: ButtonVariant;
   size?: "sm" | "md" | "lg";
+  showArrow?: boolean;
 };
 
 export function ButtonLink({
@@ -17,28 +19,30 @@ export function ButtonLink({
   children,
   className,
   prefetch = false,
+  showArrow = true,
   ...props
 }: ButtonLinkProps) {
   return (
     <PrismicLink
       className={clsx(
-        "inline-flex items-center justify-center rounded-full border font-sans font-medium no-underline transition-colors duration-200",
+        "inline-flex items-center justify-center gap-5 rounded-full border font-sans font-medium no-underline! transition-colors duration-200 whitespace-normal text-center py-1.5",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         size === "sm" && "min-h-9 px-4 text-sm",
         size === "md" && "min-h-11 px-5 text-sm",
-        size === "lg" && "min-h-13 px-6 text-base",
+        size === "lg" && "min-h-[52px] px-6 text-base",
         variant === "primary" &&
-          "border-primary bg-primary !text-inverse hover:opacity-85",
+          "border-wine bg-wine !text-paper hover:border-wine-hover hover:bg-wine-hover",
         variant === "secondary" &&
-          "border-secondary bg-secondary !text-inverse hover:opacity-85",
+          "border-border bg-background text-primary hover:bg-surface-strong",
         variant === "outline" &&
-          "border-primary bg-transparent text-primary hover:bg-primary hover:text-inverse",
+          "border-border bg-transparent text-primary hover:bg-surface hover:border-secondary",
         className
       )}
       prefetch={prefetch}
       {...props}
     >
-      {children}
+      <span>{children}</span>
+      {showArrow ? <ArrowIcon className="size-4" /> : null}
     </PrismicLink>
   );
 }

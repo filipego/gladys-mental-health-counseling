@@ -13,7 +13,13 @@ export default async function Page({ params }: { params: Promise<Params> }) {
   const client = createClient();
   const page = await client.getByUID("page", uid).catch(() => notFound());
 
-  return <SliceZone components={components} slices={page.data.slices} />;
+  return (
+    <SliceZone
+      components={components}
+      context={{ pageUid: uid }}
+      slices={page.data.slices}
+    />
+  );
 }
 
 export async function generateMetadata({

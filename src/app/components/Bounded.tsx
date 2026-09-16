@@ -34,12 +34,12 @@ export function Bounded({
   return (
     <Comp
       className={clsx(
-        "px-5 md:px-8",
-        spacing === "standard" && "py-16 md:py-24",
+        "px-5 md:px-12",
+        spacing === "standard" && "py-13 md:py-20",
         spacing === "compact" && "py-8 md:py-12",
         spacing === "none" && "py-0",
-        spacing === "none-above" && "pt-0 pb-16 md:pb-24",
-        spacing === "none-below" && "pt-16 md:pt-24 pb-0",
+        spacing === "none-above" && "pt-0 pb-13 md:pb-20",
+        spacing === "none-below" && "pt-13 md:pt-20 pb-0",
         className
       )}
       {...restProps}
@@ -47,7 +47,7 @@ export function Bounded({
       <div
         className={clsx(
           "mx-auto w-full",
-          width === "standard" && "max-w-6xl",
+          width === "standard" && "max-w-page",
           width === "narrow" && "max-w-4xl",
           width === "full" && "max-w-none"
         )}

@@ -36,7 +36,8 @@ Check `package.json` for exact installed versions. Use official documentation fo
 ## Tailwind CSS
 
 - Tailwind CSS 4 is configured through `@import "tailwindcss"` in `src/app/globals.css`.
-- Generic semantic colors currently live in `src/app/globals.css`; they are intentionally ready to be replaced by Gladys's selected visual direction.
+- Gladys's prototype-derived semantic colors, card radii, 1200px page width, and shared site-shell styles live in `src/app/globals.css`. Read `context/design-system.md` for roles and component usage.
+- Inter is loaded with `next/font/local` from the prototype's exact local font file and served by Next.js. Body text uses Regular and prototype headings/buttons use Medium.
 - Keep styling simple and local until reusable patterns emerge.
 
 ## ESLint and TypeScript

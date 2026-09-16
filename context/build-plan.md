@@ -31,12 +31,12 @@ Keep Gladys's counseling site focused and content-led. Add one complete, verifia
 
 Use the content plan in `planning/website-content.md` as the working product brief. Keep unconfirmed credentials, fees, availability, privacy procedures, and telehealth details clearly marked until Gladys confirms them.
 
-1. Model the four required pages and only the slices needed for their content.
+1. [In progress] Model the four required pages and only the slices needed for their content. The global `settings` type and shared site shell are complete and pushed; page content slices remain.
 2. Add the planned Home, About Gladys, Therapy & Support, and Get Started content in Prismic.
 3. Implement slices with accessible, responsive React components.
    - Use `Bounded`, `Heading`, `PrismicRichText`, and `ButtonLink` where their roles apply.
 4. Add the consultation request workflow only after the receiving service, privacy handling, and fallback contact route are confirmed.
-5. Define visual direction and replace generic styling after references are selected.
+5. The prototype-derived shared visual foundation and global header/footer are implemented in `context/design-system.md`; continue with page slices and imagery in prototype order.
 6. Track delivered work and next steps in `progress-tracker.md`.
 
 ## Feature Checklist

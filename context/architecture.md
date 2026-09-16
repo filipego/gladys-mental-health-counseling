@@ -29,13 +29,17 @@ Use `package.json` as the exact dependency-version source of truth.
 │   │   ├── api/preview/           # Enable Prismic previews
 │   │   ├── api/exit-preview/      # Exit preview mode
 │   │   ├── api/revalidate/        # Prismic revalidation endpoint
-│   │   ├── components/             # Shared layout, typography, link, Rich Text, and lazy video primitives
+│   │   ├── components/             # Shared layout, typography, links, site shell, Rich Text, and media primitives
 │   │   ├── slice-simulator/       # Slice Machine simulator route
 │   │   ├── globals.css
 │   │   ├── layout.tsx
 │   │   └── page.tsx
 │   ├── slices/
-│   │   ├── Hero/                  # Centered, Split, and Minimal hero renderer/model
+│   │   ├── Hero/                  # Homepage Hero and Inner Page Hero renderer/model
+│   │   ├── HeadingAndText/        # Side-by-side and two-column editorial copy layouts
+│   │   ├── ImageAndText/          # Reusable image/copy split with optional surface and divider controls
+│   │   ├── InformationGrid/       # Repeatable two-column practical-information grid
+│   │   ├── CallToAction/          # Conversation CTA with shared button and helper copy
 │   │   ├── Content/               # Text Only, Centered Text, Image Right, and Image Left renderer/model
 │   │   ├── Image/                 # Full Width and Two Up image renderer/model
 │   │   ├── Video/                 # YouTube, uploaded, and external video renderer/model
@@ -67,6 +71,10 @@ Prismic editor publishes content
   -> SliceZone with the generated slice component registry
   -> rendered route
 ```
+
+The root layout separately queries the non-repeatable `settings` document and passes it to `SiteHeader` and `SiteFooter`. Those components render only CMS-provided words and destinations; they intentionally do not contain hard-coded content fallbacks. Desktop navigation remains in the server-rendered header, while `SiteMobileNavigation` owns the mobile-only hamburger, right-side drawer, focus trap, Escape handling, body scroll lock, and close-on-navigation behavior.
+
+Page routes pass their UID through `SliceZone` context. Hero uses that route context only to select prototype-specific presentation hooks (title measure and media crop); copy and destinations remain Prismic-owned.
 
 ## Preview Flow
 
@@ -121,3 +129,4 @@ Do not introduce tokens or secrets until a feature requires them. If private Pri
 5. App routes default to Server Components.
 6. No database, authentication system, or UI framework is assumed.
 7. New architecture is documented when it is introduced, not before.
+8. Global navigation and footer content come from the `settings` singleton; shared layout and appearance remain owned by the React components and `globals.css`.

@@ -10,7 +10,13 @@ export default async function Page() {
   const client = createClient();
   const page = await client.getSingle("home").catch(() => notFound());
 
-  return <SliceZone components={components} slices={page.data.slices} />;
+  return (
+    <SliceZone
+      components={components}
+      context={{ pageUid: "home" }}
+      slices={page.data.slices}
+    />
+  );
 }
 
 export async function generateMetadata(): Promise<Metadata> {

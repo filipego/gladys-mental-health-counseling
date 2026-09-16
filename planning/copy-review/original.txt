@@ -1,0 +1,288 @@
+Gladys Henriquez website content
+Prepared for Gladys Henriquez
+Please review the proposed page structure and website copy below. Section notes explain where the text belongs. Details to confirm before publication are collected at the end.
+Website structure
+Four main pages: Home, About Gladys, Therapy & Support, Get Started. Privacy belongs in the footer as a utility page once the site's actual data handling is known.
+Parents are the first audience addressed. Teens and adults have clear sections on the same therapy page. Anxiety and trauma belong within that content. FAQs belong on Get Started.
+Use Gladys's first-person voice throughout. Section notes below describe content placement, not visual design. No text above the opening headline. Photos, typography, motion and composition will be considered with the forthcoming references.
+The primary action is “Request a free consultation.” All instances lead to /get-started#consultation. This wording matches a request form. Use “Schedule” only if visitors will actually choose and reserve a time.
+
+Home
+1  Opening
+Placement: headline, short introduction and primary button. A secondary text link leads to the therapy page.
+Understand what's happening. Change what keeps repeating.
+I'm Gladys Henriquez, a mental health counselor working with parents, teens and adults in New York. Maybe you're worried about your child. Maybe you're tired of the same conflict, anxiety or patterns showing up in your own life. We can slow it down, understand what's underneath it and figure out what needs to change.
+I offer in-person sessions in New York City and telehealth sessions, in English and Spanish.
+Button: Request a free consultation
+Supporting text: A free 15-minute call for new clients.
+Text link: See who I work with → /therapy-support
+2  Parent concerns
+Placement: a short section immediately after the introduction, before the service choices.
+When you know something with your child feels off
+Maybe your teenager is pulling away, school has become a struggle, or every conversation turns into an argument. You may be trying to decide when to give space, when to step in and whether you're handling it the right way.
+Instead of focusing only on the behavior in front of us, we'll look at what's happening underneath it, what keeps the conflict going and what could help you respond differently. There is room to talk about what all of this is doing to you, too.
+Text link: Read about parent support → /therapy-support#parents
+3  Support options
+Placement: three brief entries with descriptive links. These are the three actual audiences, not three new pages.
+Who I work with
+Parents
+Parenting can leave you second-guessing yourself, especially when the same conflict keeps coming back. We can work on communication, boundaries, understanding your child's reactions and repairing after hard moments.
+Link: Parent support → /therapy-support#parents
+Teens
+School, friendships, anxiety and family stress can pile up fast. You do not have to come in with the perfect explanation. We can start with what has been hard lately.
+Link: Therapy for teens → /therapy-support#teens
+Adults
+If you keep replaying conversations, bracing for problems or falling back into patterns you understand but still cannot change, therapy can give us a place to work through what is keeping you stuck.
+Link: Therapy for adults → /therapy-support#adults
+4  Introduction to Gladys
+Placement: a brief personal introduction with a real portrait when one is supplied. Keep the longer background on About.
+What it's like to work with me
+I don't come into therapy assuming I know your life better than you do. I listen, ask questions and pay attention to the patterns that are easy to miss when you're living inside them.
+I believe in my clients' strengths, including the ones they have a hard time seeing in themselves. If something we try is not helping, I want to know. We can adjust instead of forcing an approach that does not fit. We'll work at your pace, with patience for the parts that take time.
+Gladys Henriquez
+Mental Health Counselor – Limited Permit (MHC-LP)
+I work under the practice of John Orr, LMHC.
+Link: About Gladys → /about
+5  Practical details and consultation
+Placement: show these details before the final button. No separate homepage FAQ repeating them.
+Sessions and getting started
+In-person sessions: 55 Broadway Ave, New York, NY.
+Telehealth: Available. We can discuss whether virtual sessions are an option for you during the consultation.
+Languages: English and Spanish.
+Fees: Sessions start at $200. I accept private insurance. Please ask about your plan before your first appointment.
+We can start with a free 15-minute consultation. Tell me what's bringing you here, ask your questions and get a feel for whether working together makes sense.
+Button: Request a free consultation
+Link: Fees and common questions → /get-started#practical-details
+About Gladys
+1  Introduction
+Placement: name as the page heading, followed by her title and introduction. Include a supplied portrait.
+About Gladys Henriquez
+Mental Health Counselor – Limited Permit (MHC-LP)
+I work with parents, teens and adults who are trying to make sense of what keeps happening, what is hurting and what they want to be different.
+I start by listening to how you understand your own life. What has been hard? What has helped before? What have you been carrying for a long time? I also pay attention to strengths you may not be giving yourself credit for.
+2  Working together
+Therapy should feel like a real conversation
+You do not have to say the right thing in therapy. We'll talk honestly about what you want to change and pay attention to whether the work is actually helping. If something does not feel useful, tell me. I would rather adjust than keep doing something simply because it is what we started with.
+I respect your pace. Change can be uncomfortable, and some parts take time. Being patient with yourself is part of the work.
+Some sessions may include a creative activity or, with your agreement, a mindfulness walk. We decide together whether either one fits the work we are doing. You can always choose to keep our sessions focused on conversation.
+3  Understanding context
+Placement: one short section connecting her perspective to the person seeking therapy.
+I want to understand the life around the problem
+I don't look at what you're feeling as if it exists in a vacuum. What happens at home, at school or at work matters. So do your culture, relationships and experiences of change or loss.
+My work with families, schools and community programs has taught me to pay attention to context. Sometimes the question is not only what you're feeling, but what has been happening around you.
+4  Professional background
+Placement: compact factual background. Please confirm the professional details in this section before publication.
+My background
+My background includes graduate mental health counseling training at NYU Steinhardt and work with children and families, teens and adults.
+I'm a Registered Circle of Security Parenting Facilitator and the founder and Executive Director of Discover and Grow. I also continue developing my work in expressive arts-informed counseling.
+I work under the practice of John Orr, LMHC, and offer sessions in English and Spanish.
+5  Invitation
+Start with a conversation
+The free 15-minute consultation gives you a chance to tell me what you're looking for, ask questions and get a sense of how I work. You can decide afterward whether you want to schedule a first session.
+Button: Request a free consultation
+Therapy & Support
+1  Introduction
+Therapy and parent support
+People come to therapy for different reasons. A parent may be worried about a child. A teenager may feel overwhelmed or misunderstood. An adult may be tired of anxiety, old pain or the same pattern showing up again. The work depends on what is happening in your life and what you want to change.
+Jump links: Parents → #parents | Teens → #teens | Adults → #adults
+2  Parents
+Anchor: #parents. Give this section the most space of the three audience sections.
+Look underneath the behavior, not just at the behavior
+Parenting gets hard when every response starts to feel like a guess. Your child may be anxious, upset, angry or pulling away. You may set a boundary and question yourself five minutes later, or find yourselves having the same argument with no idea how to get out of it.
+Instead of asking only, 'How do I stop this behavior?' we'll look at what happened before it, what each of you needed, what made the moment escalate and what could help next time.
+We may work on communication and boundaries, strong emotions, and how to repair after conflict. We can also make room for your own stress and the expectations you carry as a parent.
+My work with parents draws on my counseling and school experience, along with my training as a Registered Circle of Security Parenting Facilitator.
+If you're seeking therapy for your teenager, you can contact me about that too.
+Button: Request a free consultation
+3  Teens
+Anchor: #teens. Address the teenager directly here.
+Your side of the story matters
+You might be dealing with school pressure, friendship problems, anxiety, anger or things at home that are hard to talk about. Sometimes you know exactly what's bothering you. Sometimes you just know you haven't felt like yourself lately.
+You do not have to walk in with everything figured out. We can start with what is happening now and work on ways to handle situations that feel too big, confusing or exhausting.
+I want to hear your perspective, not just what other people think is going on. We'll work at a pace you can manage. If words are hard to find, we can talk about using a creative activity to help you express what you're feeling.
+For parents: You can request the first consultation about support for your teenager. We'll talk through the next steps during that call.
+Button: Request a free consultation
+4  Adults
+Anchor: #adults.
+When you understand the pattern but still feel stuck
+Maybe you replay conversations long after they end, expect something to go wrong or question decisions you already made. Maybe you can explain exactly why you react a certain way and still find yourself doing it again.
+Understanding a pattern is not the same as changing it. We can look at what keeps pulling you back into the same reaction and practice different ways of responding.
+Our conversations may include difficult past experiences, family expectations, relationships, grief, life changes, boundaries or the demands of everyday life. We can also make sense of reactions that feel stronger than the moment seems to call for.
+Button: Request a free consultation
+5  Approaches
+Placement: a plain explanation after the audience sections. Keep methods together rather than creating separate service pages. Please confirm the approach list before publication.
+I don't use one approach with everyone
+Depending on what you need, our work may draw on cognitive behavioral therapy (CBT), acceptance and commitment therapy (ACT), psychodynamic or narrative approaches, mindfulness and trauma-informed care.
+Some sessions may focus on a thought that keeps taking over. In others, we may connect something happening now to an earlier experience or practice how you want to respond in a difficult situation. I'll explain what we're doing, and I want your feedback on whether it is helping.
+With your agreement, we may use expressive art or a mindfulness walk as part of a session. We will only use those options when they make sense for the work we're doing.
+6  Session options
+Meeting in person or online
+I offer in-person sessions at 55 Broadway Ave, New York, NY, and telehealth sessions. We can discuss location requirements for telehealth when you contact me.
+Sessions are available in English and Spanish. Fees start at $200, and I accept private insurance. Please ask about coverage for your plan before beginning therapy.
+Button: Request a free consultation
+Get Started
+1  Consultation introduction
+Request a free consultation
+You do not need a polished explanation. Start with a free 15-minute call, tell me a little about what is bringing you here and ask the questions you need to ask before deciding whether you want to work together.
+Complete the form below to request a call. I'll contact you to arrange a time for us to speak.
+2  Consultation form
+Anchor: #consultation. Show the form directly beneath the introduction. Use visible labels and mark optional fields. The request does not reserve an appointment.
+
+Availability helper: Include your time zone if you're outside New York.
+Message helper: A sentence or two is enough. Please leave out medical records and sensitive personal details.
+Required checkbox, unchecked initially: I understand that this form is for consultation requests and should not be used for emergencies. Sending it does not establish a therapist-client relationship.
+Privacy link: Read the privacy notice.
+Submit button: Request my consultation
+Sending button: Sending your request…
+Keep entered information on the page if validation or submission fails. Move focus to the error summary and connect each field to its own message. Show success only after the request is accepted by the receiving service.
+Validation copy
+Error summary: Please check the highlighted fields.
+Missing name: Enter your first name.
+Contact choice: Choose email or phone.
+Email: Enter a valid email address so I can contact you.
+Phone: Enter a phone number so I can contact you.
+Support choice: Choose who you're seeking support for. You can select “I'm not sure yet.”
+Checkbox: Please confirm that you've read this statement.
+Submission failure
+Your request couldn't be sent. Your answers are still here. Please try again.
+Button: Try again
+Success state
+I received your consultation request.
+I'll contact you by your preferred method to arrange a time for our free 15-minute call. Your appointment is not booked yet.
+Link: Return to Home → /
+Keep the emergency notice visible in every form state. Do not promise a response time until Gladys supplies one. Add an alternative contact route once she confirms a public practice email or phone number.
+3  What happens next
+What we'll talk about
+Use the consultation to tell me what has been going on and ask about my approach, fees or session options. If you're contacting me about your teenager, we can talk through how to get started with them.
+If it feels like a good fit, we'll arrange your first session. You do not have to commit to therapy during the consultation.
+4  Practical details
+Anchor: #practical-details. Present cost and location openly, outside accordions.
+Fees and session options
+Sessions start at $200. I accept private insurance. Please ask about your specific plan so we can discuss coverage and costs before your first appointment.
+In-person sessions take place at 55 Broadway Ave, New York, NY. Telehealth is also available. When you contact me, we can confirm whether I can offer online sessions where you'll be located.
+You can have your sessions in English or Spanish.
+5  Common questions
+Questions you may have before we talk
+How long is the free consultation?
+The call lasts 15 minutes. You can tell me what you're looking for, ask questions and get a sense of whether you want to schedule a therapy session.
+Do I have to start therapy afterward?
+No. The consultation is a conversation, not a commitment. You can decide afterward whether you want to begin.
+Can I contact you about my teenager?
+Yes. You can reach out about therapy for your teenager or about support for yourself as a parent.
+Can I use insurance?
+I accept private insurance. Please ask about your plan before booking a session so we can discuss your coverage and costs.
+Can we meet online or speak Spanish?
+I offer telehealth and sessions in Spanish or English. We can confirm whether online sessions are available for your location during the consultation.
+What are your credentials?
+I'm a Mental Health Counselor – Limited Permit (MHC-LP). I work under the practice of John Orr, LMHC.
+End link: Go to the consultation form → #consultation
+Shared navigation and footer
+Header name: Gladys Henriquez. Link to Home.
+Navigation: Home / About Gladys / Therapy & Support / Get Started.
+Primary button: Request a free consultation.
+Mobile menu controls: Open menu / Close menu.
+Footer copy:
+Gladys Henriquez
+Mental Health Counselor – Limited Permit (MHC-LP)
+I work under the practice of John Orr, LMHC.
+55 Broadway Ave, New York, NY
+In-person and telehealth sessions. English and Spanish.
+Links: About Gladys / Therapy & Support / Get Started / Privacy.
+Emergency notice, also beside the consultation form:
+This website and form are not monitored for emergencies. If you're in immediate danger, call 911. For mental health crisis support in the U.S., call or text 988.
+Copyright: © [current year] Gladys Henriquez.
+Utility content and page descriptions
+Page not found
+That page isn't here.
+You can head back home or request a consultation.
+Links: Return to Home / Request a free consultation.
+Privacy page
+This page needs the selected form provider and the practice's actual privacy procedures. Do not publish a generic policy or make claims about encryption, retention, cookies, sharing or legal compliance without those facts.
+Page heading: Website privacy.
+Content needed: who operates the site and receives requests, what the form collects and why, service providers, retention, cookies or analytics if used, and how to contact the practice about privacy. Link a separate practice privacy notice if the practice supplies one.
+Search result titles and descriptions
+
+Content coverage and details to confirm
+
+Before publication, confirm the official address spelling and full postal details, the practice's preferred credential/supervision wording, accepted insurance plans and what the starting fee covers. Confirm ages served and telehealth locations. Confirm the NYU, Circle of Security and Discover and Grow details, along with the therapeutic approaches listed.
+The form is a proposed workflow. Confirm who receives requests, the public fallback contact route, privacy procedures and any response-time promise before implementing it. Clarify how teen confidentiality and parent participation are explained by the practice before adding an FAQ on those subjects.
+Page
+Sections in reading order
+Visitor's next step
+Home
+Opening, parent concerns, support options, introduction to Gladys, practical details and consultation
+Find relevant support or request a call
+About Gladys
+Introduction, working together, personal context, background, invitation
+Decide whether to contact Gladys
+Therapy & Support
+Introduction, parents, teens, adults, approaches, session options
+Understand the work and request a call
+Get Started
+Consultation introduction, request form, what happens next, practical details, FAQs
+Submit a consultation request
+Field label
+Input and behavior
+First name
+Required text
+How would you like me to contact you?
+Required choice: Email / Phone
+Email address
+Required if Email is chosen. Otherwise optional
+Phone number
+Required if Phone is chosen. Otherwise optional
+Who is the support for?
+Required choice: Myself / My teenager / Me as a parent / I'm not sure yet
+How would you prefer to meet?
+Optional choice: In person / Online / Either
+Preferred language
+Optional choice: English / Spanish / Either
+When are you usually available for a call?
+Optional short text
+Anything you'd like me to know before we speak?
+Optional short text area
+Page
+Title
+Description
+Home
+Gladys Henriquez, MHC-LP | Therapy and parent support in New York
+Therapy for parents, teens and adults with Gladys Henriquez, MHC-LP. In-person and telehealth sessions in English and Spanish.
+About
+About Gladys Henriquez | Mental health counselor
+Meet Gladys Henriquez, MHC-LP, and learn how she works with parents, teens and adults through a direct, collaborative approach.
+Therapy & Support
+Therapy and parent support | Gladys Henriquez, MHC-LP
+Parent support and therapy for teens and adults in New York. Learn how Gladys works and request a free consultation.
+Get Started
+Request a free consultation | Gladys Henriquez, MHC-LP
+Request a free 15-minute consultation with Gladys Henriquez. Review session options, fees, insurance and what happens next.
+Source topic
+Where it is covered
+Parents as primary audience
+Early Home section and the first, longest service section
+Teens and adults
+Home links and full Therapy & Support sections
+Anxiety and overthinking; emotional overwhelm
+Audience sections, using everyday descriptions
+Past experiences and trauma-related patterns
+Adult section and approaches
+Family conflict, communication and boundaries
+Parent and adult sections
+School pressure, identity and self-esteem concerns
+Teen section and About introduction on recognizing strengths
+Grief, transitions and stress
+Adult section and context on About
+Strengths, adapting the approach, patience and pace
+Home introduction and About
+Mindfulness walks and expressive arts with consent
+About and approaches
+Methods and professional biography
+About background and approaches, pending original-source confirmation
+Location, formats, languages, fees and insurance
+Home summary, service close and Get Started
+Consultation flow and FAQs
+Get Started, including submission feedback and field validation
+Navigation, trust information and emergency notice
+Shared content
+Proposed future classes and teen programs
+Excluded from launch offerings because availability is unconfirmed

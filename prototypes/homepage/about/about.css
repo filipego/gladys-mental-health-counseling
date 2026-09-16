@@ -1,0 +1,67 @@
+/* About studies inherit v4's visual system; only composition changes between demos. */
+.about-demo{--bio-gap:112px}
+.about-demo main h1{font-size:56px;font-weight:550;line-height:1.08;letter-spacing:-.04em;max-width:650px}
+.about-demo main h2{font-size:38px;font-weight:550;line-height:1.15;letter-spacing:-.035em;max-width:460px}
+.about-demo main p{font-size:15px;line-height:1.75}
+.about-demo .bio-lead{font-size:21px;line-height:1.5;letter-spacing:-.015em;color:var(--ink)}
+.about-demo .bio-credential{font-size:13px;color:var(--muted);margin:24px 0 32px}
+.bio-photo{overflow:hidden}
+.bio-photo img{object-position:center 30%}
+.bio-intro>p:last-of-type,.bio-copy>p:last-of-type{margin-bottom:0}
+.bio-intro>.text-link{margin-top:24px}
+.bio-section{margin-bottom:var(--bio-gap)}
+.bio-working,.bio-background,.bio-context>.wrap,.bio-invite>.wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:72px}
+.bio-copy{max-width:65ch}
+.bio-invite .button{margin-top:28px}
+.about-demo main .text-link{gap:10px;border-bottom:1px solid #DDD8D2;padding-bottom:6px;min-height:0}
+.about-demo main .text-link:hover{color:var(--wine);border-color:var(--wine)}
+.about-demo .bio-invite{margin-bottom:96px}
+.about-switcher{position:fixed;right:20px;bottom:16px;display:flex;align-items:center;gap:4px;padding:6px;border:1px solid var(--line);border-radius:30px;background:var(--paper);z-index:50}
+.about-switcher span{font-size:11px;color:var(--muted);padding-inline:12px}
+.about-switcher a{font-size:12px;padding:8px 13px;border-radius:24px}
+.about-switcher a[aria-current]{background:var(--ink);color:var(--paper)}
+.demo-1 .bio-opening{display:grid;grid-template-columns:.9fr 1fr;gap:104px;align-items:center;padding-block:64px 112px}
+.demo-1 .bio-photo{height:570px;border-radius:12px}
+.demo-1 .bio-details{display:grid;grid-template-columns:1fr 1.05fr;gap:72px;margin-bottom:112px}
+.demo-1 .bio-details section{display:block}
+.demo-1 .bio-details h2{margin-bottom:28px;font-size:32px}
+.demo-1 .bio-invite{background:var(--stone);padding-block:64px;margin-bottom:0}
+.demo-2 .bio-opening{display:grid;grid-template-columns:1fr 1fr;gap:48px 96px;padding-block:64px 112px}
+.demo-2 .bio-title{grid-column:1/-1;display:flex;align-items:end;justify-content:space-between;gap:48px}
+.demo-2 .bio-title h1{max-width:680px}
+.demo-2 .bio-credential{margin:0 0 5px;max-width:280px}
+.demo-2 .bio-intro{max-width:500px;align-self:center}
+.demo-2 .bio-photo{height:410px;border-radius:4px}
+.demo-2 .bio-photo img{object-position:center 37%}
+.demo-2 .bio-context{background:var(--wine);color:var(--paper);padding-block:72px}
+.demo-2 .bio-context p{color:var(--paper)}
+.demo-2 .bio-context h2{font-size:42px}
+.demo-2 .bio-invite{display:grid;grid-template-columns:1fr 1.05fr;gap:72px}
+.demo-3 .bio-reading{display:grid;grid-template-columns:380px minmax(0,1fr);gap:120px;padding-block:64px 96px;align-items:start}
+.demo-3 .bio-portrait-rail{position:sticky;top:48px}
+.demo-3 .bio-photo{height:520px;border-radius:6px}
+.demo-3 .bio-article{max-width:660px}
+.demo-3 .bio-article section{display:block;margin-bottom:72px}
+.demo-3 .bio-article section:last-child{margin:0}
+.demo-3 .bio-article h2{font-size:32px;margin-bottom:24px}
+.demo-3 .bio-article .bio-invite{background:var(--stone);padding:40px;border-radius:0}
+.prototype-destination{max-width:700px;margin:100px auto;padding:32px}
+.prototype-destination p{margin-block:24px}
+@media(max-width:1100px){
+ .demo-1 .bio-opening{gap:56px}
+ .demo-3 .bio-reading{grid-template-columns:320px minmax(0,1fr);gap:64px}
+ .about-demo h1{font-size:48px}
+}
+@media(max-width:760px){
+ .about-demo h1{font-size:38px}
+ .about-demo h2{font-size:30px}
+ .about-demo .bio-opening,.bio-working,.bio-background,.bio-context>.wrap,.bio-invite>.wrap,.demo-1 .bio-details,.demo-2 .bio-invite,.demo-3 .bio-reading{grid-template-columns:1fr;gap:32px}
+ .demo-2 .bio-title{display:block}
+ .demo-2 .bio-credential{margin-top:20px;max-width:none}
+ .demo-3 .bio-portrait-rail{position:static}
+ .about-demo .bio-opening,.demo-3 .bio-reading{padding-block:40px 64px}
+ .about-demo{--bio-gap:64px}
+ .about-switcher span{display:none}
+ .about-switcher a{padding:8px}
+ .about-demo .bio-photo{height:400px}
+}

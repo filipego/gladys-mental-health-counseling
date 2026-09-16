@@ -30,11 +30,6 @@ const Content = ({ slice }: ContentProps) => {
           : "flex flex-col items-start"
       }
     >
-      {slice.primary.eyebrow && (
-        <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-primary">
-          {slice.primary.eyebrow}
-        </p>
-      )}
       {slice.primary.heading && <Heading as="h2" size="lg">{slice.primary.heading}</Heading>}
       {isFilled.richText(slice.primary.body) && (
         <PrismicRichText

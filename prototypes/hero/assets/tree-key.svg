@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg"><filter id="natural-color" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%">
+<feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 40 -40 0 0 0" result="rg"/>
+<feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 -40 40 0 0 0" result="gr"/>
+<feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 40 -40 0 0" result="gb"/>
+<feComposite in="rg" in2="gr" operator="arithmetic" k2="1" k3="1" result="a"/>
+<feComposite in="a" in2="gb" operator="arithmetic" k2="1" k3="1" result="key"/>
+<feComposite in="SourceGraphic" in2="key" operator="in"/>
+</filter></svg>

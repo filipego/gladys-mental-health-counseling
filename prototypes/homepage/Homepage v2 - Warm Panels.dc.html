@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FDFCFC; color: #000; font-family: Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #000; text-decoration: none; }
+  a:hover { color: #69434B; }
+  img { display: block; max-width: 100%; }
+  @keyframes revealUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+  [data-reveal] { opacity: 0; }
+  [data-reveal].in { animation: revealUp .95s cubic-bezier(.16,.84,.28,1) forwards; }
+</style>
+</helmet>
+
+<div style="background:#FDFCFC;color:#000;font-family:Inter,system-ui,sans-serif;overflow-x:hidden">
+
+  <header style="position:sticky;top:0;z-index:20;background:rgba(253,252,252,.85);backdrop-filter:blur(14px)">
+    <div style="max-width:1320px;margin:0 auto;padding:20px clamp(18px,4vw,56px);display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="#" style="font-size:17px;font-weight:500;letter-spacing:-.01em">Gladys Henriquez</a>
+      <nav style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">
+        <a href="#about" style="font-size:14.5px;color:#3A3733;padding:10px 16px;border-radius:999px;transition:background .25s" style-hover="background:#F5F3F1;color:#000">About Gladys</a>
+        <a href="#who" style="font-size:14.5px;color:#3A3733;padding:10px 16px;border-radius:999px;transition:background .25s" style-hover="background:#F5F3F1;color:#000">Therapy &amp; Support</a>
+        <a href="#consultation" style="font-size:14.5px;color:#3A3733;padding:10px 16px;border-radius:999px;transition:background .25s" style-hover="background:#F5F3F1;color:#000">Get Started</a>
+      </nav>
+    </div>
+  </header>
+
+  <section style="max-width:1320px;margin:0 auto;padding:clamp(48px,7vw,104px) clamp(18px,4vw,56px) clamp(56px,8vw,112px)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(36px,5vw,72px);align-items:center">
+      <div style="min-width:0">
+        <h1 style="margin:0;font-size:clamp(38px,5.2vw,68px);font-weight:300;line-height:1.05;letter-spacing:-.028em;max-width:15.5em;text-wrap:pretty">Understand what's happening. Change what keeps repeating.</h1>
+        <p style="margin:clamp(30px,3.4vw,44px) 0 0;font-size:clamp(16px,1.25vw,18.5px);line-height:1.7;color:#332F2C;max-width:34em">Maybe you're worried about your child. Maybe you're tired of the same conflict, anxiety or patterns showing up in your own life. In therapy, we can take time to understand what's underneath it. Then we'll figure out what needs to change.</p>
+        <p style="margin:20px 0 0;font-size:clamp(15px,1.1vw,16.5px);line-height:1.7;color:#6E6862;max-width:32em">I offer in-person sessions in New York City and telehealth sessions, in English and Spanish.</p>
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:clamp(32px,3.6vw,46px)">
+          <a href="#consultation" style="display:inline-flex;align-items:center;background:#000;color:#fff;font-size:15px;font-weight:500;padding:16px 30px;border-radius:999px;transition:transform .25s,box-shadow .25s" style-hover="color:#fff;transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.14)">Request a free consultation</a>
+          <a href="#who" style="display:inline-flex;align-items:center;background:#fff;border:1px solid #E4E0DB;color:#000;font-size:15px;font-weight:500;padding:15px 28px;border-radius:999px;transition:border-color .25s,background .25s" style-hover="border-color:#CFC8C1;background:#F5F3F1">See who I work with</a>
+        </div>
+        <p style="margin:20px 0 0;font-size:13.5px;color:#6E6862">A free 15-minute call for new clients.</p>
+      </div>
+      <div style="min-width:0">
+        <img src="assets/hero-portrait.png" alt="Translucent sculptural portrait with branching forms inside the head" style="width:100%;border-radius:24px" />
+      </div>
+    </div>
+  </section>
+
+  <section id="about" data-reveal="1" style="max-width:1320px;margin:0 auto;padding:0 clamp(18px,4vw,56px) clamp(20px,3vw,40px)">
+    <div style="background:#F5F3F1;border-radius:clamp(20px,2.4vw,32px);padding:clamp(28px,4vw,64px);display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:clamp(32px,4vw,64px);align-items:center">
+      <div style="min-width:0;position:relative">
+        <img src="assets/gladys-portrait-seated.png" alt="Gladys Henriquez seated by a window overlooking New York" style="width:100%;border-radius:clamp(14px,1.6vw,22px)" />
+      </div>
+      <div style="min-width:0">
+        <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#6E6862">Introduction</div>
+        <h2 style="margin:20px 0 0;font-size:clamp(28px,3.4vw,46px);font-weight:300;line-height:1.12;letter-spacing:-.022em;max-width:16em">What it's like to work with me</h2>
+        <p style="margin:clamp(24px,2.6vw,34px) 0 0;font-size:clamp(16px,1.2vw,18px);line-height:1.72;color:#332F2C;max-width:34em">I'm Gladys Henriquez, a mental health counselor working with parents, teens and adults in New York. I don't come into therapy assuming I know your life better than you do. I listen, ask questions and pay attention to the patterns that are easy to miss when you're living inside them.</p>
+        <p style="margin:20px 0 0;font-size:clamp(16px,1.2vw,18px);line-height:1.72;color:#332F2C;max-width:34em">I believe in my clients' strengths, including the ones they have a hard time seeing in themselves. If something we try is not helping, I want to know. We can adjust instead of forcing an approach that does not fit. We'll work at your pace, with patience for the parts that take time.</p>
+        <div style="margin-top:clamp(26px,3vw,38px);padding-top:22px;border-top:1px solid #E2DED9;display:grid;gap:6px">
+          <p style="margin:0;font-size:15px;font-weight:500">Gladys Henriquez</p>
+          <p style="margin:0;font-size:14px;line-height:1.6;color:#6E6862">Mental Health Counselor – Limited Permit (MHC-LP)</p>
+          <p style="margin:0;font-size:14px;line-height:1.6;color:#6E6862">I work under the practice of John Orr, LMHC.</p>
+        </div>
+        <a href="#about" style="display:inline-flex;align-items:center;gap:10px;margin-top:24px;font-size:15px;font-weight:500;color:#69434B">About Gladys <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal="1" style="max-width:1320px;margin:0 auto;padding:clamp(40px,6vw,88px) clamp(18px,4vw,56px)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4vw,64px);align-items:start">
+      <div style="min-width:0">
+        <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#6E6862">For parents</div>
+        <h2 style="margin:20px 0 0;font-size:clamp(28px,3.4vw,46px);font-weight:300;line-height:1.12;letter-spacing:-.022em;max-width:14em">When you know something with your child feels off</h2>
+      </div>
+      <div style="min-width:0;background:#E8D9D5;border-radius:clamp(18px,2vw,28px);padding:clamp(26px,3.4vw,48px)">
+        <p style="margin:0;font-size:clamp(16px,1.2vw,18px);line-height:1.72;color:#2A2523;max-width:34em">Maybe your teenager is pulling away, school has become a struggle, or every conversation turns into an argument. You may be trying to decide when to give space, when to step in and whether you're handling it the right way.</p>
+        <p style="margin:20px 0 0;font-size:clamp(16px,1.2vw,18px);line-height:1.72;color:#2A2523;max-width:34em">Instead of focusing only on the behavior in front of us, we'll look at what's happening underneath it, what keeps the conflict going and what could help you respond differently. There is room to talk about what all of this is doing to you, too.</p>
+        <a href="#who" style="display:inline-flex;align-items:center;gap:10px;margin-top:26px;font-size:15px;font-weight:500;color:#4A2E34" style-hover="color:#000">Read about parent support <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="who" data-reveal="1" style="max-width:1320px;margin:0 auto;padding:clamp(24px,3vw,48px) clamp(18px,4vw,56px) clamp(48px,6vw,96px)">
+    <div style="display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:baseline;margin-bottom:clamp(28px,3.4vw,48px)">
+      <h2 style="margin:0;font-size:clamp(26px,2.8vw,38px);font-weight:300;letter-spacing:-.02em">Who I work with</h2>
+      <p style="margin:0;font-size:14px;color:#6E6862;max-width:26em">Three audiences, one practice. Sessions in English and Spanish.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:clamp(14px,1.6vw,22px)">
+      <div style="background:#F5F3F1;border-radius:clamp(18px,2vw,26px);padding:clamp(26px,3vw,40px);display:flex;flex-direction:column;gap:18px;transition:transform .3s,background .3s" style-hover="transform:translateY(-4px);background:#F0EDEA">
+        <span style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#6E6862">01</span>
+        <h3 style="margin:0;font-size:clamp(22px,2.2vw,28px);font-weight:300;letter-spacing:-.02em">Parents</h3>
+        <p style="margin:0;font-size:16px;line-height:1.72;color:#332F2C;flex:1">Parenting can leave you second-guessing yourself, especially when the same conflict keeps coming back. We can work on communication, boundaries, understanding your child's reactions and repairing after hard moments.</p>
+        <a href="#consultation" style="display:inline-flex;gap:9px;font-size:14.5px;font-weight:500;color:#69434B">Parent support <span>→</span></a>
+      </div>
+      <div style="background:#F5F3F1;border-radius:clamp(18px,2vw,26px);padding:clamp(26px,3vw,40px);display:flex;flex-direction:column;gap:18px;transition:transform .3s,background .3s" style-hover="transform:translateY(-4px);background:#F0EDEA">
+        <span style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#6E6862">02</span>
+        <h3 style="margin:0;font-size:clamp(22px,2.2vw,28px);font-weight:300;letter-spacing:-.02em">Teens</h3>
+        <p style="margin:0;font-size:16px;line-height:1.72;color:#332F2C;flex:1">School, friendships, anxiety and family stress can pile up fast. You do not have to come in with the perfect explanation. We can start with what has been hard lately.</p>
+        <a href="#consultation" style="display:inline-flex;gap:9px;font-size:14.5px;font-weight:500;color:#69434B">Therapy for teens <span>→</span></a>
+      </div>
+      <div style="background:#F5F3F1;border-radius:clamp(18px,2vw,26px);padding:clamp(26px,3vw,40px);display:flex;flex-direction:column;gap:18px;transition:transform .3s,background .3s" style-hover="transform:translateY(-4px);background:#F0EDEA">
+        <span style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#6E6862">03</span>
+        <h3 style="margin:0;font-size:clamp(22px,2.2vw,28px);font-weight:300;letter-spacing:-.02em">Adults</h3>
+        <p style="margin:0;font-size:16px;line-height:1.72;color:#332F2C;flex:1">If you keep replaying conversations, bracing for problems or falling back into patterns you understand but still cannot change, therapy can give us a place to work through what is keeping you stuck.</p>
+        <a href="#consultation" style="display:inline-flex;gap:9px;font-size:14.5px;font-weight:500;color:#69434B">Therapy for adults <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="consultation" data-reveal="1" style="max-width:1320px;margin:0 auto;padding:0 clamp(18px,4vw,56px) clamp(48px,6vw,96px)">
+    <div style="background:#000;color:#fff;border-radius:clamp(20px,2.4vw,32px);padding:clamp(28px,4vw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,4vw,72px);align-items:start">
+      <div style="min-width:0">
+        <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#B5AFA9">Sessions and getting started</div>
+        <h2 style="margin:20px 0 0;font-size:clamp(28px,3.4vw,44px);font-weight:300;line-height:1.12;letter-spacing:-.022em;color:#fff;max-width:13em">We can start with a free 15-minute consultation.</h2>
+        <p style="margin:clamp(22px,2.4vw,32px) 0 0;font-size:clamp(16px,1.2vw,18px);line-height:1.72;color:#E4E0DB;max-width:32em">Tell me what's bringing you here, ask your questions and get a feel for whether working together makes sense.</p>
+        <a href="#consultation" style="display:inline-flex;align-items:center;background:#fff;color:#000;font-size:15px;font-weight:500;padding:16px 30px;border-radius:999px;margin-top:clamp(28px,3vw,40px);transition:transform .25s" style-hover="color:#000;background:#F5F3F1;transform:translateY(-2px)">Request a free consultation</a>
+        <p style="margin:16px 0 0;font-size:13.5px;color:#B5AFA9">A free 15-minute call for new clients.</p>
+      </div>
+      <div style="min-width:0">
+        <div style="display:grid;gap:0">
+          <div style="border-top:1px solid #2E2A28;padding:16px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:6px 24px">
+            <span style="font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#B5AFA9">In-person</span>
+            <span style="font-size:15.5px;line-height:1.65;color:#fff">55 Broadway Ave, New York, NY.</span>
+          </div>
+          <div style="border-top:1px solid #2E2A28;padding:16px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:6px 24px">
+            <span style="font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#B5AFA9">Telehealth</span>
+            <span style="font-size:15.5px;line-height:1.65;color:#fff">Available. We can discuss whether virtual sessions are an option for you during the consultation.</span>
+          </div>
+          <div style="border-top:1px solid #2E2A28;padding:16px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:6px 24px">
+            <span style="font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#B5AFA9">Languages</span>
+            <span style="font-size:15.5px;line-height:1.65;color:#fff">English and Spanish.</span>
+          </div>
+          <div style="border-top:1px solid #2E2A28;border-bottom:1px solid #2E2A28;padding:16px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:6px 24px">
+            <span style="font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#B5AFA9">Fees</span>
+            <span style="font-size:15.5px;line-height:1.65;color:#fff">Sessions start at $200. I accept private insurance. Please ask about your plan before your first appointment.</span>
+          </div>
+        </div>
+        <a href="#consultation" style="display:inline-flex;gap:10px;margin-top:24px;font-size:14.5px;font-weight:500;color:#fff;border-bottom:1px solid #46403C;padding-bottom:6px" style-hover="color:#E8D9D5;border-color:#E8D9D5">Fees and common questions <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#F5F3F1">
+    <div style="max-width:1320px;margin:0 auto;padding:clamp(44px,5vw,80px) clamp(18px,4vw,56px) 36px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(30px,4vw,60px)">
+      <div style="min-width:0">
+        <p style="margin:0;font-size:16px;font-weight:500">Gladys Henriquez</p>
+        <p style="margin:10px 0 0;font-size:14px;line-height:1.7;color:#6E6862">Mental Health Counselor – Limited Permit (MHC-LP)<br />I work under the practice of John Orr, LMHC.</p>
+      </div>
+      <div style="min-width:0">
+        <p style="margin:0;font-size:14px;line-height:1.7;color:#6E6862">55 Broadway Ave, New York, NY<br />In-person and telehealth sessions. English and Spanish.</p>
+      </div>
+      <div style="min-width:0;display:flex;flex-direction:column;gap:10px;align-items:flex-start">
+        <a href="#about" style="font-size:14px;color:#332F2C">About Gladys</a>
+        <a href="#who" style="font-size:14px;color:#332F2C">Therapy &amp; Support</a>
+        <a href="#consultation" style="font-size:14px;color:#332F2C">Get Started</a>
+        <a href="#" style="font-size:14px;color:#332F2C">Privacy</a>
+      </div>
+    </div>
+    <div style="max-width:1320px;margin:0 auto;padding:0 clamp(18px,4vw,56px) clamp(36px,4vw,56px)">
+      <div style="border-top:1px solid #E2DED9;padding-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px 40px;align-items:start">
+        <p style="margin:0;font-size:13px;line-height:1.7;color:#6E6862;max-width:44em">This website and form are not monitored for emergencies. If you're in immediate danger, call 911. For mental health crisis support in the U.S., call or text 988.</p>
+        <p style="margin:0;font-size:13px;color:#6E6862">© 2026 Gladys Henriquez.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div data-preview-switcher="1" style="position:fixed;bottom:18px;right:18px;z-index:60;display:flex;gap:4px;padding:4px;border-radius:999px;background:rgba(253,252,252,.92);border:1px solid #E4E0DB;box-shadow:0 6px 20px rgba(0,0,0,.08);backdrop-filter:blur(10px)"><a href="Homepage%20v1%20-%20Quiet%20Editorial.dc.html" style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:28px;padding:0 10px;border-radius:999px;font-size:12px;font-weight:500;letter-spacing:.04em;background:transparent;color:#332F2C;">v1</a><a href="Homepage%20v2%20-%20Warm%20Panels.dc.html" style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:28px;padding:0 10px;border-radius:999px;font-size:12px;font-weight:500;letter-spacing:.04em;background:#000;color:#fff;">v2</a><a href="Homepage%20v3%20-%20Full%20Bleed.dc.html" style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:28px;padding:0 10px;border-radius:999px;font-size:12px;font-weight:500;letter-spacing:.04em;background:transparent;color:#332F2C;">v3</a><a href="Homepage%20v4%20-%20Considered.html" style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:28px;padding:0 10px;border-radius:999px;font-size:12px;font-weight:500;color:#332F2C">v4</a><a href="Homepage%20v5%20-%20Open%20House.html" style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:28px;padding:0 10px;border-radius:999px;font-size:12px;font-weight:500;color:#332F2C">v5</a><a href="Homepage%20v6%20-%20In%20Focus.html" style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:28px;padding:0 10px;border-radius:999px;font-size:12px;font-weight:500;color:#332F2C">v6</a></div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    if (!('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('in')); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+    els.forEach(e => io.observe(e));
+  }
+}
+
+</script>
+</body>
+</html>

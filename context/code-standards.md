@@ -43,12 +43,16 @@
 
 ## Styling and Components
 
+- Read `context/design-system.md` for the prototype-derived palette, heading scale, button variants, spacing, site shell, and no-eyebrow rule. Do not reintroduce generic starter styling.
+
 - Tailwind CSS and `src/app/globals.css` are the only established styling system.
 - Match nearby patterns before introducing abstractions.
 - Do not assume shadcn/ui, Radix, a shared component folder, a token system, or an icon library exists.
 - Add a component library only after a concrete requirement establishes why it is needed.
 - Preserve responsive behavior and accessible HTML.
 - Use `PrismicLink` for inline editorial links and `ButtonLink` only for intentional CTA link fields.
+- Use `SiteHeader` and `SiteFooter` for the global shell. Do not duplicate navigation or practice/legal footer markup inside slices.
+- Wrap every page slice in `Bounded`, selecting its existing spacing and width props instead of rebuilding gutters inside the slice.
 - Use the lazy provider components for YouTube and TikTok. Keep their provider-specific embed URLs and autoplay behavior inside those components rather than duplicating them in slices.
 - Keep semantic colors and shared utility tokens in `src/app/globals.css`; components should consume those names rather than project-specific color values.
 

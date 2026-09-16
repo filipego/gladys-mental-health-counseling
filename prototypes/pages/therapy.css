@@ -1,0 +1,286 @@
+/* Therapy & Support compositions.
+
+   These pages run on the About chapter machinery: `about-content` supplies the
+   type ramp, the chapter rhythm, the tonal bands, the reading measure and the
+   closing grid, so a paragraph here is the same length as a paragraph on
+   About. Only the three page structures live in this file. */
+
+/* ── Shared across the three options ─────────────────────────────
+   Opening type matches About: the page title is the same size as
+   "About Gladys Henriquez", and the lead is About's lead, not a
+   larger reading register. */
+
+.therapy-page h1{max-width:15ch;font-size:clamp(31px,3.5vw,50px)}
+.therapy-page .opening .lead{margin-bottom:0}
+
+/* The three per-section calls to action are text links, not pills. The page
+   asks three times; at pill weight that reads as three offers instead of one
+   invitation repeated where it is useful. The pill is kept for the close. */
+.therapy-page .chapter-action{margin-top:8px}
+
+/* A note addressed to a different reader than the section around it. */
+.therapy-page .aside-note{
+ font-size:14px;
+ line-height:1.65;
+ color:var(--muted);
+ border-top:1px solid var(--line);
+ padding-top:18px;
+ margin-top:28px;
+}
+.therapy-page .band-stone .aside-note{border-top-color:#E2DDD7}
+
+/* A wine closing needs the inverse pill. The helper needs no rule: the band
+   already tints every paragraph from the wine, and size carries the step
+   down, the same way it does on About's wine chapter. */
+.therapy-page .consultation.band-wine .button{background:var(--paper);color:var(--ink)}
+.therapy-page .consultation.band-wine .button:hover{background:var(--on-wine)}
+
+/* ── 1 · Place Yourself ──────────────────────────────────────────
+   Opening matches About Portrait: title and lead left, a tall still
+   right. The photograph is the room, not a stand-in for the home
+   hero animation. Under it, the three audiences are one vertical
+   stack: collapsed rows stay a timeline of names; the open row
+   reveals that chapter. The photograph in the open row has a fixed
+   height so copy length cannot stretch it. */
+
+.place-study .opening{
+ display:grid;
+ grid-template-columns:minmax(0,1fr) clamp(320px,35vw,520px);
+ gap:var(--gutter);
+ align-items:center;
+}
+.place-study .opening-copy .lead{margin:0 0 32px;max-width:42ch}
+.place-study .opening .portrait{height:clamp(520px,50vw,700px)}
+.place-study .opening .portrait img{object-position:48% 62%}
+
+.place-study .who-chapter{
+ background:#7A4F59;
+ color:var(--paper);
+}
+.place-study .who-chapter .stack-item:first-child .stack-toggle{padding-top:0}
+.place-study .who-chapter .stack-item:last-child .stack-toggle{padding-bottom:0}
+.place-study .who-chapter .stack-item:last-child .stack-body{padding-bottom:0}
+.place-study .who-chapter h2,
+.place-study .who-chapter p{color:var(--paper)}
+.place-study .audience-stack,
+.place-study .stack-item{position:relative}
+.place-study .stack-item:not(:last-child)::after{
+ content:"";
+ position:absolute;
+ left:50%;
+ bottom:0;
+ width:100vw;
+ height:1px;
+ transform:translateX(-50%);
+ background:rgba(253,252,252,.22);
+ pointer-events:none;
+}
+.place-study .stack-toggle{
+ appearance:none;
+ width:100%;
+ margin:0;
+ background:none;
+ border:0;
+ padding:56px 0;
+ display:grid;
+ grid-template-columns:48px minmax(0,1fr) clamp(320px,35vw,520px);
+ gap:0;
+ align-items:center;
+ text-align:start;
+ cursor:pointer;
+ font:inherit;
+ color:inherit;
+}
+.place-study .stack-toggle:focus-visible{outline:2px solid var(--paper);outline-offset:6px;border-radius:4px}
+.place-study .stack-num{
+ font-size:13px;
+ font-weight:500;
+ letter-spacing:.06em;
+ color:#F2E7E8;
+}
+.place-study .stack-name{
+ padding-left:40px;
+ font-size:clamp(19px,1.55vw,21px);
+ line-height:1.07;
+ letter-spacing:-.04em;
+ font-weight:400;
+ color:var(--paper);
+ transition:color .2s;
+}
+.place-study .stack-line{font-size:15px;line-height:1.7;color:#F2E7E8}
+.place-study .stack-item.is-open .stack-num,
+.place-study .stack-item.is-open .stack-name,
+.place-study .stack-item.is-open .stack-line,
+.place-study .stack-toggle:hover .stack-name{color:var(--paper)}
+.variant-4 .place-study .who-chapter .text-link{
+ color:var(--paper);
+ border-bottom-color:rgba(253,252,252,.4);
+}
+.variant-4 .place-study .who-chapter .text-link:hover{
+ color:var(--paper);
+ border-bottom-color:var(--paper);
+}
+
+.place-study .stack-panel{
+ display:grid;
+ grid-template-rows:0fr;
+ transition:grid-template-rows .55s cubic-bezier(.22,1,.36,1);
+}
+.place-study .audience-stack.is-pinning .stack-panel{transition:none}
+.place-study .stack-item.is-open .stack-panel{grid-template-rows:1fr}
+.place-study .stack-panel-inner{overflow:hidden;min-height:0}
+
+.place-study .stack-body{
+ display:grid;
+ grid-template-columns:minmax(0,1fr) clamp(320px,35vw,520px);
+ gap:var(--gutter);
+ align-items:center;
+ padding:96px 0;
+}
+.place-study .stack-body h2{max-width:16ch}
+.place-study .stack-photo{
+ height:520px;
+ margin:0;
+ overflow:hidden;
+ background:var(--stone);
+}
+.place-study .stack-photo img{
+ width:100%;
+ height:100%;
+ object-fit:cover;
+ object-position:50% 20%;
+}
+
+/* Meeting uses Home's session facts: labels and values on a two-column
+   grid so the section fills the wrap instead of a single reading column. */
+.place-study .practice-facts{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:40px var(--gutter);
+ margin:0;
+}
+.place-study .practice-facts>div{
+ display:flex;
+ flex-direction:column;
+ gap:16px;
+ padding:12px 0;
+ border:0;
+}
+.place-study .practice-facts>div:nth-child(-n+2){padding-top:0}
+.place-study .practice-facts dt{
+ font-size:clamp(16px,1.25vw,18px);
+ line-height:1.1;
+ letter-spacing:-.04em;
+ font-weight:400;
+ margin:0;
+ color:#1A1816;
+}
+.place-study .practice-facts dd{
+ margin:0;
+ font-size:15px;
+ line-height:1.7;
+ color:var(--body);
+ max-width:40ch;
+}
+
+@media(max-width:900px){
+ .place-study .opening{
+  grid-template-columns:minmax(0,1fr);
+  align-items:start;
+ }
+ .place-study .opening .portrait{height:min(58vh,440px);order:-1}
+ .place-study .stack-toggle{grid-template-columns:36px minmax(0,1fr);gap:8px 16px;padding:40px 0}
+ .place-study .stack-name{grid-column:2;padding-left:0}
+ .place-study .stack-line{grid-column:2}
+ .place-study .stack-body{grid-template-columns:minmax(0,1fr);gap:36px;padding:72px 0}
+ .place-study .stack-photo{height:360px}
+ .place-study .practice-facts{grid-template-columns:minmax(0,1fr)}
+}
+
+/* ── 2 · Focal Rail ──────────────────────────────────────────────
+   One photograph holds the middle of the page while a rail of three names
+   changes whose section is beside it. Every section stays in the document;
+   the control only decides which one is showing. */
+
+.rail-study .rail-grid{
+ display:grid;
+ grid-template-columns:minmax(150px,2fr) minmax(0,5fr) minmax(0,5fr);
+ gap:var(--gutter);
+ align-items:start;
+}
+
+.rail-study .rail{display:grid;gap:4px;align-content:start;padding-top:6px}
+.rail-study .rail-name{
+ appearance:none;
+ background:none;
+ border:0;
+ padding:10px 0;
+ font:inherit;
+ font-size:clamp(19px,1.7vw,24px);
+ letter-spacing:-.03em;
+ font-weight:540;
+ color:var(--muted);
+ text-align:start;
+ cursor:pointer;
+ transition:color .2s;
+}
+.rail-study .rail-name:hover{color:var(--wine)}
+/* The selected name is the only ink-weight item in the rail, and the dot
+   marks it for anyone who cannot rely on the weight difference alone. */
+.rail-study .rail-name[aria-selected="true"]{color:var(--ink)}
+.rail-study .rail-name[aria-selected="true"]::before{
+ content:"";
+ display:inline-block;
+ width:7px;
+ height:7px;
+ border-radius:50%;
+ background:var(--wine);
+ margin-inline-end:12px;
+ vertical-align:middle;
+}
+.rail-study .rail-name:focus-visible{outline:2px solid var(--wine);outline-offset:6px;border-radius:4px}
+
+/* The photograph takes the height of the band, the same bleed the About
+   portrait chapters use, so the rail and the reading column sit inside it. */
+.rail-study .rail-photo{
+ height:auto;
+ align-self:stretch;
+ margin-block:calc(var(--chapter) / -2);
+}
+
+.rail-study .rail-panel[hidden]{display:none}
+.rail-study .rail-panel:focus{outline:none}
+.rail-study .rail-panel h2{margin-bottom:clamp(26px,2.6vw,38px)}
+
+@media(max-width:1100px){
+ .rail-study .rail-grid{grid-template-columns:minmax(0,1fr);gap:36px}
+ .rail-study .rail{grid-auto-flow:column;justify-content:start;gap:28px;padding-top:0}
+ .rail-study .rail-photo{
+  height:min(52vh,400px);
+  align-self:auto;
+  margin-block:0;
+  order:-1;
+ }
+ .rail-study .rail-photo img{object-position:50% 18%}
+}
+
+@media(max-width:600px){
+ .rail-study .rail{gap:18px}
+ .rail-study .rail-name{font-size:18px}
+ .rail-study .rail-name[aria-selected="true"]::before{margin-inline-end:8px}
+}
+
+/* ── 3 · Said Out Loud ───────────────────────────────────────────
+   Every chapter answers a sentence the visitor has already thought. Each
+   statement is lifted out of that section's own paragraphs, not written for
+   the page, and set in wine beside the reading column. */
+
+.loud-study .section-body{align-items:start}
+.loud-study .statement{max-width:22ch}
+/* The last chapter before the close runs without a photograph, so its
+   statement carries the change of pace on its own. */
+.loud-study .chapter+.chapter .statement{max-width:24ch}
+
+@media(max-width:1280px){
+ .loud-study .statement{max-width:30ch}
+}

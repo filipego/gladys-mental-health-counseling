@@ -1,0 +1,463 @@
+/* Get Started. Option 1 is a hero split: copy left, compact form on the
+   photograph right. Questions use a left heading and a right accordion. */
+
+.contact-page h1{max-width:14ch;font-size:clamp(31px,3.5vw,50px)}
+.contact-page .opening .lead{margin:0 0 32px}
+.contact-page .notice{
+ font-size:14px;
+ line-height:1.65;
+ color:var(--muted);
+ margin:28px 0 0;
+}
+
+.consult-form{
+ display:grid;
+ gap:12px;
+ margin:0;
+ align-items:start;
+}
+.consult-form .error-summary{
+ grid-column:1/-1;
+ background:var(--stone);
+ padding:10px 12px;
+ font-size:12px;
+ color:var(--ink);
+}
+.consult-form .error-summary[hidden],
+.consult-form .field-error[hidden],
+.consult-form [data-email-wrap][hidden],
+.consult-form [data-phone-wrap][hidden]{display:none}
+.consult-form .field-error{font-size:12px;color:var(--wine);margin-top:6px}
+.consult-form label.field-name,
+.consult-form legend{
+ font-size:12px;
+ font-weight:500;
+ display:block;
+ margin-bottom:6px;
+}
+.consult-form input[type="text"],
+.consult-form input[type="email"],
+.consult-form input[type="tel"],
+.consult-form select,
+.consult-form textarea{
+ width:100%;
+ border:0;
+ border-bottom:1px solid var(--line);
+ background:transparent;
+ padding:8px 0 10px;
+ font:inherit;
+ font-size:15px;
+ color:var(--ink);
+ border-radius:0;
+ caret-color:var(--wine);
+}
+.consult-form textarea{min-height:72px;resize:vertical}
+.consult-form input:focus-visible,
+.consult-form select:focus-visible,
+.consult-form textarea:focus-visible{
+ outline:none;
+ border-bottom-color:var(--ink);
+}
+.consult-form .hint{font-size:12px;line-height:1.5;color:var(--muted);margin:6px 0 0;max-width:none;font-weight:400}
+.consult-form legend .hint{display:inline;margin:0}
+.consult-form fieldset{border:0;margin:0;padding:0}
+.consult-form .choices{display:flex;flex-wrap:wrap;gap:10px 22px}
+.consult-form .choices label{
+ display:inline-flex;
+ align-items:center;
+ gap:8px;
+ margin:0;
+ padding:0;
+ border:0;
+ background:none;
+ font-size:15px;
+ color:var(--body);
+ cursor:pointer;
+}
+.consult-form .choices input{accent-color:var(--wine)}
+.consult-form .choices label:has(input:checked){
+ background:none;
+ color:var(--ink);
+ border:0;
+}
+.consult-form .check-wrap,
+.consult-form .actions-row{grid-column:1/-1}
+.consult-form .check{
+ display:flex;
+ gap:10px;
+ align-items:flex-start;
+ font-size:12px;
+ line-height:1.5;
+ color:var(--body);
+}
+.consult-form .check span{min-width:0}
+.consult-form .check input{margin-top:3px;accent-color:var(--ink)}
+.consult-form .actions-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px}
+.consult-form .button{padding:14px 22px;min-height:48px;font-size:14px}
+.consult-form .button[disabled]{opacity:.55}
+.consult-form .privacy-link{font-size:13px}
+.consult-form .more{
+ border-top:1px solid var(--line);
+ padding-top:12px;
+}
+.consult-form .more>summary{
+ cursor:pointer;
+ font-size:13px;
+ font-weight:500;
+ list-style:none;
+}
+.consult-form .more>summary::-webkit-details-marker{display:none}
+.consult-form .more[open]>summary{margin-bottom:14px}
+.consult-form .more-fields{display:grid;gap:16px}
+.prototype-switcher a[href*="v3"],
+.prototype-switcher a[aria-label*="option 3"]{display:none}
+
+/* ── Option 1: copy left, short form on the photograph ─────────── */
+
+.over-study .desk{
+ display:grid;
+ grid-template-columns:minmax(0,1fr) clamp(320px,42vw,540px);
+ gap:var(--gutter);
+ align-items:center;
+}
+.over-study .form-stage{
+ position:relative;
+ height:clamp(640px,62vw,760px);
+ background:var(--stone);
+ overflow:hidden;
+}
+.over-study .form-stage img{
+ width:100%;
+ height:100%;
+ object-fit:cover;
+ object-position:48% 62%;
+}
+.over-study .form-card{
+ position:absolute;
+ left:16px;
+ right:16px;
+ bottom:16px;
+ background:var(--paper);
+ padding:16px 18px 18px;
+ overflow:visible;
+}
+.over-study .consult-form{
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:12px 16px;
+}
+.over-study .consult-form .support-field,
+.over-study .consult-form .check-wrap,
+.over-study .consult-form .actions-row{grid-column:1/-1}
+.over-study .consult-form .choices label{font-size:13px}
+.over-study .consult-form .check{font-size:11px;line-height:1.45}
+.over-study .consult-form .button{padding:11px 18px;min-height:42px;font-size:13px}
+
+/* ── Option 2: About opening, then the full form on wine ───────── */
+
+.wide-study .opening{
+ display:grid;
+ grid-template-columns:minmax(0,1fr) clamp(320px,35vw,520px);
+ gap:var(--gutter);
+ align-items:center;
+}
+.wide-study .opening h1{max-width:12ch}
+.wide-study #request{
+ scroll-margin-top:100px;
+}
+.wide-study .opening .portrait{height:clamp(520px,50vw,700px)}
+.wide-study .opening .portrait img{object-position:48% 62%}
+.wide-study .notice{margin-top:22px}
+.wide-study #what-we-talk{background:transparent}
+.wide-study #what-we-talk h2{margin-bottom:0}
+.wide-study .request-band{
+ background:#7A4F59;
+ color:var(--paper);
+}
+.wide-study .consult-form p{max-width:none}
+.wide-study .consult-form label.field-name,
+.wide-study .consult-form legend{
+ font-size:15px;
+ font-weight:400;
+ margin-bottom:10px;
+ color:#FAF7F7;
+}
+.wide-study .consult-form legend{
+ float:none;
+ width:100%;
+ display:block;
+ padding:0;
+}
+.wide-study .consult-form .hint{color:#F2E7E8}
+.wide-study .consult-form legend .hint{color:#F2E7E8}
+.wide-study .consult-form .choices{
+ display:flex;
+ flex-wrap:wrap;
+ align-items:flex-end;
+ align-content:flex-end;
+ gap:10px 12px;
+ margin-top:0;
+ min-height:calc(8px + 1.6em + 15px + 2px);
+}
+.wide-study .consult-form .choices label{
+ position:relative;
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ gap:0;
+ margin:0;
+ padding:7px 16px;
+ min-height:0;
+ border:1px solid #C4A8AC;
+ border-radius:999px;
+ background:transparent;
+ color:#E4D4D6;
+ font-size:14px;
+ line-height:1.2;
+ white-space:nowrap;
+}
+.wide-study .consult-form .choices label:has(input:checked){
+ background:#E4D4D6;
+ color:var(--ink);
+ border:1px solid #C4A8AC;
+}
+.wide-study .consult-form .choices label:has(input:focus-visible){
+ outline:2px solid #E4D4D6;
+ outline-offset:2px;
+}
+.wide-study .consult-form .choices input{
+ position:absolute;
+ opacity:0;
+ width:1px;
+ height:1px;
+ overflow:hidden;
+ clip:rect(0 0 0 0);
+}
+.wide-study .consult-form input[type="text"],
+.wide-study .consult-form input[type="email"],
+.wide-study .consult-form input[type="tel"],
+.wide-study .consult-form textarea{
+ color:#E4D4D6;
+ caret-color:#E4D4D6;
+ border-bottom:2px solid #C4A8AC;
+ padding:8px 0 15px;
+}
+.wide-study .form-band{padding:0 0 clamp(72px,6vw,96px)}
+.wide-study .form-band:last-of-type{padding-bottom:clamp(100px,9vw,144px)}
+.wide-study .form-title{
+ margin:0 0 44px;
+ max-width:none;
+ font-size:clamp(22px,2.2vw,32px);
+ line-height:1.1;
+ letter-spacing:-.04em;
+ color:var(--paper);
+}
+.wide-study .form-title span{
+ font-size:.48em;
+ font-weight:400;
+ letter-spacing:-.02em;
+ color:inherit;
+}
+.wide-study .form-grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ column-gap:clamp(56px,8vw,128px);
+ row-gap:88px;
+}
+.wide-study .form-grid>*{min-width:0}
+.wide-study .form-grid fieldset{
+ min-width:0;
+ min-inline-size:0;
+ border:0;
+ margin:0;
+ padding:0;
+}
+.wide-study .form-foot{
+ display:grid;
+ gap:28px;
+ align-items:start;
+ padding-top:0;
+}
+.wide-study .consult-form .check-wrap,
+.wide-study .consult-form .actions-row{grid-column:auto}
+.wide-study .consult-form textarea{min-height:168px}
+.wide-study .consult-form input:focus-visible,
+.wide-study .consult-form textarea:focus-visible{
+ border-bottom-color:#E4D4D6;
+}
+.wide-study .consult-form .check{font-size:14px;line-height:1.55;color:#F2E7E8}
+.wide-study .consult-form .check input{accent-color:var(--paper)}
+.wide-study .request-band .button{
+ background:var(--paper);
+ color:var(--ink);
+}
+.variant-4 .wide-study .request-band a.text-link{
+ color:var(--paper);
+ border-bottom-color:rgba(253,252,252,.4);
+}
+.variant-4 .wide-study .request-band a.text-link:hover{
+ color:var(--paper);
+ border-bottom-color:var(--paper);
+}
+.wide-study .consult-form .error-summary{
+ background:#69434B;
+ color:var(--paper);
+}
+.wide-study .consult-form .field-error{color:#E9C7CE}
+.wide-study .consult-success h2{color:var(--paper)}
+.wide-study .consult-success p{color:#F2E7E8}
+
+/* ── FAQ: heading left, accordion right ────────────────────────── */
+
+.wide-study #location{scroll-margin-top:100px}
+.wide-study .location-chapter .aside-grid{align-items:center}
+.wide-study .location-chapter .portrait{margin-block:0}
+.wide-study .location-map{
+ min-height:clamp(360px,42vw,560px);
+ background:var(--stone);
+}
+.wide-study .location-map iframe{
+ display:block;
+ width:100%;
+ height:100%;
+ min-height:clamp(360px,42vw,560px);
+ border:0;
+}
+.wide-study .location-chapter .text-link{margin-top:8px}
+.wide-study>.chapter{
+ position:relative;
+}
+.wide-study>.chapter::before{
+ content:"";
+ position:absolute;
+ left:50%;
+ top:0;
+ width:100vw;
+ height:1px;
+ transform:translateX(-50%);
+ background:var(--line);
+ pointer-events:none;
+}
+
+.contact-page .faq-split{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:var(--gutter);
+ align-items:start;
+}
+.contact-page .faq-split h2{margin-bottom:18px}
+
+/* Same facts grid as Therapy's meeting band: labels and values across
+   the wrap instead of a single reading column. */
+.contact-page .practice-facts{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:40px var(--gutter);
+ margin:0;
+}
+.contact-page .practice-facts>div{
+ display:flex;
+ flex-direction:column;
+ gap:16px;
+ padding:12px 0;
+ border:0;
+}
+.contact-page .practice-facts>div:nth-child(-n+2){padding-top:0}
+.contact-page .practice-facts dt{
+ font-size:clamp(16px,1.25vw,18px);
+ line-height:1.1;
+ letter-spacing:-.04em;
+ font-weight:400;
+ margin:0;
+ color:#1A1816;
+}
+.contact-page .practice-facts dd{
+ margin:0;
+ font-size:15px;
+ line-height:1.7;
+ color:var(--body);
+ max-width:40ch;
+}
+.contact-page .faq-list{border-top:1px solid var(--line)}
+.contact-page .faq-list details{border-bottom:1px solid var(--line)}
+.contact-page .faq-list summary{
+ cursor:pointer;
+ list-style:none;
+ display:flex;
+ justify-content:space-between;
+ gap:24px;
+ align-items:baseline;
+ padding:40px 0;
+ font-size:clamp(19px,1.55vw,21px);
+ font-weight:400;
+ letter-spacing:-.04em;
+}
+.contact-page .faq-list summary::-webkit-details-marker{display:none}
+.contact-page .faq-list summary::after{
+ content:"";
+ width:10px;
+ height:10px;
+ margin-top:8px;
+ flex-shrink:0;
+ border-right:1px solid currentColor;
+ border-bottom:1px solid currentColor;
+ transform:rotate(45deg);
+ transition:transform .2s;
+}
+.contact-page .faq-list details[open] summary{padding-bottom:20px}
+.contact-page .faq-list details[open] summary::after{transform:rotate(225deg);margin-top:10px}
+.contact-page .faq-list details p{
+ padding:0 0 40px;
+ margin:0;
+ max-width:none;
+}
+
+@media(max-width:1100px){
+ .wide-study .opening,
+ .wide-study .location-chapter .aside-grid,
+ .wide-study .form-grid,
+ .contact-page .faq-split,
+ .contact-page .practice-facts{grid-template-columns:minmax(0,1fr)}
+ .wide-study .opening{align-items:start}
+ .wide-study .opening .portrait{height:min(58vh,440px)}
+ .wide-study .location-map,
+ .wide-study .location-map iframe{min-height:min(52vh,400px)}
+}
+
+@media(max-width:900px){
+ .over-study .desk,
+ .over-study .consult-form{grid-template-columns:minmax(0,1fr)}
+ .over-study .form-stage{height:min(72vh,580px);order:-1}
+ .over-study .form-card{left:12px;right:12px;bottom:12px}
+ .contact-page .faq-list summary{padding:28px 0}
+ .contact-page .faq-list details p{padding-bottom:28px}
+}
+
+@media(max-width:760px){
+ .contact-page,
+ .wide-study{overflow-x:clip}
+ .wide-study>.chapter::before{
+  left:0;
+  width:100%;
+  transform:none;
+ }
+ .wide-study .opening .portrait{height:min(52vh,360px)}
+ .wide-study .location-chapter .aside-grid .portrait,
+ .wide-study .location-map,
+ .wide-study .location-map iframe{
+  width:100%;
+  max-width:100%;
+  min-height:0;
+  height:min(48vh,320px);
+  align-self:auto;
+ }
+ .wide-study .form-band,
+ .wide-study .form-band:last-of-type{padding-bottom:24px}
+ .wide-study .form-grid{gap:36px 0}
+ .wide-study .form-title{margin-bottom:28px}
+ .wide-study .consult-form .choices{margin-top:0}
+ .wide-study .consult-form textarea{min-height:128px}
+ .wide-study .consult-form .actions-row{display:grid;width:100%}
+ .wide-study .consult-form .button{width:100%}
+ .contact-page .practice-facts>div{padding:18px 0}
+ .contact-page .faq-list summary{gap:16px;font-size:18px}
+}
