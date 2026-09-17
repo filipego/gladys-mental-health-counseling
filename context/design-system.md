@@ -17,9 +17,9 @@ The approved pages in `prototypes/pages/` are the visual source of truth: Home, 
 | body / secondary | #44403B | Paragraph copy |
 | muted-foreground | #68625C | Readable supporting copy |
 | rose | #E8D9D5 | Text selection |
-| wine | #69434B | Primary CTA fill and link hover |
+| wine | #6A2C47 | Primary CTA fill and link hover |
 | wine-hover | #8A626A | Primary CTA hover/focus |
-| wine-band | #7A4F59 | Deep mauve page bands and form surface |
+| wine-band | #6A2C47 | Alias of wine for deep page bands and form surfaces |
 | on-wine | #F2E7E8 | Supporting copy on deep mauve |
 | rose-border | #E8C8CF | Visible pale-rose outlines and footer divider |
 | rose-accent | #E9C7CE | Accent copy on dark bands |
@@ -60,6 +60,12 @@ All sizes use full pill corners, medium weight, vertical padding for wrapping, a
 
 `TextLink` is the shared standalone editorial-link component. It composes `PrismicLink` with the existing `ArrowIcon`, uses the prototype's fine underline, and exposes only `dark` and `light` tones so the same link works on paper and wine surfaces. Do not reproduce this arrow-link markup inside slices.
 
+`Button` is the action counterpart to `ButtonLink`. It shares the same pill geometry, sizes, focus treatment, and semantic variants, adding an inverse paper-on-wine treatment for form submission. Navigation stays in `ButtonLink`; submit/reset actions use `Button`.
+
+## Consultation form
+
+The Get Started form owns a full-width `wine-band` surface and the standard 1200px `Bounded` rail. Desktop fields use the prototype's two-column grid, 44px title-to-grid separation, 88px row gap, pale-rose underlines, and pill radio controls; the layout collapses to one column at 1100px and tightens its section rhythm at 760px. `Heading`, `Button`, and `TextLink` remain shared primitives. `FormField`, `FormTextarea`, `ChoicePills`, and `LoadingDots` are reusable form controls rather than inline slice markup. The animated three-dot state respects reduced-motion preferences.
+
 ## Surfaces and spacing
 
 Use `bg-surface rounded-card` for a 20px-radius warm-gray panel. Use `rounded-large` for 24px large media panels. Flat surfaces are the default; no heavy shadows or speculative Card abstraction.
@@ -95,6 +101,18 @@ The slice uses the 1200px `Bounded` rail, the prototype's `clamp(48px, 7.5vw, 11
 `InformationGrid` is the reusable pink practical-information section. It uses the surface token, 1200px `Bounded` rail, shared `Heading` hierarchy, a repeatable two-column definition grid on desktop, and one-column stacking on mobile. Item bodies are rendered by the shared `PrismicRichText`, including the Get Started location anchor. Page context is used only for the prototype's larger mobile item rhythm on Get Started.
 
 `CallToAction` is the reusable paper conversation section. It preserves the prototype's desktop copy/action split and mobile stack, uses the shared `Heading` and `PrismicRichText`, and delegates the wine CTA entirely to `ButtonLink`. Its helper copy is a separate Rich Text field. Neither renderer contains page-specific words, destinations, or inline presentation.
+
+## Heading and Text slice
+
+`HeadingAndText` owns three editorial compositions: Side by Side, Two Columns, and Conversation Chapter. Each variation exposes the same optional wine-background control. The paper treatment preserves the existing foreground/body/link colors; the wine treatment removes the bottom rule, uses paper for headings, `on-wine` for ordinary copy, `rose-accent` for the Conversation Chapter statement, and the shared light `TextLink` treatment.
+
+Conversation Chapter matches the selected About prototype: one full-width H2 followed by a `1.35fr / 1fr` reading-and-statement grid, with the statement at `clamp(24px, 2.3vw, 32px)`. The grid collapses at 1280px and keeps the standard Bounded rail and chapter spacing. The renderer continues to compose the shared `Bounded`, `Heading`, `PrismicRichText`, and `TextLink` primitives; no copy or presentation is inlined.
+
+## Audience accordion slice
+
+`AudienceAccordion` is the Therapy page's full-width wine chapter for Parents, Teens, and Adults. Each closed row uses a restrained number, audience label, and aligned summary; the open panel pairs a shared H2/Rich Text/TextLink reading column with a fixed-height editorial image. Full-viewport divider rules continue through the `Bounded` rail, while the content itself remains on the standard 1200px grid.
+
+Exactly one audience may be open at a time, with Parents open initially unless a matching URL hash selects another row. Clicking the open row may close all panels. Hash links open and pin the matching row without smooth scrolling, and the arrow keys move focus cyclically between toggles. At 900px and below the row summary and open panel stack into the prototype's mobile reading order; reduced-motion preferences remove the panel animation.
 
 ## Client sheet and verification
 

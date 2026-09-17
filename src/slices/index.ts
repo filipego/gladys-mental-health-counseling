@@ -3,12 +3,17 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  audience_accordion: dynamic(() => import("./AudienceAccordion")),
   call_to_action: dynamic(() => import("./CallToAction")),
+  consultation_form: dynamic(() => import("./ConsultationForm")),
   content: dynamic(() => import("./Content")),
+  faq_accordion: dynamic(() => import("./FaqAccordion")),
   heading_and_text: dynamic(() => import("./HeadingAndText")),
   hero: dynamic(() => import("./Hero")),
   image: dynamic(() => import("./Image")),
   image_and_text: dynamic(() => import("./ImageAndText")),
   information_grid: dynamic(() => import("./InformationGrid")),
+  location_map: dynamic(() => import("./LocationMap")),
   video: dynamic(() => import("./Video")),
+  who_i_work_with: dynamic(() => import("./WhoIWorkWith")),
 };

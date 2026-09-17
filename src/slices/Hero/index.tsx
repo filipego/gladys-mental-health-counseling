@@ -65,10 +65,21 @@ const Hero = ({ context, slice }: HeroProps) => {
     );
   }
 
-  if (slice.variation !== "default") return null;
+  if (slice.variation !== "default" && slice.variation !== "fullImage") return null;
+
+  const isFullImage = slice.variation === "fullImage";
 
   return (
-    <Bounded className={`hero hero--homepage ${pageClassName ?? ""}`} spacing="none">
+    <Bounded
+      className={`hero hero--homepage ${isFullImage ? "hero--homepage-image" : ""} ${pageClassName ?? ""}`}
+      spacing="none"
+    >
+      {slice.variation === "fullImage" &&
+      isFilled.image(slice.primary.background_image) ? (
+        <div aria-hidden="true" className="hero__background">
+          <PrismicNextImage fallbackAlt="" field={slice.primary.background_image} />
+        </div>
+      ) : null}
       <div className="hero__grid hero__grid--homepage">
         <div className="hero__copy">
           {slice.primary.heading ? (
@@ -120,11 +131,15 @@ const Hero = ({ context, slice }: HeroProps) => {
           ) : null}
 
           {isFilled.richText(slice.primary.helper_copy) ? (
-            <PrismicRichText className="hero__helper" field={slice.primary.helper_copy} />
+            <PrismicRichText
+              className="hero__helper"
+              field={slice.primary.helper_copy}
+            />
           ) : null}
         </div>
 
-        {isFilled.image(slice.primary.animation_poster) ? (
+        {slice.variation === "default" &&
+        isFilled.image(slice.primary.animation_poster) ? (
           <div className="hero__animation-stage">
             <PrismicNextImage fallbackAlt="" field={slice.primary.animation_poster} />
           </div>

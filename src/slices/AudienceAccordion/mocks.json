@@ -1,0 +1,103 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"audience_items": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"key": "fe78fe3f-40d2-49a5-80c4-72d3996f2c70",
+						"value": [
+							[
+								"anchor_id",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "egg",
+									"type": "Text"
+								}
+							],
+							[
+								"audience_name",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "goose",
+									"type": "Text"
+								}
+							],
+							[
+								"summary",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "gift",
+									"type": "Text"
+								}
+							],
+							[
+								"heading",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "was",
+									"type": "Text"
+								}
+							],
+							[
+								"body",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Enim occaecat qui proident laborum laboris consequat eiusmod ex fugiat dolor reprehenderit do irure. Irure eu deserunt aute nostrud occaecat commodo aliquip dolor labore minim."
+											}
+										}
+									]
+								}
+							],
+							[
+								"cta",
+								{
+									"key": "a1df4e76-0eeb-466a-91f7-f9179c8f4e56",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://prismic.io",
+										"text": "bean"
+									}
+								}
+							],
+							[
+								"image",
+								{
+									"__TYPE__": "ImageContent",
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117",
+										"width": 3810,
+										"height": 5715
+									},
+									"width": 3810,
+									"height": 5715,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117",
+									"alt": "see",
+									"thumbnails": {}
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

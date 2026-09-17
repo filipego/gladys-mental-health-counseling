@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 import { renderToStaticMarkup } from "react-dom/server";
 
@@ -32,6 +33,27 @@ test("SiteHeader does not invent content when Settings is empty", () => {
   assert.doesNotMatch(html, /Therapy &amp; Support/);
   assert.doesNotMatch(html, /Get Started/);
   assert.match(html, /aria-label="Main navigation"/);
+});
+
+test("The full-image homepage makes the server-rendered header transparent before hydration", () => {
+  const css = readFileSync(
+    new URL("../globals.css", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(
+    css,
+    /:where\(body:has\(\.hero--homepage-image\)\) \.site-header\s*\{[^}]*background:\s*transparent/,
+  );
+});
+
+test("Cross-page navigation does not inherit global smooth scrolling", () => {
+  const css = readFileSync(
+    new URL("../globals.css", import.meta.url),
+    "utf8",
+  );
+
+  assert.doesNotMatch(css, /scroll-behavior:\s*smooth/);
 });
 
 test("SiteFooter does not invent content when Settings is empty", () => {

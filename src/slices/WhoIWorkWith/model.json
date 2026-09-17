@@ -1,0 +1,82 @@
+{
+  "id": "who_i_work_with",
+  "type": "SharedSlice",
+  "name": "WhoIWorkWith",
+  "description": "WhoIWorkWith",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "practice_note": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Practice note",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "audience_items": {
+          "type": "Group",
+          "config": {
+            "label": "Audience items",
+            "repeat": true,
+            "fields": {
+              "audience_name": {
+                "type": "Text",
+                "config": {
+                  "label": "Audience name",
+                  "placeholder": ""
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "label": "Audience image",
+                  "constraint": {
+                    "width": 1536,
+                    "height": 1024
+                  },
+                  "thumbnails": []
+                }
+              },
+              "description": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Description",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph"
+                }
+              },
+              "link": {
+                "type": "Link",
+                "config": {
+                  "label": "Audience link",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

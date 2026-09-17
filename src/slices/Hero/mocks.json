@@ -161,5 +161,110 @@
 				"value": []
 			}
 		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "fullImage",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "cent",
+				"type": "Text"
+			},
+			"lead": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Culpa cillum reprehenderit deserunt enim elit ut irure."
+						}
+					}
+				]
+			},
+			"ctas": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"key": "788bb9e4-c662-4bd3-8a98-bc127a1ba564",
+						"value": [
+							[
+								"label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "dozen",
+									"type": "Text"
+								}
+							],
+							[
+								"link",
+								{
+									"key": "9953cfc2-06b3-4af1-9d5e-204adc7c29df",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://prismic.io",
+										"text": "this",
+										"variant": "Primary"
+									}
+								}
+							]
+						]
+					}
+				]
+			},
+			"supporting_copy": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Deserunt ut ut ut est eu consectetur."
+						}
+					}
+				]
+			},
+			"helper_copy": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nisi proident adipisicing laboris."
+						}
+					}
+				]
+			},
+			"background_image": {
+				"__TYPE__": "ImageContent",
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1547082299-de196ea013d6",
+					"width": 4272,
+					"height": 2848
+				},
+				"width": 4272,
+				"height": 2848,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"url": "https://images.unsplash.com/photo-1547082299-de196ea013d6",
+				"alt": "flew",
+				"thumbnails": {}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"key": "78c6b2cb-0c70-42e3-be1a-4641408c13d2",
+				"value": []
+			}
+		]
 	}
 ]

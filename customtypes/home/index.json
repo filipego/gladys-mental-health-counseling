@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "who_i_work_with": {
+              "type": "SharedSlice"
+            },
             "information_grid": {
               "type": "SharedSlice"
             },

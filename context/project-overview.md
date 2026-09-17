@@ -10,7 +10,7 @@ The site uses the approved static prototypes in `prototypes/pages/` as its visua
 
 - Primary audience: parents concerned about their children, followed by teens and adults seeking therapy.
 - Main pages: Home, About Gladys, Therapy & Support, and Get Started.
-- Core action: “Request a free consultation,” leading to `/get-started#consultation`.
+- Core action: “Request a free consultation,” leading to `/get-started#request`.
 - Service details: in-person sessions in New York City, telehealth where available, English and Spanish sessions, fees starting at $200, and private insurance information.
 - Content requirements: plain-language descriptions of parent support, teen therapy, adult therapy, approaches, session options, consultation flow, FAQs, privacy, and the emergency notice.
 
@@ -22,7 +22,7 @@ The site uses the approved static prototypes in `prototypes/pages/` as its visua
 - Slice Machine connected to the `mental-health-counseling` repository.
 - Preview, exit-preview, revalidation, and slice-simulator routes.
 - A synchronized non-repeatable `home` custom type.
-- A local slice registry containing Hero, Content, Image, and Video.
+- A local slice registry containing the published editorial, audience, location, FAQ, and consultation form slices.
 - Shared slice primitives for section bounds, headings, links, CTA links, and Rich Text.
 - A fully Prismic-backed global site shell whose header and footer copy and links come only from the published Settings singleton.
 - Lazy YouTube and TikTok components for dedicated provider-ID fields.
@@ -55,8 +55,8 @@ The local slice library contains complete Hero, Content, Image, and Video models
 - Authentication, users, roles, or permissions.
 - File storage or upload infrastructure.
 - A component library or shared UI wrapper system.
-- Forms, tables, charts, global state, or notifications.
-- A completed client-specific page design and consultation workflow.
+- Tables, charts, global state, or notifications.
+- Live consultation email delivery. The form and validated server boundary exist, but outbound Resend delivery remains intentionally disabled until credentials, the HTML email template, receiving policy, and fallback route are confirmed.
 - Rich Text image or video embeds. TikTok and YouTube use dedicated components; images will use a dedicated component when added.
 
 Add any of these only when a concrete project requirement calls for them.

@@ -7,18 +7,23 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "node --import tsx --test src/slices/slices.test.tsx src/app/components/site-shell.test.tsx",
+    "test": "node --import tsx --test src/slices/slices.test.tsx src/app/components/site-shell.test.tsx src/lib/consultation-schema.test.ts",
     "slicemachine": "start-slicemachine",
     "both": "npm run dev & npm run slicemachine"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.9.1",
     "@prismicio/client": "^7.21.8",
     "@prismicio/next": "^2.3.0",
     "@prismicio/react": "^3.4.1",
+    "@react-email/components": "^1.0.12",
     "clsx": "^2.1.1",
     "next": "16.2.10",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "react-hook-form": "^7.88.0",
+    "resend": "^6.28.1",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@slicemachine/adapter-next": "^0.3.98",

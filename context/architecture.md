@@ -35,10 +35,14 @@ Use `package.json` as the exact dependency-version source of truth.
 │   │   ├── layout.tsx
 │   │   └── page.tsx
 │   ├── slices/
-│   │   ├── Hero/                  # Homepage Hero and Inner Page Hero renderer/model
-│   │   ├── HeadingAndText/        # Side-by-side and two-column editorial copy layouts
+│   │   ├── Hero/                  # Homepage, full-image homepage, and inner-page hero renderer/model
+│   │   ├── AudienceAccordion/     # Hash-aware Parents, Teens, and Adults accordion
+│   │   ├── WhoIWorkWith/          # Homepage audience overview rows
+│   │   ├── HeadingAndText/        # Side-by-side, two-column, and conversation editorial layouts
 │   │   ├── ImageAndText/          # Reusable image/copy split with optional surface and divider controls
 │   │   ├── InformationGrid/       # Repeatable two-column practical-information grid
+│   │   ├── LocationMap/           # Address-driven map and editorial location copy
+│   │   ├── FaqAccordion/          # Repeatable native-disclosure FAQ rows
 │   │   ├── CallToAction/          # Conversation CTA with shared button and helper copy
 │   │   ├── Content/               # Text Only, Centered Text, Image Right, and Image Left renderer/model
 │   │   ├── Image/                 # Full Width and Two Up image renderer/model
@@ -117,8 +121,10 @@ The default repository is committed in `slicemachine.config.json`. Public conten
 | Variable | Required | Purpose |
 | --- | --- | --- |
 | `NEXT_PUBLIC_PRISMIC_ENVIRONMENT` | Optional | Override the default Prismic environment/repository at runtime |
+| `RESEND_API_KEY` | Required for delivery | Server-only Resend credential for consultation email delivery |
+| `CONSULTATION_TO_EMAIL` | Required for delivery | Server-only destination for consultation requests |
 
-Do not introduce tokens or secrets until a feature requires them. If private Prismic access is later enabled, keep access tokens server-only and document the new environment variable here.
+The consultation route validates every unknown request body with the shared Zod schema before consulting delivery configuration. Until the Resend email template and receiving policy are completed, it returns an explicit service-unavailable response and never reports a false success. Keep both Resend values server-only. If private Prismic access is later enabled, keep access tokens server-only and document the new environment variable here.
 
 ## Invariants
 

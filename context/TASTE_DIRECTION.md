@@ -33,7 +33,7 @@ These are proposed roles, not extracted tokens except where explicitly noted.
 | Soft stone | #F5F3F1 | Occasional section surfaces; observed on ElevenLabs |
 | Warm charcoal | #292524 | Headings, body, primary buttons |
 | Muted rose | #E8D9D5 | A limited human-facing panel or artwork background |
-| Deep wine | #69434B | Links and small emphasis; optional alternate CTA color |
+| Deep wine | #6A2C47 | Links and small emphasis; optional alternate CTA color |
 | Fine border | #DED8D4 | Quiet separators, form edges where sufficient contrast is established |
 
 Keep roughly 85–90% of the page neutral. Rose is a supporting surface, not every section's background. Use dark text on pale surfaces; do not use pale accent colors for body text. Verify actual contrast and focus/error states when implementing. No green success states.

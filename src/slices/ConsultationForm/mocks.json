@@ -1,0 +1,83 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"about_heading": {
+				"__TYPE__": "FieldContent",
+				"value": "blind",
+				"type": "Text"
+			},
+			"session_heading": {
+				"__TYPE__": "FieldContent",
+				"value": "over",
+				"type": "Text"
+			},
+			"before_speak_heading": {
+				"__TYPE__": "FieldContent",
+				"value": "mud",
+				"type": "Text"
+			},
+			"availability_hint": {
+				"__TYPE__": "FieldContent",
+				"value": "taught",
+				"type": "Text"
+			},
+			"message_hint": {
+				"__TYPE__": "FieldContent",
+				"value": "fairly",
+				"type": "Text"
+			},
+			"consent_text": {
+				"__TYPE__": "FieldContent",
+				"value": "leader",
+				"type": "Text"
+			},
+			"submit_label": {
+				"__TYPE__": "FieldContent",
+				"value": "wife",
+				"type": "Text"
+			},
+			"validation_summary": {
+				"__TYPE__": "FieldContent",
+				"value": "sport",
+				"type": "Text"
+			},
+			"delivery_unavailable_message": {
+				"__TYPE__": "FieldContent",
+				"value": "service",
+				"type": "Text"
+			},
+			"success_heading": {
+				"__TYPE__": "FieldContent",
+				"value": "raise",
+				"type": "Text"
+			},
+			"success_message": {
+				"__TYPE__": "FieldContent",
+				"value": "somehow",
+				"type": "Text"
+			},
+			"privacy_link": {
+				"key": "f1911adc-96c4-4d5a-9caa-967434dddd7c",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com",
+					"text": "lot"
+				}
+			},
+			"success_eyebrow": {
+				"__TYPE__": "FieldContent",
+				"value": "sudden",
+				"type": "Text"
+			},
+			"reset_label": {
+				"__TYPE__": "FieldContent",
+				"value": "society",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

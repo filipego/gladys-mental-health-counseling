@@ -1,0 +1,39 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "couple",
+				"type": "Text"
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Culpa commodo aliquip elit veniam."
+						}
+					}
+				]
+			},
+			"address": {
+				"__TYPE__": "FieldContent",
+				"value": "mountain",
+				"type": "Text"
+			},
+			"map_link": {
+				"__TYPE__": "LinkContent",
+				"key": "390cce6f-60b6-4a2e-a004-8773829d1867",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io",
+					"text": "constantly"
+				}
+			}
+		},
+		"items": []
+	}
+]

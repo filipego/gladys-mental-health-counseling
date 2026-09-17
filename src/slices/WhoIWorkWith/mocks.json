@@ -1,0 +1,96 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "silly",
+				"type": "Text"
+			},
+			"practice_note": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Culpa minim occaecat excepteur duis aute cupidatat ut anim."
+						}
+					}
+				]
+			},
+			"audience_items": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"key": "56017b3c-2516-4bb6-a30a-93b177329196",
+						"value": [
+							[
+								"audience_name",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "whom",
+									"type": "Text"
+								}
+							],
+							[
+								"image",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef",
+										"width": 4000,
+										"height": 6000
+									},
+									"width": 1536,
+									"height": 1024,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 1667
+										},
+										"background": "transparent"
+									},
+									"url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?rect=0%2C1667%2C4000%2C2667&w=1536&h=1024",
+									"alt": "here",
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Ut deserunt veniam fugiat id culpa labore ex et."
+											}
+										}
+									]
+								}
+							],
+							[
+								"link",
+								{
+									"__TYPE__": "LinkContent",
+									"key": "5774fea3-f92d-4ebb-960d-6b9065ea20d4",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://twitter.com",
+										"text": "graph"
+									}
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

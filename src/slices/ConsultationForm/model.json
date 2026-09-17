@@ -1,0 +1,121 @@
+{
+  "id": "consultation_form",
+  "type": "SharedSlice",
+  "name": "ConsultationForm",
+  "description": "ConsultationForm",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "about_heading": {
+          "type": "Text",
+          "config": {
+            "label": "About heading",
+            "placeholder": ""
+          }
+        },
+        "session_heading": {
+          "type": "Text",
+          "config": {
+            "label": "Session heading",
+            "placeholder": ""
+          }
+        },
+        "before_speak_heading": {
+          "type": "Text",
+          "config": {
+            "label": "Before speaking heading",
+            "placeholder": ""
+          }
+        },
+        "availability_hint": {
+          "type": "Text",
+          "config": {
+            "label": "Availability hint",
+            "placeholder": ""
+          }
+        },
+        "message_hint": {
+          "type": "Text",
+          "config": {
+            "label": "Message hint",
+            "placeholder": ""
+          }
+        },
+        "consent_text": {
+          "type": "Text",
+          "config": {
+            "label": "Consent text",
+            "placeholder": ""
+          }
+        },
+        "submit_label": {
+          "type": "Text",
+          "config": {
+            "label": "Submit label",
+            "placeholder": ""
+          }
+        },
+        "validation_summary": {
+          "type": "Text",
+          "config": {
+            "label": "Validation summary",
+            "placeholder": ""
+          }
+        },
+        "delivery_unavailable_message": {
+          "type": "Text",
+          "config": {
+            "label": "Delivery unavailable message",
+            "placeholder": ""
+          }
+        },
+        "success_heading": {
+          "type": "Text",
+          "config": {
+            "label": "Success heading",
+            "placeholder": ""
+          }
+        },
+        "success_message": {
+          "type": "Text",
+          "config": {
+            "label": "Success message",
+            "placeholder": ""
+          }
+        },
+        "privacy_link": {
+          "type": "Link",
+          "config": {
+            "label": "Privacy link",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
+          }
+        },
+        "success_eyebrow": {
+          "type": "Text",
+          "config": {
+            "label": "Success eyebrow",
+            "placeholder": ""
+          }
+        },
+        "reset_label": {
+          "type": "Text",
+          "config": {
+            "label": "Reset button label",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

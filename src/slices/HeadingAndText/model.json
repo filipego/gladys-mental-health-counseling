@@ -38,6 +38,15 @@
             "allowText": true,
             "repeat": false
           }
+        },
+        "use_wine_background": {
+          "type": "Boolean",
+          "config": {
+            "label": "Use wine background",
+            "placeholder_false": "Paper background",
+            "placeholder_true": "Wine background",
+            "default_value": false
+          }
         }
       },
       "items": {}
@@ -71,6 +80,60 @@
           "config": {
             "label": "Right body",
             "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "use_wine_background": {
+          "type": "Boolean",
+          "config": {
+            "label": "Use wine background",
+            "placeholder_false": "Paper background",
+            "placeholder_true": "Wine background",
+            "default_value": false
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "conversationChapter",
+      "name": "Conversation Chapter",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "body": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Body",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "use_wine_background": {
+          "type": "Boolean",
+          "config": {
+            "label": "Use wine background",
+            "placeholder_false": "Paper background",
+            "placeholder_true": "Wine background",
+            "default_value": true
+          }
+        },
+        "statement": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Statement",
+            "placeholder": "A short pull-out statement",
             "allowTargetBlank": true,
             "multi": "paragraph"
           }

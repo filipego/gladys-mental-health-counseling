@@ -27,6 +27,10 @@
 					"url": "https://slicemachine.dev",
 					"text": "thus"
 				}
+			},
+			"use_wine_background": {
+				"__TYPE__": "BooleanContent",
+				"value": false
 			}
 		},
 		"items": []
@@ -61,12 +65,72 @@
 						}
 					}
 				]
+			},
+			"use_wine_background": {
+				"__TYPE__": "BooleanContent",
+				"value": false
 			}
 		},
 		"items": [
 			{
 				"__TYPE__": "GroupItemContent",
 				"key": "4155d030-9f89-432c-934c-93e826ddb068",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "conversationChapter",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Therapy should feel like a real conversation"
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "You do not have to say the right thing in therapy. We'll talk honestly about what you want to change and pay attention to whether the work is actually helping. If something does not feel useful, tell me. I would rather adjust than keep doing something simply because it is what we started with.",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Some sessions may include a creative activity or, with your agreement, a mindfulness walk. We decide together whether either one fits the work we are doing. You can always choose to keep our sessions focused on conversation.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			},
+			"use_wine_background": {
+				"__TYPE__": "BooleanContent",
+				"value": true
+			},
+			"statement": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "I respect your pace. Change can be uncomfortable, and some parts take time. Being patient with yourself is part of the work.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"key": "463180a1-75b3-4d30-82e7-977112463428",
 				"value": []
 			}
 		]

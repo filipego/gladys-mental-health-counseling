@@ -17,6 +17,18 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "consultation_form": {
+              "type": "SharedSlice"
+            },
+            "location_map": {
+              "type": "SharedSlice"
+            },
+            "faq_accordion": {
+              "type": "SharedSlice"
+            },
+            "audience_accordion": {
+              "type": "SharedSlice"
+            },
             "information_grid": {
               "type": "SharedSlice"
             },

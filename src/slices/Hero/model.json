@@ -132,6 +132,91 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "fullImage",
+      "name": "Full Image Homepage Hero",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "lead": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Lead",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink"
+          }
+        },
+        "background_image": {
+          "type": "Image",
+          "config": {
+            "label": "Background image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "ctas": {
+          "type": "Group",
+          "config": {
+            "label": "Calls to action",
+            "repeat": true,
+            "fields": {
+              "label": {
+                "type": "Text",
+                "config": {
+                  "label": "Label",
+                  "placeholder": ""
+                }
+              },
+              "link": {
+                "type": "Link",
+                "config": {
+                  "label": "Link",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false,
+                  "variants": [
+                    "Primary",
+                    "Secondary",
+                    "Outline"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "supporting_copy": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Supporting copy",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink"
+          }
+        },
+        "helper_copy": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Helper copy",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink"
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

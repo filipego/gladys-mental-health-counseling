@@ -32,11 +32,53 @@ const HeadingAndText = ({ context, slice }: HeadingAndTextProps) => {
     ? pageClassNames[context.pageUid]
     : undefined;
 
+  if (slice.variation === "conversationChapter") {
+    const usesWineBackground = slice.primary.use_wine_background === true;
+
+    return (
+      <section
+        className={clsx(
+          "heading-and-text heading-and-text--conversation-chapter",
+          usesWineBackground && "heading-and-text--wine",
+          pageClassName,
+        )}
+        data-slice-type={slice.slice_type}
+        data-slice-variation={slice.variation}
+      >
+        <Bounded as="div" className="heading-and-text__bounded" spacing="none">
+          {slice.primary.heading ? (
+            <Heading as="h2" className="heading-and-text__heading" size="md">
+              {slice.primary.heading}
+            </Heading>
+          ) : null}
+
+          <div className="heading-and-text__conversation-grid">
+            {isFilled.richText(slice.primary.body) ? (
+              <PrismicRichText
+                className="heading-and-text__rich-text heading-and-text__conversation-body"
+                field={slice.primary.body}
+              />
+            ) : null}
+            {isFilled.richText(slice.primary.statement) ? (
+              <PrismicRichText
+                className="heading-and-text__statement"
+                field={slice.primary.statement}
+              />
+            ) : null}
+          </div>
+        </Bounded>
+      </section>
+    );
+  }
+
   if (slice.variation === "twoColumns") {
+    const usesWineBackground = slice.primary.use_wine_background === true;
+
     return (
       <section
         className={clsx(
           "heading-and-text heading-and-text--two-columns",
+          usesWineBackground && "heading-and-text--wine",
           pageClassName,
         )}
         data-slice-type={slice.slice_type}
@@ -70,10 +112,13 @@ const HeadingAndText = ({ context, slice }: HeadingAndTextProps) => {
 
   if (slice.variation !== "default") return null;
 
+  const usesWineBackground = slice.primary.use_wine_background === true;
+
   return (
     <section
       className={clsx(
         "heading-and-text heading-and-text--side-by-side",
+        usesWineBackground && "heading-and-text--wine",
         pageClassName,
       )}
       data-slice-type={slice.slice_type}
@@ -98,6 +143,7 @@ const HeadingAndText = ({ context, slice }: HeadingAndTextProps) => {
               <TextLink
                 className="heading-and-text__link"
                 field={slice.primary.link}
+                tone={usesWineBackground ? "light" : "dark"}
               >
                 {slice.primary.link.text}
               </TextLink>

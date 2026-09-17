@@ -35,7 +35,7 @@ Use the content plan in `planning/website-content.md` as the working product bri
 2. Add the planned Home, About Gladys, Therapy & Support, and Get Started content in Prismic.
 3. Implement slices with accessible, responsive React components.
    - Use `Bounded`, `Heading`, `PrismicRichText`, and `ButtonLink` where their roles apply.
-4. Add the consultation request workflow only after the receiving service, privacy handling, and fallback contact route are confirmed.
+4. [In progress] The prototype-matched consultation form, reusable controls, shared Zod validation, and server route boundary are implemented. Resend and React Email dependencies are installed, but outbound delivery stays disabled until credentials, the HTML email template, privacy handling, and fallback contact route are confirmed.
 5. The prototype-derived shared visual foundation and global header/footer are implemented in `context/design-system.md`; continue with page slices and imagery in prototype order.
 6. Track delivered work and next steps in `progress-tracker.md`.
 
