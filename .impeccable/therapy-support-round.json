@@ -1,0 +1,90 @@
+{
+  "title": "Therapy & Support — choose the composition",
+  "question": "Same world as Home and About (paper, stone, wine, Inter, black pill). The choice here is how the page is arranged. Lock one.",
+  "options": [
+    {
+      "id": "place-yourself",
+      "label": "Place Yourself, Then Read",
+      "kicker": "THE ROLL",
+      "lineage": "Home's \"Who I work with\" row list, raised to page scale",
+      "thesis": "One screen to find your own row, then three chapters long enough to actually answer you.",
+      "palette": ["#FDFCFC", "#F5F3F1", "#69434B", "#000000"],
+      "materials": ["three-row index at heading scale", "alternating paper and stone chapters", "one wine chapter for approaches"],
+      "viewport": "Page title and the opening paragraph on the left; beneath it a three-row index — Parents, Teens, Adults — set at heading scale with one line each, Parents first and deepest. The Parents chapter begins before the fold ends.",
+      "risk": "The index repeats what Home already says; if it is set timidly it reads as a second navigation bar rather than a triage.",
+      "wireframe": {
+        "cols": 12,
+        "rows": 12,
+        "regions": [
+          { "label": "header", "x": 0, "y": 0, "w": 12, "h": 1 },
+          { "label": "title + opening", "x": 0, "y": 1, "w": 7, "h": 2 },
+          { "label": "Parents", "x": 0, "y": 3, "w": 4, "h": 1, "accent": true },
+          { "label": "Teens", "x": 4, "y": 3, "w": 4, "h": 1 },
+          { "label": "Adults", "x": 8, "y": 3, "w": 4, "h": 1 },
+          { "label": "Parents chapter", "x": 0, "y": 4, "w": 8, "h": 3 },
+          { "label": "photo", "x": 8, "y": 4, "w": 4, "h": 3 },
+          { "label": "Teens chapter · stone", "x": 0, "y": 7, "w": 12, "h": 2 },
+          { "label": "Adults chapter", "x": 0, "y": 9, "w": 12, "h": 1 },
+          { "label": "Approaches · wine", "x": 0, "y": 10, "w": 12, "h": 1 },
+          { "label": "Sessions + consultation", "x": 0, "y": 11, "w": 12, "h": 1 }
+        ]
+      },
+      "comp": ".impeccable/mocks/decision/place-yourself.webp"
+    },
+    {
+      "id": "focal-rail",
+      "label": "The Focal Rail",
+      "lineage": "the anveril.com capture saved to this project's Hub board",
+      "thesis": "One photograph holds the page; a three-name rail beside it changes whose story you are reading.",
+      "palette": ["#FDFCFC", "#F5F3F1", "#69434B", "#000000"],
+      "materials": ["left rail of three names", "one tall photograph at real scale", "reading column to its right"],
+      "viewport": "Title and opening paragraph across the top; below, a quiet rail of three names on the left, a single tall photograph in the middle, and the chosen audience's copy on the right. Parents is open on arrival.",
+      "risk": "Two thirds of the page's substance is hidden behind a control, and the long Parents copy has to fit a column that Teens and Adults will underfill.",
+      "wireframe": {
+        "cols": 12,
+        "rows": 11,
+        "regions": [
+          { "label": "header", "x": 0, "y": 0, "w": 12, "h": 1 },
+          { "label": "title + opening", "x": 0, "y": 1, "w": 6, "h": 1 },
+          { "label": "Parents / Teens / Adults rail", "x": 0, "y": 2, "w": 3, "h": 5, "accent": true },
+          { "label": "photograph", "x": 3, "y": 2, "w": 5, "h": 5 },
+          { "label": "selected audience copy", "x": 8, "y": 2, "w": 4, "h": 5 },
+          { "label": "Approaches · stone", "x": 0, "y": 7, "w": 12, "h": 2 },
+          { "label": "Sessions + consultation", "x": 0, "y": 9, "w": 12, "h": 2 }
+        ]
+      },
+      "comp": ".impeccable/mocks/decision/focal-rail.webp"
+    },
+    {
+      "id": "said-out-loud",
+      "label": "Said Out Loud",
+      "lineage": "the `statement` register already carried on About's wine band",
+      "thesis": "Every chapter opens on a sentence the visitor has already thought, and then answers it.",
+      "palette": ["#FDFCFC", "#F5F3F1", "#69434B", "#000000"],
+      "materials": ["wine statement at display scale opening each chapter", "reading column beneath it", "photographs only where a chapter earns one"],
+      "viewport": "Page title, the opening paragraph, then immediately the first recognition set large in wine — \"How do I stop this behavior?\" — with the Parents chapter answering it directly underneath.",
+      "risk": "Three statements in a row becomes a rhythm the reader learns to skip, and the wine loses its force by the third one.",
+      "wireframe": {
+        "cols": 12,
+        "rows": 12,
+        "regions": [
+          { "label": "header", "x": 0, "y": 0, "w": 12, "h": 1 },
+          { "label": "title + opening", "x": 0, "y": 1, "w": 7, "h": 2 },
+          { "label": "\u201cHow do I stop this behavior?\u201d", "x": 0, "y": 3, "w": 8, "h": 1, "accent": true },
+          { "label": "Parents chapter", "x": 0, "y": 4, "w": 7, "h": 2 },
+          { "label": "photo", "x": 7, "y": 4, "w": 5, "h": 2 },
+          { "label": "\u201cyou haven\u2019t felt like yourself\u201d", "x": 0, "y": 6, "w": 8, "h": 1, "accent": true },
+          { "label": "Teens chapter · stone", "x": 0, "y": 7, "w": 12, "h": 1 },
+          { "label": "\u201cunderstanding it isn\u2019t changing it\u201d", "x": 0, "y": 8, "w": 8, "h": 1, "accent": true },
+          { "label": "Adults chapter", "x": 0, "y": 9, "w": 12, "h": 1 },
+          { "label": "Approaches", "x": 0, "y": 10, "w": 12, "h": 1 },
+          { "label": "Sessions + consultation · wine", "x": 0, "y": 11, "w": 12, "h": 1 }
+        ]
+      },
+      "comp": ".impeccable/mocks/decision/said-out-loud.webp"
+    }
+  ],
+  "reroll": true,
+  "steer": true,
+  "buildPath": { "value": "code", "toggle": true }
+}

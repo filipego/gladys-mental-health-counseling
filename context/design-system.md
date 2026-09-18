@@ -74,7 +74,7 @@ Every slice uses `Bounded`. Standard content uses `max-w-page` (1200px), 20px mo
 
 ## Global shell
 
-`SiteHeader` and `SiteFooter` are rendered by the root layout around every page. The header is sticky, uses the paper surface and a single line divider, and renders the wordmark plus Settings-owned navigation. At 760px and below, desktop links give way to a two-line hamburger that opens a blush, right-side drawer with a backdrop, focus containment, Escape-to-close, body scroll lock, and close-on-link navigation. The footer uses the blush surface, 320px navigation rail, oversized signature, practice details, emergency copy, copyright, and Privacy link.
+`SiteHeader` and `SiteFooter` are rendered by the root layout around every page. Both use the reusable traced `LovelyDaysLogo` alongside Settings-owned navigation and content. The logo module exposes small, medium, large, and fluid display sizes; the header uses the readable medium treatment at 80% ink opacity while the footer uses the softer display treatment. They step down to dedicated 126px and 280px maximum widths on mobile. At 760px and below, desktop links give way to a two-line hamburger that opens a blush, right-side drawer with a backdrop, focus containment, Escape-to-close, body scroll lock, and close-on-link navigation. The footer uses the blush surface, 320px navigation rail, oversized signature, practice details, emergency copy, copyright, and Privacy link.
 
 The footer navigation compares each CMS-managed destination with the current pathname and omits the matching item. Home therefore excludes Home, About excludes About Gladys, Therapy & Support excludes Therapy & Support, and Get Started excludes Get Started.
 

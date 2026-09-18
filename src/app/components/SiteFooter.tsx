@@ -2,6 +2,7 @@ import { isFilled } from "@prismicio/client";
 
 import type { SettingsDocument } from "../../../prismicio-types";
 import { Bounded } from "./Bounded";
+import { LovelyDaysLogo } from "./LovelyDaysLogo";
 import { PrismicLink } from "./PrismicLink";
 import { SiteFooterNavigation } from "./SiteFooterNavigation";
 
@@ -43,8 +44,12 @@ export function SiteFooter({ settings }: SiteFooterProps) {
         </div>
 
         {siteName ? (
-          <PrismicLink className="site-footer__signature" href="/">
-            {siteName}
+          <PrismicLink
+            aria-label={siteName}
+            className="site-footer__signature"
+            href="/"
+          >
+            <LovelyDaysLogo alt="" size="display" />
           </PrismicLink>
         ) : null}
 

@@ -1,0 +1,176 @@
+{
+  "runId": "IMMERSIVE-RUN-gladys-homepage-2026-09-10",
+  "version": 1,
+  "mode": "direction",
+  "status": "intake",
+  "corpusGrounding": {
+    "coreFilesAtEof": [
+      "orchestration.md",
+      "preferences.md",
+      "experience-contract.md",
+      "evidence-library.md",
+      "visual-reference-manifest.md",
+      "motion-reference-manifest.md",
+      "process-reference-manifest.md",
+      "reference-corpus.md",
+      "doctrine.md",
+      "motion-vocabulary.md",
+      "production.md",
+      "previsualization.md",
+      "quality-gates.md",
+      "evolving-the-library.md",
+      "execution-contract.md",
+      "scrollcraft-adapter.md",
+      "visual-development.md",
+      "performance-budget.md",
+      "dependencies.md",
+      "decision-memory.md"
+    ],
+    "visualOverviewIds": [
+      "site-sondaven",
+      "site-lando-norris",
+      "site-indigo-laboratory",
+      "site-noth",
+      "site-mr-black",
+      "site-santioni-spirits",
+      "site-become-a-yogi",
+      "site-mesh3d",
+      "site-haoqi",
+      "site-ride-radian",
+      "site-pear"
+    ],
+    "processIds": [
+      "video-QUI6Ug4cHnE",
+      "video-39IlNR-P3-Q",
+      "video-GJxchJkk4Lk",
+      "video-ubH1ulaK-t4"
+    ],
+    "visualValidatorEvidence": "python3 scripts/validate_visual_corpus.py EXIT 0: Visual taste corpus valid: 11 websites, 321 frames, 11 overview sheets, 11 motion strips.",
+    "processValidatorEvidence": "python3 scripts/validate_process_corpus.py EXIT 0: Process corpus valid: 4 videos, 4 full transcripts, 72 archived demonstration frames.",
+    "namedReferences": [
+      {
+        "userName": "Dribbble",
+        "class": "external-layout-research",
+        "resolved": "https://dribbble.com/search/shots/popular/web-design?q=therapy%20website",
+        "corpusMatch": "none",
+        "note": "User-authorized layout research. Not visual-taste corpus. Do not copy palette, type, or therapy-template skins."
+      },
+      {
+        "userName": "awards / Awwwards",
+        "class": "external-layout-research",
+        "resolved": "https://www.awwwards.com/websites/health-beauty/",
+        "corpusMatch": "process-only mention in EVID-video-spatial-production as a quality-study convenience, not taste doctrine",
+        "note": "Inspect for section jobs and conversion calm. Reject WebGL/particle/clinic-template identity."
+      },
+      {
+        "userName": "styles referral / Refero Styles",
+        "class": "project-brand-system-plus-catalog",
+        "resolved": "https://styles.refero.design/ and context/design-system.md (ElevenLabs Refero already selected)",
+        "corpusMatch": "none",
+        "note": "Locked project tokens: Inter, #FDFCFC paper, stone, black pills. Catalog is not a new identity brief."
+      },
+      {
+        "userName": "Gladys Voice - Hero Revision.docx",
+        "class": "canonical-copy-source",
+        "resolved": "/Volumes/Extreme Pro/medias/Gladys Voice - Hero Revision.docx and planning/copy-review/hero-revision.txt",
+        "corpusMatch": "none"
+      }
+    ],
+    "verdict": "strong"
+  },
+  "intake": {
+    "grillingComplete": false,
+    "domainModelingComplete": true,
+    "frontierEmpty": true,
+    "userConfirmationEvidence": "pending shared-understanding confirmation after round 1 answers",
+    "verdict": "needs work",
+    "rounds": [
+      {
+        "round": 1,
+        "agentEndedTurnAndWaited": true,
+        "domainModelingEvidence": "Homepage studies ≠ hero studies. Converts = consultation request. prototypes/images 08_27/08_28 (1–5) are Gladys portraits; 08_52/08_53 files are neural hero frames. Pose 4 includes ROCKROSE environmental branding and should not lead a therapy intro.",
+        "questions": [
+          {
+            "id": "Q1-primary-visitor",
+            "decision": "Who the homepage must convert first",
+            "prerequisites": [],
+            "allPrerequisitesSettledBeforeRound": true,
+            "answered": true,
+            "answer": "parents"
+          },
+          {
+            "id": "Q2-build-path",
+            "decision": "Comp-first vs code-first for this homepage prototype round",
+            "prerequisites": [],
+            "allPrerequisitesSettledBeforeRound": true,
+            "answered": true,
+            "answer": "code"
+          },
+          {
+            "id": "Q3-portrait-source",
+            "decision": "Which Gladys photographs are authorized for the intro section",
+            "prerequisites": [],
+            "allPrerequisitesSettledBeforeRound": true,
+            "answered": true,
+            "answer": "prototypes/images five Gladys portraits (08_27_59 1-3 and 08_28_00 4-5)"
+          }
+        ]
+      }
+    ]
+  },
+  "experienceContract": {
+    "id": "pending",
+    "path": "pending",
+    "version": 0,
+    "validatorEvidence": "not run; intake incomplete",
+    "verdict": "needs work"
+  },
+  "evidenceLineage": [],
+  "territories": [],
+  "recommendedTerritoryId": "",
+  "scrollcraft": {
+    "applicable": false,
+    "reason": "User locked an aesthetic, conversion-led homepage with little parallax/effects. Native editorial scroll is the working hypothesis; Scrollcraft interview stays off the current frontier until a later round if a section earns authored scroll.",
+    "adapterApplied": false
+  },
+  "visualDevelopment": {
+    "required": true,
+    "manifestPath": "",
+    "validatorEvidence": "",
+    "verdict": "needs work"
+  },
+  "performanceBudget": {
+    "required": true,
+    "manifestPath": "",
+    "validatorEvidence": "",
+    "verdict": "needs work"
+  },
+  "dependencies": {
+    "validatorEvidence": "python3 scripts/validate_dependencies.py EXIT 0: PASS required capability entrypoints resolved (grilling, domain-modeling, impeccable, design-dna, scrollcraft, design-loop, filipe-flow, watch, browser-proof).",
+    "selected": [
+      {"name": "grilling", "status": "running"},
+      {"name": "domain-modeling", "status": "running"},
+      {"name": "impeccable", "status": "running", "note": "init blocked on PRODUCT.md until Q1-Q3 answered; new-work deferred"},
+      {"name": "prototype", "status": "deferred", "note": "homepage throwaway after shared understanding"},
+      {"name": "scrollcraft", "status": "deferred"}
+    ]
+  },
+  "qualityGates": {
+    "QUALITY-protocol-compliance": {
+      "verdict": "needs work",
+      "evidence": "Corpus grounding complete. Intake round 1 asked; waiting. No territories presented."
+    }
+  },
+  "reconciliation": {
+    "blockers": [
+      "Intake round 1 unanswered",
+      "PRODUCT.md missing until init interview lands",
+      "Experience contract not yet authored"
+    ],
+    "missingArtifacts": [
+      "IMMERSIVE-EXPERIENCE-CONTRACT.json",
+      "PRODUCT.md"
+    ],
+    "overallVerdict": "needs work"
+  }
+}

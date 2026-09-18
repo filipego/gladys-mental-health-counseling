@@ -5,6 +5,7 @@ import { Bounded } from "./Bounded";
 import { PrismicLink } from "./PrismicLink";
 import { SiteMobileNavigation } from "./SiteMobileNavigation";
 import { HeroHeaderObserver } from "./HeroHeaderObserver";
+import { LovelyDaysLogo } from "./LovelyDaysLogo";
 
 type SiteHeaderProps = {
   settings: SettingsDocument["data"] | null;
@@ -26,8 +27,8 @@ export function SiteHeader({ settings }: SiteHeaderProps) {
         <HeroHeaderObserver />
         <Bounded as="div" className="site-header__bounded" spacing="none">
           {siteName ? (
-            <PrismicLink className="site-wordmark" href="/">
-              {siteName}
+            <PrismicLink aria-label={siteName} className="site-wordmark" href="/">
+              <LovelyDaysLogo alt="" size="md" />
             </PrismicLink>
           ) : null}
 

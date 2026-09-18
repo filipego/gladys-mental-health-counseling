@@ -1192,10 +1192,33 @@ a {
 
 .site-wordmark {
   flex: none;
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: -0.025em;
   white-space: nowrap;
+}
+
+.lovely-days-logo {
+  display: block;
+  height: auto;
+  opacity: 0.68;
+}
+
+.site-header .lovely-days-logo {
+  opacity: 0.8;
+}
+
+.lovely-days-logo--sm {
+  width: 96px;
+}
+
+.lovely-days-logo--md {
+  width: 150px;
+}
+
+.lovely-days-logo--lg {
+  width: 220px;
+}
+
+.lovely-days-logo--display {
+  width: min(100%, 600px);
 }
 
 .site-header__nav {
@@ -1563,10 +1586,6 @@ a {
 .site-footer__signature {
   display: block;
   padding-block: 24px 40px;
-  font-size: clamp(48px, 8.1vw, 112px);
-  font-weight: 500;
-  line-height: 1.08;
-  letter-spacing: -0.04em;
 }
 
 .site-footer__bottom {
@@ -1643,6 +1662,10 @@ a {
 }
 
 @media (max-width: 760px) {
+  .site-header .lovely-days-logo--md {
+    width: 126px;
+  }
+
   .hero--homepage-image {
     overflow: visible;
   }
@@ -1955,7 +1978,10 @@ a {
 
   .site-footer__signature {
     padding-block: 20px 32px;
-    font-size: clamp(38px, 9.8vw, 68px);
+  }
+
+  .site-footer .lovely-days-logo--display {
+    width: min(80%, 280px);
   }
 
   .site-footer__legal {

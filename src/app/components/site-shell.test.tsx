@@ -7,6 +7,7 @@ import type { SettingsDocument } from "../../../prismicio-types";
 import { SiteFooter } from "./SiteFooter";
 import { isCurrentFooterLink } from "./SiteFooterNavigation";
 import { SiteHeader } from "./SiteHeader";
+import { LovelyDaysLogo } from "./LovelyDaysLogo";
 
 const emptySettings = {
   site_name: null,
@@ -33,6 +34,16 @@ test("SiteHeader does not invent content when Settings is empty", () => {
   assert.doesNotMatch(html, /Therapy &amp; Support/);
   assert.doesNotMatch(html, /Get Started/);
   assert.match(html, /aria-label="Main navigation"/);
+});
+
+test("LovelyDaysLogo exposes reusable size variants with a transparent asset", () => {
+  const html = renderToStaticMarkup(
+    <LovelyDaysLogo alt="" className="test-logo" size="md" />,
+  );
+
+  assert.match(html, /src="\/lovely-days\.svg"/);
+  assert.match(html, /lovely-days-logo--md/);
+  assert.match(html, /class="[^"]*test-logo/);
 });
 
 test("The full-image homepage makes the server-rendered header transparent before hydration", () => {
@@ -103,7 +114,9 @@ test("The shared shell renders Settings content", () => {
     </>,
   );
 
-  assert.match(html, /A CMS site name/);
+  assert.match(html, /aria-label="A CMS site name"/);
+  assert.match(html, /lovely-days-logo--md/);
+  assert.match(html, /lovely-days-logo--display/);
   assert.match(html, /A CMS header link/);
   assert.match(html, /aria-label="Open navigation"/);
   assert.match(html, /aria-label="Mobile navigation"/);
