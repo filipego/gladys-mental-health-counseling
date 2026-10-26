@@ -40,6 +40,22 @@
 						]
 					}
 				]
+			},
+			"anchor_id": {
+				"__TYPE__": "FieldContent",
+				"value": "mouse",
+				"type": "Text"
+			},
+			"intro": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Proident velit nisi nisi veniam ut cupidatat est dolore ut velit amet. Laborum dolor aute quis ut irure et est aliqua minim commodo excepteur ullamco."
+						}
+					}
+				]
 			}
 		},
 		"items": []

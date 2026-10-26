@@ -122,9 +122,11 @@ The default repository is committed in `slicemachine.config.json`. Public conten
 | --- | --- | --- |
 | `NEXT_PUBLIC_PRISMIC_ENVIRONMENT` | Optional | Override the default Prismic environment/repository at runtime |
 | `RESEND_API_KEY` | Required for delivery | Server-only Resend credential for consultation email delivery |
-| `CONSULTATION_TO_EMAIL` | Required for delivery | Server-only destination for consultation requests |
+| `CONSULTATION_TO_EMAIL` | Optional | Server-only destination for consultation requests; defaults to `info@lovelydayscounseling.com` |
+| `CONSULTATION_FROM_EMAIL` | Optional | Sender for both consultation emails; defaults to `Gladys Henriquez <info@lovelydayscounseling.com>`. The domain must be verified in Resend. |
+| `NEXT_PUBLIC_SITE_URL` | Optional | Public site origin used for email images (the thank-you email logo at `/email/lovely-days-logo.png`). Falls back to Vercel's `VERCEL_PROJECT_PRODUCTION_URL`; without either, the email shows a text wordmark. |
 
-The consultation route validates every unknown request body with the shared Zod schema before consulting delivery configuration. Until the Resend email template and receiving policy are completed, it returns an explicit service-unavailable response and never reports a false success. Keep both Resend values server-only. If private Prismic access is later enabled, keep access tokens server-only and document the new environment variable here.
+The consultation route validates every unknown request body with the shared Zod schema before consulting delivery configuration. Without `RESEND_API_KEY` it returns an explicit service-unavailable response. With it, it sends the request to `CONSULTATION_TO_EMAIL`, or `info@lovelydayscounseling.com` by default (`src/emails/ConsultationRequestEmail.tsx`, reply-to set to the requester's email when given) and reports success only after Resend accepts that message. When the requester gave an email address, it then sends the thank-you note (`src/emails/ConsultationThankYouEmail.tsx`); a failure of that courtesy email is logged and does not fail the request. Keep the Resend values server-only. If private Prismic access is later enabled, keep access tokens server-only and document the new environment variable here.
 
 ## Invariants
 

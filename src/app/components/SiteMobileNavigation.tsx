@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 import type { SettingsDocument } from "../../../prismicio-types";
-import { PrismicLink } from "./PrismicLink";
+import { NavLink } from "./NavLink";
 
 type NavigationItem = SettingsDocument["data"]["header_navigation"][number];
 
@@ -72,7 +72,7 @@ export function SiteMobileNavigation({ navigation }: SiteMobileNavigationProps) 
       <button
         aria-controls="mobile-navigation-panel"
         aria-expanded={isOpen}
-        aria-label="Open navigation"
+        aria-label="Open menu"
         className="site-mobile-nav__trigger"
         onClick={() => setIsOpen(true)}
         ref={triggerRef}
@@ -84,7 +84,7 @@ export function SiteMobileNavigation({ navigation }: SiteMobileNavigationProps) 
 
       <button
         aria-hidden={!isOpen}
-        aria-label="Close navigation"
+        aria-label="Close menu"
         className="site-mobile-nav__backdrop"
         data-open={isOpen}
         onClick={() => setIsOpen(false)}
@@ -105,7 +105,7 @@ export function SiteMobileNavigation({ navigation }: SiteMobileNavigationProps) 
         <div className="site-mobile-nav__panel-header">
           <span className="site-mobile-nav__label">Menu</span>
           <button
-            aria-label="Close navigation"
+            aria-label="Close menu"
             className="site-mobile-nav__close"
             onClick={() => setIsOpen(false)}
             tabIndex={isOpen ? 0 : -1}
@@ -119,13 +119,14 @@ export function SiteMobileNavigation({ navigation }: SiteMobileNavigationProps) 
 
         <nav aria-label="Mobile main navigation" className="site-mobile-nav__links">
           {navigation.map((item, index) => (
-            <PrismicLink
+            <NavLink
               className={
                 item.is_call_to_action
                   ? "site-mobile-nav__link site-mobile-nav__link--cta"
                   : "site-mobile-nav__link"
               }
               field={item.link}
+              isCallToAction={item.is_call_to_action}
               key={`${item.label}-${index}`}
               onClick={() => setIsOpen(false)}
               tabIndex={isOpen ? 0 : -1}
@@ -134,7 +135,7 @@ export function SiteMobileNavigation({ navigation }: SiteMobileNavigationProps) 
               <svg aria-hidden="true" viewBox="0 0 24 24">
                 <path d="M5 12h14M14 7l5 5-5 5" />
               </svg>
-            </PrismicLink>
+            </NavLink>
           ))}
         </nav>
       </div>

@@ -30,10 +30,10 @@ export const consultationSchema = z
       context.addIssue({ code: "custom", path: ["phone"], message: "Enter a phone number so I can contact you." });
     }
     if (!values.supportFor) {
-      context.addIssue({ code: "custom", path: ["supportFor"], message: "Choose who you are seeking support for." });
+      context.addIssue({ code: "custom", path: ["supportFor"], message: "Choose who you're seeking support for. You can select “I'm not sure yet.”" });
     }
     if (!values.understand) {
-      context.addIssue({ code: "custom", path: ["understand"], message: "Please confirm that you have read this statement." });
+      context.addIssue({ code: "custom", path: ["understand"], message: "Please confirm that you've read this statement." });
     }
   });
 

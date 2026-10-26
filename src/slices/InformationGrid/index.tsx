@@ -28,12 +28,20 @@ const InformationGrid = ({ context, slice }: InformationGridProps) => {
       )}
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      id={slice.primary.anchor_id?.trim() || undefined}
     >
       <Bounded as="div" className="information-grid__bounded" spacing="none">
         {slice.primary.heading ? (
           <Heading as="h2" className="information-grid__heading" size="md">
             {slice.primary.heading}
           </Heading>
+        ) : null}
+
+        {isFilled.richText(slice.primary.intro) ? (
+          <PrismicRichText
+            className="information-grid__intro"
+            field={slice.primary.intro}
+          />
         ) : null}
 
         {slice.primary.items.length > 0 ? (

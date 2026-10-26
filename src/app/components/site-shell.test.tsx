@@ -118,7 +118,7 @@ test("The shared shell renders Settings content", () => {
   assert.match(html, /lovely-days-logo--md/);
   assert.match(html, /lovely-days-logo--display/);
   assert.match(html, /A CMS header link/);
-  assert.match(html, /aria-label="Open navigation"/);
+  assert.match(html, /aria-label="Open menu"/);
   assert.match(html, /aria-label="Mobile navigation"/);
   assert.match(html, /aria-label="Mobile main navigation"/);
   assert.match(html, /data-open="false"/);

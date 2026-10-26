@@ -47,6 +47,17 @@
             "allowTargetBlank": true,
             "multi": "paragraph"
           }
+        },
+        "secondary_link": {
+          "type": "Link",
+          "config": {
+            "label": "Secondary link",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
+          }
         }
       },
       "items": {}

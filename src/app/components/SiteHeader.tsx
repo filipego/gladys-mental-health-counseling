@@ -6,6 +6,7 @@ import { PrismicLink } from "./PrismicLink";
 import { SiteMobileNavigation } from "./SiteMobileNavigation";
 import { HeroHeaderObserver } from "./HeroHeaderObserver";
 import { LovelyDaysLogo } from "./LovelyDaysLogo";
+import { NavLink } from "./NavLink";
 
 type SiteHeaderProps = {
   settings: SettingsDocument["data"] | null;
@@ -37,17 +38,18 @@ export function SiteHeader({ settings }: SiteHeaderProps) {
             className="site-header__nav site-header__nav--desktop"
           >
             {navigation.map((item, index) => (
-              <PrismicLink
+              <NavLink
                 className={
                   item.is_call_to_action
                     ? "site-nav-link site-nav-link--cta"
                     : "site-nav-link"
                 }
                 field={item.link}
+                isCallToAction={item.is_call_to_action}
                 key={`${item.label}-${index}`}
               >
                 {item.label}
-              </PrismicLink>
+              </NavLink>
             ))}
           </nav>
           <SiteMobileNavigation navigation={navigation} />

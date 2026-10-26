@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "node --import tsx --test src/slices/slices.test.tsx src/app/components/site-shell.test.tsx src/lib/consultation-schema.test.ts",
+    "test": "node --import tsx --test src/slices/slices.test.tsx src/app/components/site-shell.test.tsx src/lib/consultation-schema.test.ts src/emails/emails.test.tsx",
     "slicemachine": "start-slicemachine",
     "both": "npm run dev & npm run slicemachine"
   },
@@ -26,14 +26,14 @@
     "zod": "^3.25.76"
   },
   "devDependencies": {
-    "@slicemachine/adapter-next": "^0.3.98",
+    "@slicemachine/adapter-next": "^0.3.100",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
-    "slice-machine-ui": "^2.21.5",
+    "slice-machine-ui": "^2.21.6",
     "tailwindcss": "^4",
     "tsx": "^4.23.1",
     "typescript": "^5"

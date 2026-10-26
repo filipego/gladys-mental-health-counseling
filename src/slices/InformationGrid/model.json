@@ -43,6 +43,22 @@
               }
             }
           }
+        },
+        "anchor_id": {
+          "type": "Text",
+          "config": {
+            "label": "Anchor ID",
+            "placeholder": "e.g. practical-details"
+          }
+        },
+        "intro": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Intro",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink"
+          }
         }
       },
       "items": {}

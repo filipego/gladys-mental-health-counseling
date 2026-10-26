@@ -434,38 +434,7 @@ interface SettingsDocumentData {
     unknown,
     prismic.FieldState,
     never
-  >; /**
-   * Meta Title field in *Settings*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: settings.meta_title_new
-   * - **Tab**: SEO & Metadata New
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  meta_title_new: prismic.KeyTextField;
-
-  /**
-   * Meta Description field in *Settings*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: settings.meta_description_new
-   * - **Tab**: SEO & Metadata New
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  meta_description_new: prismic.KeyTextField;
-
-  /**
-   * Meta Image field in *Settings*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: settings.meta_image_new
-   * - **Tab**: SEO & Metadata New
-   * - **Documentation**: https://prismic.io/docs/fields/image
-   */
-  meta_image_new: prismic.ImageField<never>;
+  >;
 }
 
 /**
@@ -651,6 +620,22 @@ export interface CallToActionSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   helper_text: prismic.RichTextField;
+
+  /**
+   * Secondary link field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: call_to_action.default.primary.secondary_link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  secondary_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
 }
 
 /**
@@ -2240,6 +2225,26 @@ export interface InformationGridSliceDefaultPrimary {
   items: prismic.GroupField<
     Simplify<InformationGridSliceDefaultPrimaryItemsItem>
   >;
+
+  /**
+   * Anchor ID field in *InformationGrid → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: e.g. practical-details
+   * - **API ID Path**: information_grid.default.primary.anchor_id
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  anchor_id: prismic.KeyTextField;
+
+  /**
+   * Intro field in *InformationGrid → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: information_grid.default.primary.intro
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  intro: prismic.RichTextField;
 }
 
 /**

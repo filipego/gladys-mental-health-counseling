@@ -38,6 +38,15 @@
 						}
 					}
 				]
+			},
+			"secondary_link": {
+				"__TYPE__": "LinkContent",
+				"key": "702477c8-be33-4834-8424-1919ca0ff522",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io",
+					"text": "selection"
+				}
 			}
 		},
 		"items": []

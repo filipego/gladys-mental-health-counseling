@@ -62,14 +62,14 @@ const defaults: Required<ConsultationFormCopy> = {
   messageHint: "A sentence or two is enough. Please leave out medical records and sensitive personal details.",
   consentText: "I understand that this form is for consultation requests and should not be used for emergencies. Sending it does not establish a therapist-client relationship.",
   submitLabel: "Request my consultation",
-  privacyLabel: "Read the privacy notice",
+  privacyLabel: "Read the privacy notice.",
   privacyHref: "#privacy-note",
   validationSummary: "Please check the highlighted fields.",
-  deliveryUnavailableMessage: "Your request is ready, but online delivery is not configured yet. Please try again later or use the contact details below.",
+  deliveryUnavailableMessage: "Your request couldn't be sent. Your answers are still here. Please try again.",
   successEyebrow: "Request received",
-  successHeading: "I received your consultation request.",
-  successBody: "I'll contact you by your preferred method to arrange a time for our free 15-minute call. Your appointment is not booked yet.",
-  resetLabel: "Start a new request",
+  successHeading: "Your consultation request has been received.",
+  successBody: "I'll contact you by your preferred method to arrange a time for our free 15-minute call. Please note that your consultation has not been scheduled yet, and submitting this request does not establish a therapist-client relationship.",
+  resetLabel: "Return to Home",
 };
 
 export function ConsultationForm({ copy: incomingCopy }: { copy?: ConsultationFormCopy }) {
@@ -78,7 +78,6 @@ export function ConsultationForm({ copy: incomingCopy }: { copy?: ConsultationFo
     register,
     control,
     handleSubmit,
-    reset,
     setValue,
     formState: { errors, isSubmitting },
   } = useForm<ConsultationFormData>({
@@ -91,11 +90,6 @@ export function ConsultationForm({ copy: incomingCopy }: { copy?: ConsultationFo
   const meet = useWatch({ control, name: "meet" });
   const language = useWatch({ control, name: "language" });
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
-
-  const resetForm = () => {
-    reset({ contactBy: undefined, supportFor: undefined, understand: false });
-    setStatus("idle");
-  };
 
   const onSubmit: SubmitHandler<ConsultationFormData> = async (values) => {
     setStatus("idle");
@@ -131,9 +125,9 @@ export function ConsultationForm({ copy: incomingCopy }: { copy?: ConsultationFo
           <p className={styles.successEyebrow}>{copy.successEyebrow}</p>
           <Heading as="h2" color="inverse" size="sm">{copy.successHeading}</Heading>
           <p>{copy.successBody}</p>
-          <Button className={styles.successAction} type="button" variant="inverse" onClick={resetForm}>
+          <TextLink className={styles.successAction} href="/" tone="light">
             {copy.resetLabel}
-          </Button>
+          </TextLink>
         </div>
       </div>
     );
@@ -170,7 +164,7 @@ export function ConsultationForm({ copy: incomingCopy }: { copy?: ConsultationFo
         <label className={styles.check}><input type="checkbox" {...register("understand")} /><span>{copy.consentText}</span></label>
         {errors.understand ? <p className={styles.error}>{errors.understand.message}</p> : null}
         {status === "error" ? <FormAlert>{copy.deliveryUnavailableMessage}</FormAlert> : null}
-        <div className={styles.actions}><Button className={styles.submit} type="submit" variant="inverse" disabled={isSubmitting}>{isSubmitting ? <>Sending your request <LoadingDots /></> : copy.submitLabel}</Button><TextLink href={copy.privacyHref} tone="light" className={styles.privacy}>{copy.privacyLabel}</TextLink></div>
+        <div className={styles.actions}><Button className={styles.submit} type="submit" variant="inverse" disabled={isSubmitting}>{isSubmitting ? <>Sending your request… <LoadingDots /></> : copy.submitLabel}</Button><TextLink href={copy.privacyHref} tone="light" className={styles.privacy}>{copy.privacyLabel}</TextLink></div>
       </div>
     </form>
   );

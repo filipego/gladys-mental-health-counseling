@@ -5,6 +5,7 @@ import { Bounded } from "@/app/components/Bounded";
 import { ButtonLink } from "@/app/components/ButtonLink";
 import { Heading } from "@/app/components/Heading";
 import { PrismicRichText } from "@/app/components/PrismicRichText";
+import { TextLink } from "@/app/components/TextLink";
 
 /**
  * Props for `CallToAction`.
@@ -53,6 +54,15 @@ const CallToAction = ({ slice }: CallToActionProps) => {
                 className="call-to-action__helper"
                 field={slice.primary.helper_text}
               />
+            ) : null}
+            {isFilled.link(slice.primary.secondary_link) &&
+            slice.primary.secondary_link.text ? (
+              <TextLink
+                className="call-to-action__secondary-link"
+                field={slice.primary.secondary_link}
+              >
+                {slice.primary.secondary_link.text}
+              </TextLink>
             ) : null}
           </div>
         </div>
