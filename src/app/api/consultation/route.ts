@@ -10,10 +10,15 @@ import { consultationSchema } from "@/lib/consultation-schema";
 const DEFAULT_FROM = "Gladys Henriquez <info@lovelydayscounseling.com>";
 const DEFAULT_TO = "info@lovelydayscounseling.com";
 
-/** Public site origin for email images: explicit override, else Vercel's production domain. */
-function siteOrigin() {
+/**
+ * Public origin for email images: an explicit override, else the origin that
+ * served this request (always live), else Vercel's production domain.
+ */
+function siteOrigin(request: Request) {
   const explicit = process.env.NEXT_PUBLIC_SITE_URL;
   if (explicit) return explicit.replace(/\/+$/, "");
+  const { origin, hostname } = new URL(request.url);
+  if (hostname !== "localhost" && hostname !== "127.0.0.1") return origin;
   const vercel = process.env.VERCEL_PROJECT_PRODUCTION_URL;
   return vercel ? `https://${vercel}` : undefined;
 }
@@ -59,7 +64,7 @@ export async function POST(request: Request) {
 
   // The thank-you note is a courtesy; a failure here should not undo a delivered request.
   if (requesterEmail) {
-    const origin = siteOrigin();
+    const origin = siteOrigin(request);
     const thankYouEmail = createElement(ConsultationThankYouEmail, {
       firstName: data.firstName,
       logoSrc: origin ? `${origin}/email/lovely-days-logo-white.png` : undefined,
