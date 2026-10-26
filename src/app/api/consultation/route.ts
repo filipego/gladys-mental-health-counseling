@@ -62,7 +62,7 @@ export async function POST(request: Request) {
     const origin = siteOrigin();
     const thankYouEmail = createElement(ConsultationThankYouEmail, {
       firstName: data.firstName,
-      logoSrc: origin ? `${origin}/email/lovely-days-logo.png` : undefined,
+      logoSrc: origin ? `${origin}/email/lovely-days-logo-white.png` : undefined,
     });
     const thankYou = await resend.emails.send({
       from,

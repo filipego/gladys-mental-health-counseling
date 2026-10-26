@@ -78,7 +78,7 @@ export function ConsultationThankYouEmail({
                 alt="Lovely Days"
                 height="52"
                 src={logoSrc}
-                style={{ display: "block", height: "52px", width: "181px" }}
+                style={{ display: "block", height: "52px", width: "181px", backgroundColor: colors.card }}
                 width="181"
               />
             ) : (
