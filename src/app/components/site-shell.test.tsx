@@ -119,9 +119,9 @@ test("The shared shell renders Settings content", () => {
   assert.match(html, /lovely-days-logo--display/);
   assert.match(html, /A CMS header link/);
   assert.match(html, /aria-label="Open menu"/);
-  assert.match(html, /aria-label="Mobile navigation"/);
-  assert.match(html, /aria-label="Mobile main navigation"/);
-  assert.match(html, /data-open="false"/);
+  // The menu panel itself renders into <body> in the browser only.
+  assert.match(html, /aria-controls="mobile-navigation-panel"/);
+  assert.match(html, /aria-expanded="false"/);
   assert.match(html, /A CMS footer link/);
   assert.match(html, /A CMS address/);
   assert.match(html, /A CMS credential/);

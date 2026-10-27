@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { createPortal } from "react-dom";
 
 import type { SettingsDocument } from "../../../prismicio-types";
 import { NavLink } from "./NavLink";
@@ -11,10 +12,19 @@ type SiteMobileNavigationProps = {
   navigation: NavigationItem[];
 };
 
+const subscribeToNothing = () => () => {};
+
 export function SiteMobileNavigation({ navigation }: SiteMobileNavigationProps) {
   const [isOpen, setIsOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
+  // The panel renders in <body>: inside the header, the header's blur and
+  // transform stop Chrome from painting it.
+  const canPortal = useSyncExternalStore(
+    subscribeToNothing,
+    () => true,
+    () => false,
+  );
 
   useEffect(() => {
     const mobileQuery = window.matchMedia("(max-width: 760px)");
@@ -67,21 +77,8 @@ export function SiteMobileNavigation({ navigation }: SiteMobileNavigationProps) 
     };
   }, [isOpen]);
 
-  return (
+  const layer = (
     <div className="site-mobile-nav">
-      <button
-        aria-controls="mobile-navigation-panel"
-        aria-expanded={isOpen}
-        aria-label="Open menu"
-        className="site-mobile-nav__trigger"
-        onClick={() => setIsOpen(true)}
-        ref={triggerRef}
-        type="button"
-      >
-        <span />
-        <span />
-      </button>
-
       <button
         aria-hidden={!isOpen}
         aria-label="Close menu"
@@ -138,6 +135,25 @@ export function SiteMobileNavigation({ navigation }: SiteMobileNavigationProps) 
           ))}
         </nav>
       </div>
+    </div>
+  );
+
+  return (
+    <div className="site-mobile-nav">
+      <button
+        aria-controls="mobile-navigation-panel"
+        aria-expanded={isOpen}
+        aria-label="Open menu"
+        className="site-mobile-nav__trigger"
+        onClick={() => setIsOpen(true)}
+        ref={triggerRef}
+        type="button"
+      >
+        <span />
+        <span />
+      </button>
+
+      {canPortal ? createPortal(layer, document.body) : null}
     </div>
   );
 }
