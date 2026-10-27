@@ -3,6 +3,7 @@ import { type SliceComponentProps } from "@prismicio/react";
 
 import { Bounded } from "@/app/components/Bounded";
 import { ButtonLink } from "@/app/components/ButtonLink";
+import { Heading } from "@/app/components/Heading";
 import {
   ConsultationForm as ConsultationFormFields,
   type ConsultationFormCopy,
@@ -52,7 +53,22 @@ const ConsultationForm = ({ slice }: ConsultationFormProps) => {
         {isFilled.link(slice.primary.booking_link) &&
         slice.primary.booking_link.text ? (
           <div className={styles.booking}>
-            <ButtonLink field={slice.primary.booking_link} variant="inverse">
+            <div className={styles.bookingCopy}>
+              {slice.primary.booking_heading ? (
+                <Heading as="h2" color="inverse" size="sm">
+                  {slice.primary.booking_heading}
+                </Heading>
+              ) : null}
+              {slice.primary.booking_body ? (
+                <p>{slice.primary.booking_body}</p>
+              ) : null}
+            </div>
+            <ButtonLink
+              className={styles.bookingAction}
+              field={slice.primary.booking_link}
+              size="lg"
+              variant="inverse"
+            >
               {slice.primary.booking_link.text}
             </ButtonLink>
           </div>

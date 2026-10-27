@@ -124,6 +124,20 @@
             "allowText": true,
             "repeat": false
           }
+        },
+        "booking_heading": {
+          "type": "Text",
+          "config": {
+            "label": "Booking heading",
+            "placeholder": ""
+          }
+        },
+        "booking_body": {
+          "type": "Text",
+          "config": {
+            "label": "Booking body",
+            "placeholder": ""
+          }
         }
       },
       "items": {}

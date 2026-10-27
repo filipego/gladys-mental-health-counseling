@@ -78,13 +78,23 @@
 				"type": "Text"
 			},
 			"booking_link": {
-				"__TYPE__": "LinkContent",
 				"key": "2cc7d8cd-d0b8-439d-9c52-4e203adc4352",
+				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "ExternalLink",
 					"url": "http://twitter.com",
 					"text": "usual"
 				}
+			},
+			"booking_heading": {
+				"__TYPE__": "FieldContent",
+				"value": "difference",
+				"type": "Text"
+			},
+			"booking_body": {
+				"__TYPE__": "FieldContent",
+				"value": "captured",
+				"type": "Text"
 			}
 		},
 		"items": []

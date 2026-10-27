@@ -833,6 +833,26 @@ export interface ConsultationFormSliceDefaultPrimary {
     prismic.FieldState,
     never
   >;
+
+  /**
+   * Booking heading field in *ConsultationForm → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: consultation_form.default.primary.booking_heading
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  booking_heading: prismic.KeyTextField;
+
+  /**
+   * Booking body field in *ConsultationForm → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: consultation_form.default.primary.booking_body
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  booking_body: prismic.KeyTextField;
 }
 
 /**
