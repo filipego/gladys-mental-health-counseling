@@ -304,6 +304,16 @@ a {
   background: var(--surface);
 }
 
+/* When the call to action sits above the practical details, the blush band
+   stays on the upper section, as it was before the two were reordered. */
+.call-to-action:has(+ .information-grid) {
+  background: var(--surface);
+}
+
+.call-to-action + .information-grid {
+  background: var(--background);
+}
+
 .information-grid__heading,
 .call-to-action__heading {
   max-width: 24ch;
