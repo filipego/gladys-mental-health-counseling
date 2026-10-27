@@ -76,6 +76,15 @@
 				"__TYPE__": "FieldContent",
 				"value": "society",
 				"type": "Text"
+			},
+			"booking_link": {
+				"__TYPE__": "LinkContent",
+				"key": "2cc7d8cd-d0b8-439d-9c52-4e203adc4352",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com",
+					"text": "usual"
+				}
 			}
 		},
 		"items": []

@@ -1,5 +1,6 @@
 .slice { background:var(--wine-band); color:var(--paper); scroll-margin-top:89px; }
 .bounded { padding-top:clamp(80px,8vw,128px); padding-bottom:clamp(88px,9vw,144px); }
+.booking { padding-bottom:clamp(56px,6vw,80px); }
 .root { --form-error:#ffb3bd; display:grid; gap:12px; }
 .band { padding:0 0 clamp(72px,6vw,96px); }
 .band:last-of-type { padding-bottom:clamp(100px,9vw,144px); }

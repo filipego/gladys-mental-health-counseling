@@ -2,6 +2,7 @@ import { asLink, Content, isFilled } from "@prismicio/client";
 import { type SliceComponentProps } from "@prismicio/react";
 
 import { Bounded } from "@/app/components/Bounded";
+import { ButtonLink } from "@/app/components/ButtonLink";
 import {
   ConsultationForm as ConsultationFormFields,
   type ConsultationFormCopy,
@@ -48,6 +49,14 @@ const ConsultationForm = ({ slice }: ConsultationFormProps) => {
       data-slice-variation={slice.variation}
     >
       <Bounded as="div" className={styles.bounded} spacing="none">
+        {isFilled.link(slice.primary.booking_link) &&
+        slice.primary.booking_link.text ? (
+          <div className={styles.booking}>
+            <ButtonLink field={slice.primary.booking_link} variant="inverse">
+              {slice.primary.booking_link.text}
+            </ButtonLink>
+          </div>
+        ) : null}
         <ConsultationFormFields copy={copy} />
       </Bounded>
     </section>

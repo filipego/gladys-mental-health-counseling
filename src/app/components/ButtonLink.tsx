@@ -5,7 +5,7 @@ import { ArrowIcon } from "./ArrowIcon";
 import { PrismicLink } from "./PrismicLink";
 
 /** Values used by the matching Prismic CTA style select field. */
-export type ButtonVariant = "primary" | "secondary" | "outline";
+export type ButtonVariant = "primary" | "secondary" | "outline" | "inverse";
 
 export type ButtonLinkProps = PrismicNextLinkProps & {
   variant?: ButtonVariant;
@@ -36,6 +36,8 @@ export function ButtonLink({
           "border-border bg-background text-primary hover:bg-surface-strong",
         variant === "outline" &&
           "border-border bg-transparent text-primary hover:bg-surface hover:border-secondary",
+        variant === "inverse" &&
+          "border-paper bg-paper !text-primary hover:border-rose hover:bg-rose",
         className
       )}
       prefetch={prefetch}

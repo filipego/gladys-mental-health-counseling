@@ -817,6 +817,22 @@ export interface ConsultationFormSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   reset_label: prismic.KeyTextField;
+
+  /**
+   * Booking link field in *ConsultationForm → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Calendly link for booking a consultation
+   * - **API ID Path**: consultation_form.default.primary.booking_link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  booking_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
 }
 
 /**

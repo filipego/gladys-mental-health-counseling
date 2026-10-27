@@ -113,6 +113,17 @@
             "label": "Reset button label",
             "placeholder": ""
           }
+        },
+        "booking_link": {
+          "type": "Link",
+          "config": {
+            "label": "Booking link",
+            "placeholder": "Calendly link for booking a consultation",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
+          }
         }
       },
       "items": {}
