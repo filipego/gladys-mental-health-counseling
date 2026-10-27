@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
-import { createClient } from "@/prismicio";
+import { PrismicPreview } from "@prismicio/next";
+
+import { createClient, repositoryName } from "@/prismicio";
 
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
@@ -38,6 +40,7 @@ export default async function RootLayout({
           {children}
         </main>
         <SiteFooter settings={settings?.data ?? null} />
+        <PrismicPreview repositoryName={repositoryName} />
       </body>
     </html>
   );

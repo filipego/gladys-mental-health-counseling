@@ -31,13 +31,9 @@ const routes: Route[] = [
 export const createClient = (config: ClientConfig = {}) => {
   const client = baseCreateClient(repositoryName, {
     routes,
-    // The publish webhook expires the "prismic" tag, but Prismic's CDN can
-    // briefly still report the previous content ref right after a publish.
-    // The 60-second revalidate keeps that stale ref from sticking around until
-    // the next publish.
     fetchOptions:
       process.env.NODE_ENV === "production"
-        ? { next: { tags: ["prismic"], revalidate: 60 } }
+        ? { next: { tags: ["prismic"] }, cache: "force-cache" }
         : { next: { revalidate: 5 } },
     ...config,
   });
