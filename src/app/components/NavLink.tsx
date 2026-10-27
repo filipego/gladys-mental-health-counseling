@@ -9,20 +9,19 @@ import { PrismicLink } from "./PrismicLink";
 type NavLinkProps = Pick<ComponentProps<"a">, "className" | "onClick" | "tabIndex"> & {
   children: ReactNode;
   field: LinkField;
-  /** Call-to-action items never show the current-page state. */
-  isCallToAction?: boolean;
 };
 
 const normalize = (path: string) => path.replace(/[#?].*$/, "").replace(/\/+$/, "") || "/";
 
 /** A header navigation link that marks itself as the current page. */
-export function NavLink({ isCallToAction, field, ...props }: NavLinkProps) {
+export function NavLink({ field, ...props }: NavLinkProps) {
   const pathname = usePathname();
   const href = asLink(field);
   const target = href?.startsWith("/") ? normalize(href) : null;
   const current = normalize(pathname ?? "/");
+  // Links to a section (e.g. /get-started#consultation) are actions, not pages.
   const isCurrent =
-    !isCallToAction &&
+    !href?.includes("#") &&
     target !== null &&
     (target === "/" ? current === "/" : current === target || current.startsWith(`${target}/`));
 

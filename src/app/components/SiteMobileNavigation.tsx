@@ -126,7 +126,6 @@ export function SiteMobileNavigation({ navigation }: SiteMobileNavigationProps) 
                   : "site-mobile-nav__link"
               }
               field={item.link}
-              isCallToAction={item.is_call_to_action}
               key={`${item.label}-${index}`}
               onClick={() => setIsOpen(false)}
               tabIndex={isOpen ? 0 : -1}

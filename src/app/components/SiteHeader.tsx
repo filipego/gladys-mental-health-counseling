@@ -45,7 +45,6 @@ export function SiteHeader({ settings }: SiteHeaderProps) {
                     : "site-nav-link"
                 }
                 field={item.link}
-                isCallToAction={item.is_call_to_action}
                 key={`${item.label}-${index}`}
               >
                 {item.label}

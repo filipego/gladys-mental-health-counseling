@@ -1971,6 +1971,11 @@ a {
     font-weight: 500;
   }
 
+  .site-mobile-nav__link--cta[aria-current="page"] {
+    color: var(--paper);
+    box-shadow: 0 0 0 2px var(--paper), 0 0 0 3.5px var(--wine);
+  }
+
   .hero__grid--homepage,
   .hero__grid--inner {
     grid-template-columns: 1fr;
