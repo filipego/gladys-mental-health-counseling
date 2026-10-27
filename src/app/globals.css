@@ -1742,7 +1742,7 @@ a {
   }
 
   .hero--homepage-image .hero__grid--homepage {
-    min-height: calc(80svh - 76px);
+    min-height: 0;
   }
 
   .image-and-text__grid,
