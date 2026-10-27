@@ -1745,6 +1745,11 @@ a {
     min-height: 0;
   }
 
+  /* Under the button, line the link up with the button label and helper. */
+  .hero--homepage .hero__button.hero__button--text {
+    padding-inline-start: 22px;
+  }
+
   .image-and-text__grid,
   .image-and-text--background .image-and-text__grid {
     grid-template-columns: minmax(0, 1fr);
