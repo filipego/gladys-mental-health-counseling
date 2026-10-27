@@ -1731,8 +1731,14 @@ a {
     top: -77px;
   }
 
-  .hero--homepage-image .hero__background img {
-    object-position: 62% center;
+  /* Phones: the copy spans the full width, so the photo is dropped and the
+     hero sits on the photo's own cream tone. */
+  .hero--homepage-image .hero__background {
+    display: none;
+  }
+
+  .hero--homepage-image::after {
+    background: rgb(246 235 222);
   }
 
   .hero--homepage-image .hero__grid--homepage {
