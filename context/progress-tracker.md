@@ -180,7 +180,7 @@
 ## 2026-10-26 — Revised website copy (Lovely_Days_Counseling_Website_Copy_Revised.docx)
 
 - Slice Machine models (pushed): `InformationGrid` gained `anchor_id` (Text) and `intro` (Rich Text); `CallToAction` gained `secondary_link` (Link). Renderers updated; Slice Machine upgraded to latest.
-- Code: consultation form anchor is now `#consultation` (was `#request`); form validation, failure, success, and sending copy updated to the doc; success state links "Return to Home"; mobile menu labels are "Open menu" / "Close menu"; added `src/app/not-found.tsx` with the doc's 404 copy.
+- Code: consultation form anchor is now `#consultation` (was `#request`); form validation, failure, success, and sending copy updated to the doc; the success screen keeps its "Start a new request" button; mobile menu labels are "Open menu" / "Close menu"; added `src/app/not-found.tsx` with the doc's 404 copy.
 - Prismic content (saved as unpublished drafts, not published): Home, About, Therapy & Support, Get Started, and Settings rewritten to the doc. Home gained "Therapy doesn't always have to look the same"; About's info grid and Get Started's map section were removed to match the doc's structure; all CTAs point to `/get-started#consultation`; SEO titles and descriptions set.
 - Not done: header supporting line ("Counseling with Gladys Henriquez, MHC-LP") has no field; therapy-page jump links and the FAQ end link were skipped; privacy page is still pending per the doc. Prismic preview is not configured for the repo, so the drafts can't be previewed locally yet.
 

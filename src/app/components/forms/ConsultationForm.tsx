@@ -69,7 +69,7 @@ const defaults: Required<ConsultationFormCopy> = {
   successEyebrow: "Request received",
   successHeading: "Your consultation request has been received.",
   successBody: "I'll contact you by your preferred method to arrange a time for our free 15-minute call. Please note that your consultation has not been scheduled yet, and submitting this request does not establish a therapist-client relationship.",
-  resetLabel: "Return to Home",
+  resetLabel: "Start a new request",
 };
 
 export function ConsultationForm({ copy: incomingCopy }: { copy?: ConsultationFormCopy }) {
@@ -78,6 +78,7 @@ export function ConsultationForm({ copy: incomingCopy }: { copy?: ConsultationFo
     register,
     control,
     handleSubmit,
+    reset,
     setValue,
     formState: { errors, isSubmitting },
   } = useForm<ConsultationFormData>({
@@ -90,6 +91,11 @@ export function ConsultationForm({ copy: incomingCopy }: { copy?: ConsultationFo
   const meet = useWatch({ control, name: "meet" });
   const language = useWatch({ control, name: "language" });
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const resetForm = () => {
+    reset({ contactBy: undefined, supportFor: undefined, understand: false });
+    setStatus("idle");
+  };
 
   const onSubmit: SubmitHandler<ConsultationFormData> = async (values) => {
     setStatus("idle");
@@ -125,9 +131,9 @@ export function ConsultationForm({ copy: incomingCopy }: { copy?: ConsultationFo
           <p className={styles.successEyebrow}>{copy.successEyebrow}</p>
           <Heading as="h2" color="inverse" size="sm">{copy.successHeading}</Heading>
           <p>{copy.successBody}</p>
-          <TextLink className={styles.successAction} href="/" tone="light">
+          <Button className={styles.successAction} type="button" variant="inverse" onClick={resetForm}>
             {copy.resetLabel}
-          </TextLink>
+          </Button>
         </div>
       </div>
     );
