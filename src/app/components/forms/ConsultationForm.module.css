@@ -17,6 +17,9 @@
 .field input, .field textarea { width:100%; border:0; border-bottom:2px solid #c4a8ac; background:transparent; color:#e4d4d6; padding:8px 0 15px; font:inherit; font-size:15px; outline:none; }
 .field textarea { min-height:168px; resize:vertical; }
 .field input:focus-visible, .field textarea:focus-visible { border-bottom-color:#e4d4d6; }
+/* Browser autofill must not paint the fields light blue or turn the text dark */
+.field input:-webkit-autofill, .field input:-webkit-autofill:hover, .field input:-webkit-autofill:focus { -webkit-text-fill-color:#e4d4d6; caret-color:#e4d4d6; -webkit-box-shadow:inset 0 0 0 1000px var(--wine-band); transition:background-color 600000s 0s, color 600000s 0s; }
+.field input:autofill { filter:none; box-shadow:inset 0 0 0 1000px var(--wine-band); }
 .field input[aria-invalid="true"], .field textarea[aria-invalid="true"] { border-bottom-color:var(--form-error); }
 .hint { margin:6px 0 0; color:#f2e7e8; font-size:12px; line-height:1.5; }
 .error { margin:11px 0 0; color:var(--form-error); font-size:13px; font-weight:550; line-height:1.45; }
@@ -36,6 +39,7 @@
 .alert p { margin:1px 0 0; }
 .alertMark { display:grid; place-items:center; width:24px; height:24px; border:1px solid var(--form-error); border-radius:50%; color:var(--form-error); font-size:14px; font-weight:700; line-height:1; }
 .foot .alert { margin:0; }
+.success:focus { outline:none; }
 .success { display:grid; grid-template-columns:auto minmax(0,1fr); align-items:start; gap:22px; max-width:760px; border:1px solid rgb(255 255 255 / .3); border-radius:8px; background:rgb(255 255 255 / .08); padding:clamp(28px,4vw,48px); }
 .successMark { display:grid; place-items:center; width:42px; height:42px; border:1px solid rgb(255 255 255 / .58); border-radius:50%; color:#fdfcfc; font-size:20px; line-height:1; }
 .successCopy { display:grid; gap:14px; }

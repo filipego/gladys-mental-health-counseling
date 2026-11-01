@@ -2,7 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, useWatch } from "react-hook-form";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { SubmitHandler } from "react-hook-form";
 
 import { Button } from "@/app/components/Button";
@@ -91,6 +91,16 @@ export function ConsultationForm({ copy: incomingCopy }: { copy?: ConsultationFo
   const meet = useWatch({ control, name: "meet" });
   const language = useWatch({ control, name: "language" });
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const successRef = useRef<HTMLDivElement>(null);
+
+  // The message is much shorter than the form, so bring it into view instead of leaving the page scrolled past it
+  useEffect(() => {
+    const success = successRef.current;
+    if (status !== "success" || !success) return;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    success.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+    success.focus({ preventScroll: true });
+  }, [status]);
 
   const resetForm = () => {
     reset({ contactBy: undefined, supportFor: undefined, understand: false });
@@ -125,7 +135,7 @@ export function ConsultationForm({ copy: incomingCopy }: { copy?: ConsultationFo
 
   if (status === "success") {
     return (
-      <div className={styles.success} role="status" aria-live="polite">
+      <div className={styles.success} ref={successRef} role="status" aria-live="polite" tabIndex={-1}>
         <span className={styles.successMark} aria-hidden="true">✓</span>
         <div className={styles.successCopy}>
           <p className={styles.successEyebrow}>{copy.successEyebrow}</p>
