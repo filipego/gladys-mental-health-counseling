@@ -70,6 +70,8 @@ export function SiteFooter({ lang, settings }: SiteFooterProps) {
               <PrismicLink
                 className="site-footer__privacy"
                 field={settings!.privacy_link}
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 {getLinkText(settings!.privacy_link)}
               </PrismicLink>

@@ -251,7 +251,7 @@ export function ConsultationForm({
         <label className={styles.check}><input type="checkbox" {...register("understand")} /><span>{copy.consentText}</span></label>
         {errors.understand ? <p className={styles.error}>{errorText("understand")}</p> : null}
         {status === "error" ? <FormAlert>{copy.deliveryUnavailableMessage}</FormAlert> : null}
-        <div className={styles.actions}><Button className={styles.submit} type="submit" variant="inverse" disabled={isSubmitting}>{isSubmitting ? <>{text.sending} <LoadingDots /></> : copy.submitLabel}</Button><TextLink href={copy.privacyHref} tone="light" className={styles.privacy}>{copy.privacyLabel}</TextLink></div>
+        <div className={styles.actions}><Button className={styles.submit} type="submit" variant="inverse" disabled={isSubmitting}>{isSubmitting ? <>{text.sending} <LoadingDots /></> : copy.submitLabel}</Button><TextLink href={copy.privacyHref} tone="light" className={styles.privacy} {...(copy.privacyHref.startsWith("#") ? {} : { target: "_blank", rel: "noopener noreferrer" })}>{copy.privacyLabel}</TextLink></div>
       </div>
     </form>
   );
