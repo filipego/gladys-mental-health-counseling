@@ -1676,7 +1676,7 @@ a {
   position: relative;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  background: #d9d6d2 center / cover no-repeat;
+  background: #d9d6d2;
   isolation: isolate;
 }
 
@@ -1899,10 +1899,12 @@ a {
 }
 
 .hero-video-player:fullscreen video {
+  background: #000;
   object-fit: contain;
 }
 
 .hero-video-player:-webkit-full-screen video {
+  background: #000;
   object-fit: contain;
 }
 

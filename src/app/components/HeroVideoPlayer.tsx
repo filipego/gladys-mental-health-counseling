@@ -170,7 +170,6 @@ export function HeroVideoPlayer({ src, poster, title }: HeroVideoPlayerProps) {
       )}
       data-state={state}
       ref={playerRef}
-      style={poster ? { backgroundImage: `url("${poster}")` } : undefined}
     >
       <video
         aria-label={title ?? undefined}
