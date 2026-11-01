@@ -202,3 +202,12 @@
 - Layout follows the approved prototype in `prototypes/hero-video` (option 3). On phones the buttons and helper line come after the two supporting paragraphs (Gladys's request), and the text link and helper line are indented to the button label as on the old phone hero.
 - Uploaded `gladys-intro-1080.mp4` (1080p web copy of `output/hero-video/renders/gladys-hero-v4.mp4`, 28 MB) and `gladys-intro-poster.jpg` (frame at 5.15 s) to the Prismic media library.
 - Home document: hero switched to the new variation. The "Maybe something…" paragraph moved from Lead to Supporting copy (wording unchanged) to match the design. Code deployed in 09fa086, then the Home document was published; verified on www.lovelydayscounseling.com on desktop and phone (one-click play with sound, phone button order).
+- Video cover replaced with `gladys-intro-cover.jpg` (frame at 5.52 s, between captions: no subtitle on screen, name card showing, eyes open). Published and checked on the live homepage. Also fixed the poster flashing under the video in full screen (`5fe7b85`).
+
+## 2026-11-01 — Spanish version of the site
+
+- English and Spanish now share every URL. `src/proxy.ts` serves Spanish when the visitor picked it with the new English/Español toggle (end of the desktop menu, bottom of the phone menu; remembered in the `site-language` cookie) or when the device language is Spanish; otherwise English. Pages moved under an internal `src/app/[lang]/` folder that never shows in addresses.
+- Added the `es-us` locale in Prismic and Spanish versions of Home, About, Therapy & Support, Get Started and Settings (menu and footer), created through the Migration API with the same UIDs, images and links as the English documents. Spanish privacy notice uploaded as `Aviso de privacidad.docx` and linked from the Spanish footer and form.
+- Interface text that lives in code has Spanish versions: menu and skip-link labels, form labels, choice pills, errors and fallbacks, video player labels, map title (and Spanish map labels), not-found page, site description, and the requester's thank-you email (sent in the language the form was used in; the email to Gladys stays in English).
+- Translations use "usted" throughout; Gladys has not reviewed them yet. The intro video stays in English; its screen-reader title says so.
+- English pages render word for word as before apart from the new toggle; no existing styles changed (two new rules for the toggle only).

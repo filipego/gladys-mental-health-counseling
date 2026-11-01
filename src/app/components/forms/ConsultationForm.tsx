@@ -17,6 +17,7 @@ import {
   consultationSchema,
   type ConsultationFormData,
 } from "@/lib/consultation-schema";
+import { defaultLocale, type Locale } from "@/lib/i18n";
 
 export type ConsultationFormCopy = {
   aboutHeading?: string;
@@ -72,8 +73,76 @@ const defaults: Required<ConsultationFormCopy> = {
   resetLabel: "Start a new request",
 };
 
-export function ConsultationForm({ copy: incomingCopy }: { copy?: ConsultationFormCopy }) {
-  const copy = { ...defaults, ...incomingCopy };
+// Used where the Spanish Prismic fields are empty, and for labels that only live here
+const spanishDefaults: Required<ConsultationFormCopy> = {
+  aboutHeading: "Sobre usted",
+  sessionHeading: "La sesión",
+  beforeSpeakHeading: "Antes de hablar (opcional)",
+  firstNameLabel: "Nombre",
+  contactMethodLabel: "¿Cómo prefiere que me comunique con usted?",
+  emailLabel: "Correo electrónico",
+  phoneLabel: "Número de teléfono",
+  supportForLabel: "¿Para quién es el apoyo?",
+  meetingLabel: "¿Cómo prefiere reunirse?",
+  languageLabel: "Idioma preferido",
+  availabilityLabel: "¿Cuándo suele estar disponible para una llamada?",
+  availabilityHint: "Incluya su zona horaria si está fuera de Nueva York.",
+  messageLabel: "¿Hay algo que le gustaría que yo supiera antes de hablar?",
+  messageHint: "Una o dos oraciones son suficientes. Por favor, no incluya expedientes médicos ni datos personales delicados.",
+  consentText: "Entiendo que este formulario es para solicitar una consulta y no debe usarse en emergencias. Enviarlo no establece una relación entre terapeuta y cliente.",
+  submitLabel: "Solicitar mi consulta",
+  privacyLabel: "Lea el aviso de privacidad.",
+  privacyHref: "#privacy-note",
+  validationSummary: "Por favor, revise los campos señalados.",
+  deliveryUnavailableMessage: "No se pudo enviar su solicitud. Sus respuestas siguen aquí. Por favor, inténtelo de nuevo.",
+  successEyebrow: "Solicitud recibida",
+  successHeading: "Su solicitud de consulta ha sido recibida.",
+  successBody: "Me comunicaré con usted por el medio que prefiera para acordar un horario para nuestra llamada gratuita de 15 minutos. Tenga en cuenta que su consulta aún no ha sido programada y que enviar esta solicitud no establece una relación entre terapeuta y cliente.",
+  resetLabel: "Comenzar una nueva solicitud",
+};
+
+const formText = {
+  "en-us": {
+    optional: "(optional)",
+    sending: "Sending your request…",
+    options: {
+      email: "Email", phone: "Phone",
+      myself: "Myself", teenager: "My teenager", parent: "Me as a parent", unsure: "I'm not sure yet",
+      inPerson: "In person", online: "Online", meetEither: "Either",
+      english: "English", spanish: "Spanish", languageEither: "Either",
+    },
+    // English errors come from the shared schema
+    errors: {} as Partial<Record<keyof ConsultationFormData, string>>,
+  },
+  "es-us": {
+    optional: "(opcional)",
+    sending: "Enviando su solicitud…",
+    options: {
+      email: "Correo electrónico", phone: "Teléfono",
+      myself: "Para mí", teenager: "Mi hijo o hija adolescente", parent: "Para mí como madre o padre", unsure: "Aún no lo sé",
+      inPerson: "En persona", online: "En línea", meetEither: "Cualquiera",
+      english: "Inglés", spanish: "Español", languageEither: "Cualquiera",
+    },
+    errors: {
+      firstName: "Escriba su nombre.",
+      contactBy: "Elija correo electrónico o teléfono.",
+      email: "Escriba un correo electrónico válido para poder comunicarme con usted.",
+      phone: "Escriba un número de teléfono para poder comunicarme con usted.",
+      supportFor: "Elija para quién busca apoyo. Puede seleccionar “Aún no lo sé”.",
+      understand: "Por favor, confirme que ha leído esta declaración.",
+    } as Partial<Record<keyof ConsultationFormData, string>>,
+  },
+} as const;
+
+export function ConsultationForm({
+  copy: incomingCopy,
+  lang = defaultLocale,
+}: {
+  copy?: ConsultationFormCopy;
+  lang?: Locale;
+}) {
+  const copy = { ...(lang === "es-us" ? spanishDefaults : defaults), ...incomingCopy };
+  const text = formText[lang];
   const {
     register,
     control,
@@ -121,7 +190,7 @@ export function ConsultationForm({ copy: incomingCopy }: { copy?: ConsultationFo
       const response = await fetch("/api/consultation", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify(values),
+        body: JSON.stringify({ ...values, lang }),
       });
       if (!response.ok) {
         setStatus("error");
@@ -150,37 +219,39 @@ export function ConsultationForm({ copy: incomingCopy }: { copy?: ConsultationFo
   }
 
   const errorCount = Object.keys(errors).length;
+  const errorText = (field: keyof ConsultationFormData) =>
+    errors[field] ? (text.errors[field] ?? errors[field]?.message) : undefined;
   return (
     <form className={styles.root} noValidate onSubmit={handleSubmit(onSubmit)}>
       <section className={styles.band}>
         {errorCount > 0 ? <FormAlert>{copy.validationSummary}</FormAlert> : null}
         <Heading as="h2" className={styles.title} color="inverse" size="sm">{copy.aboutHeading}</Heading>
         <div className={styles.grid}>
-          <FormField id="firstName" label={copy.firstNameLabel} autoComplete="given-name" {...register("firstName")} error={errors.firstName?.message} />
+          <FormField id="firstName" label={copy.firstNameLabel} autoComplete="given-name" {...register("firstName")} error={errorText("firstName")} />
           <fieldset>
             <legend className={styles.legend}>{copy.contactMethodLabel}</legend>
-            <ChoicePills name="contactBy" value={contactBy} onChange={(value) => setValue("contactBy", value as ConsultationFormData["contactBy"], { shouldValidate: true })} options={[{ value: "email", label: "Email" }, { value: "phone", label: "Phone" }]} describedBy={errors.contactBy ? "contactBy-error" : undefined} invalid={Boolean(errors.contactBy)} />
-            {errors.contactBy ? <p className={styles.error} id="contactBy-error">{errors.contactBy.message}</p> : null}
+            <ChoicePills name="contactBy" value={contactBy} onChange={(value) => setValue("contactBy", value as ConsultationFormData["contactBy"], { shouldValidate: true })} options={[{ value: "email", label: text.options.email }, { value: "phone", label: text.options.phone }]} describedBy={errors.contactBy ? "contactBy-error" : undefined} invalid={Boolean(errors.contactBy)} />
+            {errors.contactBy ? <p className={styles.error} id="contactBy-error">{errorText("contactBy")}</p> : null}
           </fieldset>
-          <FormField id="email" label={copy.emailLabel} type="email" autoComplete="email" required={contactBy === "email"} {...register("email")} error={errors.email?.message} />
-          <FormField id="phone" label={copy.phoneLabel} type="tel" autoComplete="tel" required={contactBy === "phone"} {...register("phone")} error={errors.phone?.message} />
+          <FormField id="email" label={copy.emailLabel} type="email" autoComplete="email" required={contactBy === "email"} {...register("email")} error={errorText("email")} />
+          <FormField id="phone" label={copy.phoneLabel} type="tel" autoComplete="tel" required={contactBy === "phone"} {...register("phone")} error={errorText("phone")} />
         </div>
       </section>
       <section className={styles.band}>
         <Heading as="h2" className={styles.title} color="inverse" size="sm">{copy.sessionHeading}</Heading>
         <div className={styles.grid}>
-          <fieldset><legend className={styles.legend}>{copy.supportForLabel}</legend><ChoicePills name="supportFor" value={supportFor} onChange={(value) => setValue("supportFor", value as ConsultationFormData["supportFor"], { shouldValidate: true })} options={[{ value: "myself", label: "Myself" }, { value: "teenager", label: "My teenager" }, { value: "parent", label: "Me as a parent" }, { value: "unsure", label: "I'm not sure yet" }]} />{errors.supportFor ? <p className={styles.error}>{errors.supportFor.message}</p> : null}</fieldset>
-          <fieldset><legend className={styles.legend}>{copy.meetingLabel} <span className={styles.hint}>(optional)</span></legend><ChoicePills name="meet" value={meet} onChange={(value) => setValue("meet", value as ConsultationFormData["meet"])} options={[{ value: "in-person", label: "In person" }, { value: "online", label: "Online" }, { value: "either", label: "Either" }]} /></fieldset>
-          <fieldset><legend className={styles.legend}>{copy.languageLabel} <span className={styles.hint}>(optional)</span></legend><ChoicePills name="language" value={language} onChange={(value) => setValue("language", value as ConsultationFormData["language"])} options={[{ value: "english", label: "English" }, { value: "spanish", label: "Spanish" }, { value: "either", label: "Either" }]} /></fieldset>
-          <FormField id="availability" label={<>{copy.availabilityLabel} <span className={styles.hint}>(optional)</span></>} {...register("availability")} hint={copy.availabilityHint} error={errors.availability?.message} />
+          <fieldset><legend className={styles.legend}>{copy.supportForLabel}</legend><ChoicePills name="supportFor" value={supportFor} onChange={(value) => setValue("supportFor", value as ConsultationFormData["supportFor"], { shouldValidate: true })} options={[{ value: "myself", label: text.options.myself }, { value: "teenager", label: text.options.teenager }, { value: "parent", label: text.options.parent }, { value: "unsure", label: text.options.unsure }]} />{errors.supportFor ? <p className={styles.error}>{errorText("supportFor")}</p> : null}</fieldset>
+          <fieldset><legend className={styles.legend}>{copy.meetingLabel} <span className={styles.hint}>{text.optional}</span></legend><ChoicePills name="meet" value={meet} onChange={(value) => setValue("meet", value as ConsultationFormData["meet"])} options={[{ value: "in-person", label: text.options.inPerson }, { value: "online", label: text.options.online }, { value: "either", label: text.options.meetEither }]} /></fieldset>
+          <fieldset><legend className={styles.legend}>{copy.languageLabel} <span className={styles.hint}>{text.optional}</span></legend><ChoicePills name="language" value={language} onChange={(value) => setValue("language", value as ConsultationFormData["language"])} options={[{ value: "english", label: text.options.english }, { value: "spanish", label: text.options.spanish }, { value: "either", label: text.options.languageEither }]} /></fieldset>
+          <FormField id="availability" label={<>{copy.availabilityLabel} <span className={styles.hint}>{text.optional}</span></>} {...register("availability")} hint={copy.availabilityHint} error={errorText("availability")} />
         </div>
       </section>
-      <section className={styles.band}><Heading as="h2" className={styles.title} color="inverse" size="sm">{copy.beforeSpeakHeading}</Heading><div className={styles.grid}><FormTextarea id="message" label={copy.messageLabel} {...register("message")} hint={copy.messageHint} error={errors.message?.message} /></div></section>
+      <section className={styles.band}><Heading as="h2" className={styles.title} color="inverse" size="sm">{copy.beforeSpeakHeading}</Heading><div className={styles.grid}><FormTextarea id="message" label={copy.messageLabel} {...register("message")} hint={copy.messageHint} error={errorText("message")} /></div></section>
       <div className={styles.foot}>
         <label className={styles.check}><input type="checkbox" {...register("understand")} /><span>{copy.consentText}</span></label>
-        {errors.understand ? <p className={styles.error}>{errors.understand.message}</p> : null}
+        {errors.understand ? <p className={styles.error}>{errorText("understand")}</p> : null}
         {status === "error" ? <FormAlert>{copy.deliveryUnavailableMessage}</FormAlert> : null}
-        <div className={styles.actions}><Button className={styles.submit} type="submit" variant="inverse" disabled={isSubmitting}>{isSubmitting ? <>Sending your request… <LoadingDots /></> : copy.submitLabel}</Button><TextLink href={copy.privacyHref} tone="light" className={styles.privacy}>{copy.privacyLabel}</TextLink></div>
+        <div className={styles.actions}><Button className={styles.submit} type="submit" variant="inverse" disabled={isSubmitting}>{isSubmitting ? <>{text.sending} <LoadingDots /></> : copy.submitLabel}</Button><TextLink href={copy.privacyHref} tone="light" className={styles.privacy}>{copy.privacyLabel}</TextLink></div>
       </div>
     </form>
   );

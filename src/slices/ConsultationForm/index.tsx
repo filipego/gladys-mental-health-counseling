@@ -9,17 +9,20 @@ import {
   type ConsultationFormCopy,
 } from "@/app/components/forms/ConsultationForm";
 import styles from "@/app/components/forms/ConsultationForm.module.css";
+import type { Locale } from "@/lib/i18n";
 
 /**
  * Props for `ConsultationForm`.
  */
-export type ConsultationFormProps =
-  SliceComponentProps<Content.ConsultationFormSlice>;
+export type ConsultationFormProps = SliceComponentProps<
+  Content.ConsultationFormSlice,
+  { lang?: Locale }
+>;
 
 /**
  * Component for "ConsultationForm" Slices.
  */
-const ConsultationForm = ({ slice }: ConsultationFormProps) => {
+const ConsultationForm = ({ context, slice }: ConsultationFormProps) => {
   const copy: ConsultationFormCopy = {
     aboutHeading: slice.primary.about_heading || undefined,
     sessionHeading: slice.primary.session_heading || undefined,
@@ -73,7 +76,7 @@ const ConsultationForm = ({ slice }: ConsultationFormProps) => {
             </ButtonLink>
           </div>
         ) : null}
-        <ConsultationFormFields copy={copy} />
+        <ConsultationFormFields copy={copy} lang={context.lang} />
       </Bounded>
     </section>
   );

@@ -3,7 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import clsx from "clsx";
 
+import { getDictionary, type Dictionary } from "@/lib/i18n";
+
 type HeroVideoPlayerProps = {
+  /** Button names read by screen readers, in the page's language */
+  labels?: Dictionary["video"];
   src: string;
   poster?: string | null;
   title?: string | null;
@@ -41,7 +45,12 @@ const exitFullscreen = () => {
  * with sound. Corner controls (sound, pause, full screen) show on hover with a mouse,
  * and for a few seconds after a tap on touch screens.
  */
-export function HeroVideoPlayer({ src, poster, title }: HeroVideoPlayerProps) {
+export function HeroVideoPlayer({
+  labels = getDictionary(undefined).video,
+  src,
+  poster,
+  title,
+}: HeroVideoPlayerProps) {
   const playerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<WebkitVideo>(null);
   const barRef = useRef<HTMLSpanElement>(null);
@@ -200,7 +209,7 @@ export function HeroVideoPlayer({ src, poster, title }: HeroVideoPlayerProps) {
         type="button"
       />
       <button
-        aria-label="Play the video with sound"
+        aria-label={labels.playWithSound}
         className="hero-video-player__play"
         onClick={play}
         type="button"
@@ -218,7 +227,7 @@ export function HeroVideoPlayer({ src, poster, title }: HeroVideoPlayerProps) {
       </button>
       <div className="hero-video-player__controls">
         <button
-          aria-label={muted ? "Turn sound on" : "Mute"}
+          aria-label={muted ? labels.soundOn : labels.mute}
           className="hero-video-player__pill"
           onClick={toggleMuted}
           type="button"
@@ -242,7 +251,7 @@ export function HeroVideoPlayer({ src, poster, title }: HeroVideoPlayerProps) {
           ) : null}
         </button>
         <button
-          aria-label={state === "playing" ? "Pause" : "Play"}
+          aria-label={state === "playing" ? labels.pause : labels.play}
           className="hero-video-player__round"
           onClick={() => {
             togglePlay();
@@ -262,7 +271,7 @@ export function HeroVideoPlayer({ src, poster, title }: HeroVideoPlayerProps) {
         </button>
         {canFullscreen ? (
           <button
-            aria-label={isFull ? "Exit full screen" : "Full screen"}
+            aria-label={isFull ? labels.exitFullScreen : labels.fullScreen}
             className="hero-video-player__round"
             onClick={toggleFullscreen}
             type="button"

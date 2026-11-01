@@ -4,17 +4,21 @@ import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 
 import type { SettingsDocument } from "../../../prismicio-types";
+import { getDictionary, type Locale } from "@/lib/i18n";
+import { LanguageToggle } from "./LanguageToggle";
 import { NavLink } from "./NavLink";
 
 type NavigationItem = SettingsDocument["data"]["header_navigation"][number];
 
 type SiteMobileNavigationProps = {
+  lang?: Locale;
   navigation: NavigationItem[];
 };
 
 const subscribeToNothing = () => () => {};
 
-export function SiteMobileNavigation({ navigation }: SiteMobileNavigationProps) {
+export function SiteMobileNavigation({ lang = "en-us", navigation }: SiteMobileNavigationProps) {
+  const text = getDictionary(lang);
   const [isOpen, setIsOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -81,7 +85,7 @@ export function SiteMobileNavigation({ navigation }: SiteMobileNavigationProps) 
     <div className="site-mobile-nav">
       <button
         aria-hidden={!isOpen}
-        aria-label="Close menu"
+        aria-label={text.closeMenu}
         className="site-mobile-nav__backdrop"
         data-open={isOpen}
         onClick={() => setIsOpen(false)}
@@ -91,7 +95,7 @@ export function SiteMobileNavigation({ navigation }: SiteMobileNavigationProps) 
 
       <div
         aria-hidden={!isOpen}
-        aria-label="Mobile navigation"
+        aria-label={text.mobileNavigation}
         aria-modal="true"
         className="site-mobile-nav__panel"
         data-open={isOpen}
@@ -100,9 +104,9 @@ export function SiteMobileNavigation({ navigation }: SiteMobileNavigationProps) 
         role="dialog"
       >
         <div className="site-mobile-nav__panel-header">
-          <span className="site-mobile-nav__label">Menu</span>
+          <span className="site-mobile-nav__label">{text.menu}</span>
           <button
-            aria-label="Close menu"
+            aria-label={text.closeMenu}
             className="site-mobile-nav__close"
             onClick={() => setIsOpen(false)}
             tabIndex={isOpen ? 0 : -1}
@@ -114,7 +118,7 @@ export function SiteMobileNavigation({ navigation }: SiteMobileNavigationProps) 
           </button>
         </div>
 
-        <nav aria-label="Mobile main navigation" className="site-mobile-nav__links">
+        <nav aria-label={text.mobileMainNavigation} className="site-mobile-nav__links">
           {navigation.map((item, index) => (
             <NavLink
               className={
@@ -134,6 +138,11 @@ export function SiteMobileNavigation({ navigation }: SiteMobileNavigationProps) 
             </NavLink>
           ))}
         </nav>
+        <LanguageToggle
+          className="site-mobile-nav__language"
+          lang={lang}
+          tabIndex={isOpen ? 0 : -1}
+        />
       </div>
     </div>
   );
@@ -143,7 +152,7 @@ export function SiteMobileNavigation({ navigation }: SiteMobileNavigationProps) 
       <button
         aria-controls="mobile-navigation-panel"
         aria-expanded={isOpen}
-        aria-label="Open menu"
+        aria-label={text.openMenu}
         className="site-mobile-nav__trigger"
         onClick={() => setIsOpen(true)}
         ref={triggerRef}

@@ -1,12 +1,14 @@
 import { isFilled } from "@prismicio/client";
 
 import type { SettingsDocument } from "../../../prismicio-types";
+import type { Locale } from "@/lib/i18n";
 import { Bounded } from "./Bounded";
 import { LovelyDaysLogo } from "./LovelyDaysLogo";
 import { PrismicLink } from "./PrismicLink";
 import { SiteFooterNavigation } from "./SiteFooterNavigation";
 
 type SiteFooterProps = {
+  lang?: Locale;
   settings: SettingsDocument["data"] | null;
 };
 
@@ -18,7 +20,7 @@ function getLinkText(
     : "";
 }
 
-export function SiteFooter({ settings }: SiteFooterProps) {
+export function SiteFooter({ lang, settings }: SiteFooterProps) {
   const siteName = settings?.site_name;
   const footerNavigation = settings?.footer_navigation ?? [];
   const address = settings?.footer_address;
@@ -40,7 +42,7 @@ export function SiteFooter({ settings }: SiteFooterProps) {
             {serviceDetails ? <p>{serviceDetails}</p> : null}
           </div>
 
-          <SiteFooterNavigation items={footerNavigation} />
+          <SiteFooterNavigation items={footerNavigation} lang={lang} />
         </div>
 
         {siteName ? (

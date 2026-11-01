@@ -5,13 +5,19 @@ import { Bounded } from "@/app/components/Bounded";
 import { Heading } from "@/app/components/Heading";
 import { PrismicRichText } from "@/app/components/PrismicRichText";
 import { TextLink } from "@/app/components/TextLink";
+import { getDictionary, htmlLang, type Locale } from "@/lib/i18n";
 
-export type LocationMapProps = SliceComponentProps<Content.LocationMapSlice>;
+export type LocationMapProps = SliceComponentProps<
+  Content.LocationMapSlice,
+  { lang?: Locale }
+>;
 
-const LocationMap = ({ slice }: LocationMapProps) => {
+const LocationMap = ({ context, slice }: LocationMapProps) => {
   const address = slice.primary.address?.trim();
+  // The Spanish site asks Google for map labels in Spanish
+  const mapLanguage = context.lang && context.lang !== "en-us" ? `&hl=${htmlLang(context.lang)}` : "";
   const mapEmbedUrl = address
-    ? `https://maps.google.com/maps?q=${encodeURIComponent(address)}&z=16&output=embed`
+    ? `https://maps.google.com/maps?q=${encodeURIComponent(address)}&z=16&output=embed${mapLanguage}`
     : null;
 
   return (
@@ -54,7 +60,7 @@ const LocationMap = ({ slice }: LocationMapProps) => {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 src={mapEmbedUrl}
-                title={`Map of ${address}`}
+                title={getDictionary(context.lang).mapOf(address ?? "")}
               />
             </figure>
           ) : null}

@@ -12,6 +12,14 @@ test("thank-you email greets the requester and keeps the consultation disclaimer
   assert.match(html, /Gladys Henriquez, MHC-LP/);
 });
 
+test("thank-you email is written in Spanish for requests from the Spanish site", async () => {
+  const html = await render(<ConsultationThankYouEmail firstName="Ana" lang="es-us" />);
+  assert.match(html, /lang="es"/);
+  assert.match(html, /Hola, <!-- -->Ana<!-- -->:|Hola, Ana:/);
+  assert.match(html, /no programa una cita ni establece una relación entre terapeuta y cliente/);
+  assert.doesNotMatch(html, /Dear /);
+});
+
 test("thank-you email escapes the submitted name", async () => {
   const html = await render(<ConsultationThankYouEmail firstName={'<script>alert("x")</script>'} />);
   assert.doesNotMatch(html, /<script>/);

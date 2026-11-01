@@ -7,9 +7,11 @@ import { ButtonLink } from "@/app/components/ButtonLink";
 import { Heading } from "@/app/components/Heading";
 import { HeroVideoPlayer } from "@/app/components/HeroVideoPlayer";
 import { PrismicRichText } from "@/app/components/PrismicRichText";
+import { getDictionary, type Locale } from "@/lib/i18n";
 
 type HeroContext = {
   pageUid?: string;
+  lang?: Locale;
 };
 
 export type HeroProps = SliceComponentProps<Content.HeroSlice, HeroContext>;
@@ -121,7 +123,12 @@ const Hero = ({ context, slice }: HeroProps) => {
 
         {videoSrc ? (
           <Bounded as="div" className="hero-video__stage" spacing="none">
-            <HeroVideoPlayer poster={poster} src={videoSrc} title={slice.primary.video_title} />
+            <HeroVideoPlayer
+              labels={getDictionary(context.lang).video}
+              poster={poster}
+              src={videoSrc}
+              title={slice.primary.video_title}
+            />
           </Bounded>
         ) : null}
 

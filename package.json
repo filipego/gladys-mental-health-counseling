@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "node --import tsx --test src/slices/slices.test.tsx src/app/components/site-shell.test.tsx src/lib/consultation-schema.test.ts src/emails/emails.test.tsx",
+    "test": "node --import tsx --test src/slices/slices.test.tsx src/app/components/site-shell.test.tsx src/lib/consultation-schema.test.ts src/lib/i18n.test.ts src/emails/emails.test.tsx",
     "slicemachine": "start-slicemachine",
     "both": "npm run dev & npm run slicemachine"
   },

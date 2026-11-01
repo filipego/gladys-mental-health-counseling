@@ -102,6 +102,12 @@ The active mappings are:
 { type: "page", path: "/:uid" }
 ```
 
+The routes deliberately have no `:lang`: English and Spanish share every URL (see "Languages" in `architecture.md`).
+
+## Locales
+
+The repository has two locales: `en-us` (master) and `es-us` (Spanish - United States, added 2026-11-01 as a custom locale because Prismic has no built-in `es-us`). Every document has a Spanish version with the same UID, linked as its translation. Spanish documents link to the same pages and media as the English ones, except the privacy links, which point to `Aviso de privacidad.docx`. Switch the editor's language menu (top left) to edit the Spanish versions. The free plan allows two locales.
+
 ## Current Model State
 
 - `home` is a non-repeatable page type.

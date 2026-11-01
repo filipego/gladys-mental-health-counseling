@@ -6,9 +6,13 @@ import { Bounded } from "@/app/components/Bounded";
 import { ButtonLink } from "@/app/components/ButtonLink";
 import { Heading } from "@/app/components/Heading";
 import { PrismicRichText } from "@/app/components/PrismicRichText";
+import { getDictionary, type Locale } from "@/lib/i18n";
 
 /** Props for the editor-facing Content slice. */
-export type ContentProps = SliceComponentProps<PrismicContent.ContentSlice>;
+export type ContentProps = SliceComponentProps<
+  PrismicContent.ContentSlice,
+  { lang?: Locale }
+>;
 
 const ctaVariant = (variant: string | null | undefined) => {
   if (variant === "Secondary") return "secondary" as const;
@@ -17,7 +21,7 @@ const ctaVariant = (variant: string | null | undefined) => {
 };
 
 /** Renders editorial text sections with optional side-by-side imagery. */
-const Content = ({ slice }: ContentProps) => {
+const Content = ({ context, slice }: ContentProps) => {
   const isCentered = slice.variation === "centeredText";
   const hasImage =
     slice.variation === "imageRight" || slice.variation === "imageLeft";
@@ -54,7 +58,7 @@ const Content = ({ slice }: ContentProps) => {
                 key={`${cta.label ?? "cta"}-${index}`}
                 variant={ctaVariant(cta.link.variant)}
               >
-                {cta.label || cta.link.text || "Learn more"}
+                {cta.label || cta.link.text || getDictionary(context.lang).learnMore}
               </ButtonLink>
             );
           })}

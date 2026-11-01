@@ -4,6 +4,7 @@ import { asLink, isFilled } from "@prismicio/client";
 import { usePathname } from "next/navigation";
 
 import type { SettingsDocument } from "../../../prismicio-types";
+import { getDictionary, type Locale } from "@/lib/i18n";
 import { ArrowIcon } from "./ArrowIcon";
 import { PrismicLink } from "./PrismicLink";
 
@@ -11,6 +12,7 @@ type FooterNavigationItem =
   SettingsDocument["data"]["footer_navigation"][number];
 
 type SiteFooterNavigationProps = {
+  lang?: Locale;
   items: SettingsDocument["data"]["footer_navigation"];
 };
 
@@ -31,7 +33,7 @@ export function isCurrentFooterLink(
   );
 }
 
-export function SiteFooterNavigation({ items }: SiteFooterNavigationProps) {
+export function SiteFooterNavigation({ items, lang }: SiteFooterNavigationProps) {
   const pathname = usePathname();
   const navigation = items.filter(
     (item) =>
@@ -41,7 +43,7 @@ export function SiteFooterNavigation({ items }: SiteFooterNavigationProps) {
   );
 
   return (
-    <nav aria-label="Footer navigation" className="site-footer__nav">
+    <nav aria-label={getDictionary(lang).footerNavigation} className="site-footer__nav">
       {navigation.map((item, index) => (
         <PrismicLink
           className="site-footer__link"

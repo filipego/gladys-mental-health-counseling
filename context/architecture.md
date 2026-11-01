@@ -30,10 +30,14 @@ Use `package.json` as the exact dependency-version source of truth.
 │   │   ├── api/exit-preview/      # Exit preview mode
 │   │   ├── api/revalidate/        # Prismic revalidation endpoint
 │   │   ├── components/             # Shared layout, typography, links, site shell, Rich Text, and media primitives
-│   │   ├── slice-simulator/       # Slice Machine simulator route
-│   │   ├── globals.css
-│   │   ├── layout.tsx
-│   │   └── page.tsx
+│   │   ├── [lang]/                # Internal language folder (en-us, es-us); never shown in URLs
+│   │   │   ├── layout.tsx         # Root layout: <html lang>, header, footer, language settings
+│   │   │   ├── page.tsx           # Home
+│   │   │   ├── [uid]/page.tsx     # Pages
+│   │   │   ├── [...rest]/page.tsx # Deeper addresses show the not-found page
+│   │   │   ├── not-found.tsx
+│   │   │   └── slice-simulator/   # Slice Machine simulator route (served at /slice-simulator)
+│   │   └── globals.css
 │   ├── slices/
 │   │   ├── Hero/                  # Homepage, full-image homepage, and inner-page hero renderer/model
 │   │   ├── AudienceAccordion/     # Hash-aware Parents, Teens, and Adults accordion
@@ -48,6 +52,8 @@ Use `package.json` as the exact dependency-version source of truth.
 │   │   ├── Image/                 # Full Width and Two Up image renderer/model
 │   │   ├── Video/                 # YouTube, uploaded, and external video renderer/model
 │   │   └── index.ts               # Generated slice component registry
+│   ├── lib/i18n.ts                # Site languages, device-language detection, interface text in code
+│   ├── proxy.ts                   # Picks the language per request and serves it under the same URL
 │   └── prismicio.ts               # Central Prismic client and route resolver
 ├── prismicio-types.d.ts            # Generated Prismic types
 └── slicemachine.config.json        # Slice Machine repository configuration
@@ -90,7 +96,13 @@ Prismic preview request
   -> unpublished content rendered through normal route components
 ```
 
-`/api/exit-preview` disables preview mode. `/api/revalidate` supports Prismic-triggered cache refreshes.
+`/api/preview` also sets the language cookie to the previewed document's language, so a Spanish draft previews in Spanish.
+
+`/api/exit-preview` disables preview mode.
+
+## Languages
+
+The site is in English and Spanish under the same addresses. `src/proxy.ts` picks the language for every page request: the `site-language` cookie set by the English/Español toggle (`LanguageToggle`) wins, otherwise the device language (`Accept-Language`) decides, defaulting to English. It then rewrites internally to `/en-us/...` or `/es-us/...`; typed internal addresses redirect back to the public ones. Pages query Prismic with that locale and fall back to the English document when a Spanish one is missing. Interface text that lives in code (menu labels, form labels and errors, video controls, the thank-you email) is in `src/lib/i18n.ts` and `ConsultationForm.tsx`; everything else is translated in Prismic. Google mostly indexes the English version, since both share one URL. `/api/revalidate` supports Prismic-triggered cache refreshes.
 
 ## Content Modeling Flow
 

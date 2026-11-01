@@ -1313,6 +1313,16 @@ a {
   text-underline-offset: 8px;
 }
 
+/* English/Español switch: a plain text button that takes the menu link look */
+.site-language-toggle {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
+
 .hero {
   overflow: hidden;
 }
@@ -2442,6 +2452,16 @@ a {
   .site-mobile-nav__link--cta[aria-current="page"] {
     color: var(--paper);
     box-shadow: 0 0 0 2px var(--paper), 0 0 0 3.5px var(--wine);
+  }
+
+  .site-mobile-nav__language {
+    align-self: flex-start;
+    min-height: 44px;
+    margin-top: 20px;
+    color: var(--foreground);
+    font-size: 16px;
+    text-decoration: underline;
+    text-underline-offset: 6px;
   }
 
   .hero__grid--homepage,

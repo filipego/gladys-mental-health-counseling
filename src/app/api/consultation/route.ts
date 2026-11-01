@@ -4,8 +4,12 @@ import { render } from "@react-email/components";
 import { Resend } from "resend";
 
 import { ConsultationRequestEmail } from "@/emails/ConsultationRequestEmail";
-import { ConsultationThankYouEmail } from "@/emails/ConsultationThankYouEmail";
+import {
+  ConsultationThankYouEmail,
+  thankYouSubject,
+} from "@/emails/ConsultationThankYouEmail";
 import { consultationSchema } from "@/lib/consultation-schema";
+import { defaultLocale, isLocale } from "@/lib/i18n";
 
 const DEFAULT_FROM = "Gladys Henriquez <info@lovelydayscounseling.com>";
 const DEFAULT_TO = "info@lovelydayscounseling.com";
@@ -42,6 +46,9 @@ export async function POST(request: Request) {
   }
 
   const data = parsed.data;
+  // The site language the form was sent from, for the visitor's thank-you email
+  const requestLang = (payload as { lang?: unknown }).lang;
+  const lang = isLocale(requestLang) ? requestLang : defaultLocale;
   const to = process.env.CONSULTATION_TO_EMAIL || DEFAULT_TO;
   const from = process.env.CONSULTATION_FROM_EMAIL || DEFAULT_FROM;
   const requesterEmail = data.email || undefined;
@@ -67,12 +74,13 @@ export async function POST(request: Request) {
     const origin = siteOrigin(request);
     const thankYouEmail = createElement(ConsultationThankYouEmail, {
       firstName: data.firstName,
+      lang,
       logoSrc: origin ? `${origin}/email/lovely-days-logo-white.png` : undefined,
     });
     const thankYou = await resend.emails.send({
       from,
       to: requesterEmail,
-      subject: "Thank you for reaching out",
+      subject: thankYouSubject[lang],
       html: await render(thankYouEmail),
       text: await render(thankYouEmail, { plainText: true }),
     });

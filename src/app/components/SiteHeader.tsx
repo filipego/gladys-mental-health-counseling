@@ -1,18 +1,22 @@
 import { isFilled } from "@prismicio/client";
 
 import type { SettingsDocument } from "../../../prismicio-types";
+import { getDictionary, type Locale } from "@/lib/i18n";
 import { Bounded } from "./Bounded";
 import { PrismicLink } from "./PrismicLink";
 import { SiteMobileNavigation } from "./SiteMobileNavigation";
 import { HeroHeaderObserver } from "./HeroHeaderObserver";
+import { LanguageToggle } from "./LanguageToggle";
 import { LovelyDaysLogo } from "./LovelyDaysLogo";
 import { NavLink } from "./NavLink";
 
 type SiteHeaderProps = {
+  lang?: Locale;
   settings: SettingsDocument["data"] | null;
 };
 
-export function SiteHeader({ settings }: SiteHeaderProps) {
+export function SiteHeader({ lang = "en-us", settings }: SiteHeaderProps) {
+  const text = getDictionary(lang);
   const siteName = settings?.site_name;
   const navigation =
     settings?.header_navigation?.filter(
@@ -22,7 +26,7 @@ export function SiteHeader({ settings }: SiteHeaderProps) {
   return (
     <>
       <a className="skip-link" href="#main-content">
-        Skip to content
+        {text.skipToContent}
       </a>
       <header className="site-header">
         <HeroHeaderObserver />
@@ -34,7 +38,7 @@ export function SiteHeader({ settings }: SiteHeaderProps) {
           ) : null}
 
           <nav
-            aria-label="Main navigation"
+            aria-label={text.mainNavigation}
             className="site-header__nav site-header__nav--desktop"
           >
             {navigation.map((item, index) => (
@@ -50,8 +54,9 @@ export function SiteHeader({ settings }: SiteHeaderProps) {
                 {item.label}
               </NavLink>
             ))}
+            <LanguageToggle className="site-nav-link" lang={lang} />
           </nav>
-          <SiteMobileNavigation navigation={navigation} />
+          <SiteMobileNavigation lang={lang} navigation={navigation} />
         </Bounded>
       </header>
     </>

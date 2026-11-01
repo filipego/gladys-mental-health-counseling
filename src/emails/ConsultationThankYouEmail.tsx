@@ -10,6 +10,8 @@ import {
   Text,
 } from "@react-email/components";
 
+import { defaultLocale, htmlLang, type Locale } from "@/lib/i18n";
+
 // Email clients ignore the site stylesheet, so the neutral values from
 // src/app/globals.css are repeated here inline.
 const colors = {
@@ -38,23 +40,74 @@ const footnote = {
   lineHeight: "1.6",
 };
 
+const text = {
+  "en-us": {
+    preview:
+      "I’ve received your consultation request and will be in touch to arrange our free 15-minute call.",
+    byline: "Counseling with Gladys Henriquez, MHC-LP",
+    greeting: (name: string) => `Dear ${name},`,
+    thanks:
+      "Thank you for reaching out and taking the first step toward connecting with me.",
+    received:
+      "I’ve received your consultation request and will contact you using your preferred method to arrange a time for our free 15-minute call.",
+    during:
+      "During the consultation, you’ll have a chance to tell me a little about what brings you here, ask questions, and get a sense of whether working together feels like a good fit.",
+    reminder:
+      "Please remember that submitting this form does not schedule an appointment or establish a therapist-client relationship.",
+    lookForward: "I look forward to speaking with you.",
+    signOff: "Warmly,",
+    emergency:
+      "This website and consultation form are not monitored for emergencies. If you are in immediate danger, call 911. For mental health crisis support in the U.S., call or text 988.",
+    supervision:
+      "Counseling services are provided by Gladys under supervision through Being Unbound Mental Health Counseling, PLLC.",
+  },
+  "es-us": {
+    preview:
+      "He recibido su solicitud de consulta y me comunicaré con usted para acordar nuestra llamada gratuita de 15 minutos.",
+    byline: "Consejería con Gladys Henriquez, MHC-LP",
+    greeting: (name: string) => `Hola, ${name}:`,
+    thanks:
+      "Gracias por comunicarse conmigo y por dar este primer paso.",
+    received:
+      "He recibido su solicitud de consulta y me comunicaré con usted por el medio que prefiera para acordar un horario para nuestra llamada gratuita de 15 minutos.",
+    during:
+      "Durante la consulta, tendrá la oportunidad de contarme un poco sobre lo que le trae aquí, hacer preguntas y ver si trabajar juntos le parece una buena opción.",
+    reminder:
+      "Recuerde que enviar este formulario no programa una cita ni establece una relación entre terapeuta y cliente.",
+    lookForward: "Espero poder hablar con usted.",
+    signOff: "Cordialmente,",
+    emergency:
+      "Este sitio web y el formulario de consulta no se supervisan para atender emergencias. Si está en peligro inmediato, llame al 911. Para recibir apoyo en una crisis de salud mental en los EE. UU., llame o envíe un mensaje de texto al 988.",
+    supervision:
+      "Los servicios de consejería los brinda Gladys bajo supervisión a través de Being Unbound Mental Health Counseling, PLLC.",
+  },
+};
+
+/** The subject line of the thank-you email in each language. */
+export const thankYouSubject: Record<Locale, string> = {
+  "en-us": "Thank you for reaching out",
+  "es-us": "Gracias por comunicarse conmigo",
+};
+
 type ConsultationThankYouEmailProps = {
   firstName: string;
+  /** The language of the site the request was sent from */
+  lang?: Locale;
   /** Absolute URL of the hosted logo PNG; a text wordmark is used without it. */
   logoSrc?: string;
 };
 
 export function ConsultationThankYouEmail({
   firstName,
+  lang = defaultLocale,
   logoSrc,
 }: ConsultationThankYouEmailProps) {
+  const copy = text[lang];
+
   return (
-    <Html lang="en">
+    <Html lang={htmlLang(lang)}>
       <Head />
-      <Preview>
-        I’ve received your consultation request and will be in touch to
-        arrange our free 15-minute call.
-      </Preview>
+      <Preview>{copy.preview}</Preview>
       <Body
         style={{
           margin: 0,
@@ -102,29 +155,18 @@ export function ConsultationThankYouEmail({
                 lineHeight: "1.4",
               }}
             >
-              Counseling with Gladys Henriquez, MHC-LP
+              {copy.byline}
             </Text>
             <Hr style={{ margin: "28px 0 32px", borderColor: colors.border }} />
           </Section>
 
           <Section style={{ padding: "0 40px" }}>
             <Text style={{ ...paragraph, color: colors.foreground }}>
-              Dear {firstName},
+              {copy.greeting(firstName)}
             </Text>
-            <Text style={paragraph}>
-              Thank you for reaching out and taking the first step toward
-              connecting with me.
-            </Text>
-            <Text style={paragraph}>
-              I’ve received your consultation request and will contact you
-              using your preferred method to arrange a time for our free
-              15-minute call.
-            </Text>
-            <Text style={paragraph}>
-              During the consultation, you’ll have a chance to tell me a little
-              about what brings you here, ask questions, and get a sense of
-              whether working together feels like a good fit.
-            </Text>
+            <Text style={paragraph}>{copy.thanks}</Text>
+            <Text style={paragraph}>{copy.received}</Text>
+            <Text style={paragraph}>{copy.during}</Text>
             <Text
               style={{
                 ...paragraph,
@@ -134,11 +176,10 @@ export function ConsultationThankYouEmail({
                 fontSize: "15px",
               }}
             >
-              Please remember that submitting this form does not schedule an
-              appointment or establish a therapist-client relationship.
+              {copy.reminder}
             </Text>
-            <Text style={paragraph}>I look forward to speaking with you.</Text>
-            <Text style={{ ...paragraph, margin: "28px 0 4px" }}>Warmly,</Text>
+            <Text style={paragraph}>{copy.lookForward}</Text>
+            <Text style={{ ...paragraph, margin: "28px 0 4px" }}>{copy.signOff}</Text>
             <Text
               style={{
                 ...paragraph,
@@ -153,15 +194,8 @@ export function ConsultationThankYouEmail({
 
           <Section style={{ padding: "0 40px 32px" }}>
             <Hr style={{ margin: "0 0 20px", borderColor: colors.border }} />
-            <Text style={footnote}>
-              This website and consultation form are not monitored for
-              emergencies. If you are in immediate danger, call 911. For mental
-              health crisis support in the U.S., call or text 988.
-            </Text>
-            <Text style={{ ...footnote, margin: 0 }}>
-              Counseling services are provided by Gladys under supervision
-              through Being Unbound Mental Health Counseling, PLLC.
-            </Text>
+            <Text style={footnote}>{copy.emergency}</Text>
+            <Text style={{ ...footnote, margin: 0 }}>{copy.supervision}</Text>
           </Section>
         </Container>
       </Body>
