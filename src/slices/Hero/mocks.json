@@ -237,7 +237,6 @@
 				]
 			},
 			"background_image": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1547082299-de196ea013d6",
@@ -256,6 +255,8 @@
 				},
 				"url": "https://images.unsplash.com/photo-1547082299-de196ea013d6",
 				"alt": "flew",
+				"credits": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			}
 		},
@@ -263,6 +264,126 @@
 			{
 				"__TYPE__": "GroupItemContent",
 				"key": "78c6b2cb-0c70-42e3-be1a-4641408c13d2",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "videoHomepageHero",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "syllable",
+				"type": "Text"
+			},
+			"lead": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aute ea cupidatat consequat ex officia adipisicing magna excepteur fugiat eiusmod. Commodo adipisicing in sit esse aliqua reprehenderit elit."
+						}
+					}
+				]
+			},
+			"ctas": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"key": "d7bc3f39-0a8b-4cd1-b6c9-9def7911495e",
+						"value": [
+							[
+								"label",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "grown",
+									"type": "Text"
+								}
+							],
+							[
+								"link",
+								{
+									"key": "48b44e7a-f988-4455-9edd-09ee8ceec3b1",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://twitter.com",
+										"text": "uncle",
+										"variant": "Primary"
+									}
+								}
+							]
+						]
+					}
+				]
+			},
+			"supporting_copy": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Veniam et consectetur commodo dolore proident occaecat. Minim ad mollit fugiat laborum nisi aliqua duis consectetur veniam nostrud consequat."
+						}
+					}
+				]
+			},
+			"helper_copy": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nulla ipsum do aliqua."
+						}
+					}
+				]
+			},
+			"video_file": {
+				"key": "178de636-8883-40f1-97ba-a5f5463e9819",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io",
+					"text": "animal"
+				}
+			},
+			"poster": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1586952518485-11b180e92764",
+					"width": 4172,
+					"height": 4000
+				},
+				"width": 4172,
+				"height": 4000,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"url": "https://images.unsplash.com/photo-1586952518485-11b180e92764?rect=0%2C0%2C4172%2C4000&w=4172&h=4000",
+				"alt": "car",
+				"credits": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"video_title": {
+				"__TYPE__": "FieldContent",
+				"value": "tell",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"key": "a0f759ab-ca8e-436d-b4c2-179fff9f4cf2",
 				"value": []
 			}
 		]

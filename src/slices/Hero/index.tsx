@@ -1,10 +1,11 @@
 import { PrismicNextImage } from "@prismicio/next";
-import { Content, isFilled } from "@prismicio/client";
+import { asImageSrc, asLink, Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 
 import { Bounded } from "@/app/components/Bounded";
 import { ButtonLink } from "@/app/components/ButtonLink";
 import { Heading } from "@/app/components/Heading";
+import { HeroVideoPlayer } from "@/app/components/HeroVideoPlayer";
 import { PrismicRichText } from "@/app/components/PrismicRichText";
 
 type HeroContext = {
@@ -18,6 +19,45 @@ const pageClassNames: Record<string, string> = {
   about: "hero--about",
   "therapy--support": "hero--therapy",
   "get-started": "hero--get-started",
+};
+
+type HeroCtas = Content.HeroSliceDefaultPrimary["ctas"];
+
+const HeroActions = ({ ctas }: { ctas: HeroCtas }) => {
+  if (ctas.length === 0) return null;
+
+  return (
+    <div className="hero__actions">
+      {ctas.map((cta, index) => {
+        if (!isFilled.link(cta.link)) return null;
+
+        const label = cta.label || cta.link.text;
+        if (!label) return null;
+
+        const variant =
+          cta.link.variant === "Secondary"
+            ? "secondary"
+            : cta.link.variant === "Outline"
+              ? "outline"
+              : "primary";
+
+        return (
+          <ButtonLink
+            className={
+              index === 0
+                ? "hero__button hero__button--primary"
+                : "hero__button hero__button--text"
+            }
+            field={cta.link}
+            key={`${label}-${index}`}
+            variant={variant}
+          >
+            {label}
+          </ButtonLink>
+        );
+      })}
+    </div>
+  );
 };
 
 const Hero = ({ context, slice }: HeroProps) => {
@@ -65,6 +105,54 @@ const Hero = ({ context, slice }: HeroProps) => {
     );
   }
 
+  if (slice.variation === "videoHomepageHero") {
+    const videoSrc = asLink(slice.primary.video_file);
+    const poster = asImageSrc(slice.primary.poster, { w: 1920 });
+
+    return (
+      <section className={`hero hero--video ${pageClassName ?? ""}`}>
+        <Bounded as="div" className="hero-video__top" spacing="none">
+          {slice.primary.heading ? (
+            <Heading as="h1" className="hero__title" size="xl">
+              {slice.primary.heading}
+            </Heading>
+          ) : null}
+        </Bounded>
+
+        {videoSrc ? (
+          <Bounded as="div" className="hero-video__stage" spacing="none">
+            <HeroVideoPlayer poster={poster} src={videoSrc} title={slice.primary.video_title} />
+          </Bounded>
+        ) : null}
+
+        <div className="hero-video__band">
+          <Bounded as="div" spacing="none">
+            <div className="hero-video__band-grid">
+              <div className="hero-video__band-main">
+                {isFilled.richText(slice.primary.lead) ? (
+                  <PrismicRichText className="hero__lead" field={slice.primary.lead} />
+                ) : null}
+                <HeroActions ctas={slice.primary.ctas} />
+                {isFilled.richText(slice.primary.helper_copy) ? (
+                  <PrismicRichText
+                    className="hero__helper"
+                    field={slice.primary.helper_copy}
+                  />
+                ) : null}
+              </div>
+              {isFilled.richText(slice.primary.supporting_copy) ? (
+                <PrismicRichText
+                  className="hero__supporting"
+                  field={slice.primary.supporting_copy}
+                />
+              ) : null}
+            </div>
+          </Bounded>
+        </div>
+      </section>
+    );
+  }
+
   if (slice.variation !== "default" && slice.variation !== "fullImage") return null;
 
   const isFullImage = slice.variation === "fullImage";
@@ -97,38 +185,7 @@ const Hero = ({ context, slice }: HeroProps) => {
             />
           ) : null}
 
-          {slice.primary.ctas.length > 0 ? (
-            <div className="hero__actions">
-              {slice.primary.ctas.map((cta, index) => {
-                if (!isFilled.link(cta.link)) return null;
-
-                const label = cta.label || cta.link.text;
-                if (!label) return null;
-
-                const variant =
-                  cta.link.variant === "Secondary"
-                    ? "secondary"
-                    : cta.link.variant === "Outline"
-                      ? "outline"
-                      : "primary";
-
-                return (
-                  <ButtonLink
-                    className={
-                      index === 0
-                        ? "hero__button hero__button--primary"
-                        : "hero__button hero__button--text"
-                    }
-                    field={cta.link}
-                    key={`${label}-${index}`}
-                    variant={variant}
-                  >
-                    {label}
-                  </ButtonLink>
-                );
-              })}
-            </div>
-          ) : null}
+          <HeroActions ctas={slice.primary.ctas} />
 
           {isFilled.richText(slice.primary.helper_copy) ? (
             <PrismicRichText

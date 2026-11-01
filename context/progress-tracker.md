@@ -194,3 +194,11 @@
 - The email logo PNG is now opaque on white (`public/email/lovely-days-logo-white.png`); the transparent version rendered invisible in a mail client's dark mode. The filename changed so Gmail's image cache picks up the new file.
 - Email logo links now use the origin that served the form request. `VERCEL_PROJECT_PRODUCTION_URL` resolved to `lovelydayscounseling.com`, which still points to a parking page without HTTPS, so the logo showed as a broken image.
 - Publishing in Prismic now refreshes the live site: a Prismic webhook calls `/api/revalidate` on publish, and the route expires the `prismic` cache tag immediately (`{ expire: 0 }`) so the first visit after a publish renders fresh content. Previously nothing called the route, and its `"max"` profile served stale pages first.
+
+## 2026-11-01 — Homepage video hero (option 3)
+
+- Added a `Video Homepage Hero` variation to the Hero slice through Slice Machine and pushed it. Fields: the existing homepage copy fields plus `video_file` (media link), `poster` (image), and `video_title` (screen-reader title).
+- New client component `src/app/components/HeroVideoPlayer.tsx`: waits paused on the poster with a play button and the length; one click plays with sound; corner controls (sound with time left, pause/play, full screen) show on hover with a mouse and for about 3 seconds after a tap on touch screens; returns to the poster at the end. Styles are in `globals.css` under "Video Homepage Hero".
+- Layout follows the approved prototype in `prototypes/hero-video` (option 3). On phones the buttons and helper line come after the two supporting paragraphs (Gladys's request), and the text link and helper line are indented to the button label as on the old phone hero.
+- Uploaded `gladys-intro-1080.mp4` (1080p web copy of `output/hero-video/renders/gladys-hero-v4.mp4`, 28 MB) and `gladys-intro-poster.jpg` (frame at 5.15 s) to the Prismic media library.
+- Home document: hero switched to the new variation as a draft. The "Maybe something…" paragraph moved from Lead to Supporting copy (wording unchanged) to match the design. Publish only after the code is deployed; the currently deployed code renders nothing for this variation.

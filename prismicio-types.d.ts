@@ -1725,6 +1725,37 @@ export interface HeroSliceFullImagePrimaryCtasItem {
 }
 
 /**
+ * Item in *Hero → Video Homepage Hero → Primary → Calls to action*
+ */
+export interface HeroSliceVideoHomepageHeroPrimaryCtasItem {
+  /**
+   * Label field in *Hero → Video Homepage Hero → Primary → Calls to action*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.videoHomepageHero.primary.ctas[].label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * Link field in *Hero → Video Homepage Hero → Primary → Calls to action*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.videoHomepageHero.primary.ctas[].link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    "Primary" | "Secondary" | "Outline"
+  >;
+}
+
+/**
  * Primary content in *Hero → Homepage Hero → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -1939,10 +1970,117 @@ export type HeroSliceFullImage = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Hero → Video Homepage Hero → Primary*
+ */
+export interface HeroSliceVideoHomepageHeroPrimary {
+  /**
+   * Heading field in *Hero → Video Homepage Hero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.videoHomepageHero.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Lead field in *Hero → Video Homepage Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.videoHomepageHero.primary.lead
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  lead: prismic.RichTextField;
+
+  /**
+   * Calls to action field in *Hero → Video Homepage Hero → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.videoHomepageHero.primary.ctas[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  ctas: prismic.GroupField<Simplify<HeroSliceVideoHomepageHeroPrimaryCtasItem>>;
+
+  /**
+   * Supporting copy field in *Hero → Video Homepage Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.videoHomepageHero.primary.supporting_copy
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  supporting_copy: prismic.RichTextField;
+
+  /**
+   * Helper copy field in *Hero → Video Homepage Hero → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.videoHomepageHero.primary.helper_copy
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  helper_copy: prismic.RichTextField;
+
+  /**
+   * Video file field in *Hero → Video Homepage Hero → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.videoHomepageHero.primary.video_file
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  video_file: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Poster image field in *Hero → Video Homepage Hero → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.videoHomepageHero.primary.poster
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  poster: prismic.ImageField<never>;
+
+  /**
+   * Video title (for screen readers) field in *Hero → Video Homepage Hero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.videoHomepageHero.primary.video_title
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  video_title: prismic.KeyTextField;
+}
+
+/**
+ * Video Homepage Hero variation for Hero Slice
+ *
+ * - **API ID**: `videoHomepageHero`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type HeroSliceVideoHomepageHero = prismic.SharedSliceVariation<
+  "videoHomepageHero",
+  Simplify<HeroSliceVideoHomepageHeroPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Hero*
  */
 type HeroSliceVariation =
-  HeroSliceDefault | HeroSliceSplit | HeroSliceFullImage;
+  | HeroSliceDefault
+  | HeroSliceSplit
+  | HeroSliceFullImage
+  | HeroSliceVideoHomepageHero;
 
 /**
  * Hero Shared Slice
@@ -2815,10 +2953,13 @@ declare module "@prismicio/client" {
       HeroSliceSplitPrimary,
       HeroSliceFullImagePrimaryCtasItem,
       HeroSliceFullImagePrimary,
+      HeroSliceVideoHomepageHeroPrimaryCtasItem,
+      HeroSliceVideoHomepageHeroPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
       HeroSliceSplit,
       HeroSliceFullImage,
+      HeroSliceVideoHomepageHero,
       ImageSlice,
       ImageSliceDefaultPrimary,
       ImageSliceTwoUpPrimary,

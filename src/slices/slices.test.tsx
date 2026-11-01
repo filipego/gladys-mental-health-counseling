@@ -175,6 +175,63 @@ test("Homepage full-image Hero renders the background variation with shared copy
   assert.doesNotMatch(html, /hero__animation-stage/);
 });
 
+test("Video Homepage Hero renders the heading, intro video, and band copy", () => {
+  const slice = {
+    slice_type: "hero",
+    slice_label: null,
+    id: "hero-video-test",
+    variation: "videoHomepageHero",
+    version: "initial",
+    primary: {
+      heading: "A useful hero",
+      lead: [{ type: "paragraph", text: "A clear lead.", spans: [] }],
+      supporting_copy: [
+        { type: "paragraph", text: "Supporting copy.", spans: [] },
+      ],
+      helper_copy: [
+        { type: "paragraph", text: "A helpful next-step note.", spans: [] },
+      ],
+      ctas: [
+        {
+          label: "Learn more",
+          link: {
+            link_type: "Web",
+            url: "https://example.com",
+            target: null,
+            variant: "Primary",
+          },
+        },
+      ],
+      video_file: {
+        link_type: "Media",
+        kind: "file",
+        url: "https://media.example.com/intro.mp4",
+        name: "intro.mp4",
+        size: "1000",
+      },
+      poster: imageField("https://images.example.com/poster.jpg"),
+      video_title: "An intro video",
+    },
+    items: [],
+  } as unknown as Content.HeroSlice;
+
+  const html = renderToStaticMarkup(
+    <Hero context={{ pageUid: "home" }} index={0} slice={slice} slices={[slice]} />,
+  );
+
+  assert.match(html, /hero--video/);
+  assert.match(html, /<h1[^>]*>A useful hero<\/h1>/);
+  assert.match(html, /<video[^>]*aria-label="An intro video"/);
+  assert.match(html, /src="https:\/\/media\.example\.com\/intro\.mp4"/);
+  assert.match(html, /poster\.jpg/);
+  assert.match(html, /hero-video__band/);
+  assert.match(html, /hero__lead/);
+  assert.match(html, /hero__supporting/);
+  assert.match(html, /hero__helper/);
+  assert.match(html, />Learn more<\/span>/);
+  assert.doesNotMatch(html, /hero__background/);
+});
+
 test("Who I work with renders shared primitives and repeatable audience rows", () => {
   const slice = {
     slice_type: "who_i_work_with",
