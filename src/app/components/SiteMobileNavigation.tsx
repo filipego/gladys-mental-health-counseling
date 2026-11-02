@@ -5,7 +5,6 @@ import { createPortal } from "react-dom";
 
 import type { SettingsDocument } from "../../../prismicio-types";
 import { getDictionary, type Locale } from "@/lib/i18n";
-import { LanguageToggle } from "./LanguageToggle";
 import { NavLink } from "./NavLink";
 
 type NavigationItem = SettingsDocument["data"]["header_navigation"][number];
@@ -138,11 +137,6 @@ export function SiteMobileNavigation({ lang = "en-us", navigation }: SiteMobileN
             </NavLink>
           ))}
         </nav>
-        <LanguageToggle
-          className="site-mobile-nav__language"
-          lang={lang}
-          tabIndex={isOpen ? 0 : -1}
-        />
       </div>
     </div>
   );

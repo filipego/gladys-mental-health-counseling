@@ -1313,14 +1313,191 @@ a {
   text-underline-offset: 8px;
 }
 
-/* English/Español switch: a plain text button that takes the menu link look */
-.site-language-toggle {
-  border: 0;
-  background: transparent;
-  padding: 0;
-  color: inherit;
-  font-family: inherit;
+/* Menu links, language switch, and the phone menu button sit together on the right */
+.site-header__end {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+/* Language switch: a small pill in the style of the video controls */
+.language-switch {
+  position: relative;
+  flex: none;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.language-switch__flag {
+  display: block;
+  flex: none;
+  width: 18px;
+  height: 18px;
+}
+
+.language-switch__button,
+.language-switch--toggle {
+  display: inline-flex;
+  align-items: center;
+  height: 34px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--foreground);
+  box-shadow: 0 1px 2px rgb(23 19 15 / 0.06);
+}
+
+.language-switch__button {
+  gap: 7px;
+  padding: 0 10px 0 7px;
+  font: inherit;
   cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.language-switch__button:hover,
+.language-switch[data-open="true"] .language-switch__button {
+  border-color: #d9d4ce;
+  box-shadow: 0 1px 2px rgb(23 19 15 / 0.08), 0 6px 16px rgb(23 19 15 / 0.08);
+}
+
+.language-switch__chevron {
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.4;
+  transition: transform 0.2s ease;
+}
+
+.language-switch[data-open="true"] .language-switch__chevron {
+  transform: rotate(180deg);
+}
+
+.language-switch__list {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 60;
+  min-width: 172px;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--paper);
+  box-shadow: 0 1px 2px rgb(23 19 15 / 0.08), 0 12px 32px rgb(23 19 15 / 0.14);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px) scale(0.98);
+  transform-origin: top right;
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease,
+    visibility 0s linear 0.18s;
+}
+
+.language-switch[data-open="true"] .language-switch__list {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: 0s;
+}
+
+.language-switch__option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 40px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--foreground);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  cursor: pointer;
+}
+
+.language-switch__option .language-switch__flag {
+  width: 20px;
+  height: 20px;
+}
+
+.language-switch__option:hover,
+.language-switch__option:focus-visible {
+  outline: none;
+  background: #f5f3f0;
+}
+
+.language-switch__option[aria-current] {
+  font-weight: 500;
+}
+
+.language-switch__check {
+  width: 16px;
+  height: 16px;
+  margin-left: auto;
+  fill: none;
+  stroke: var(--wine);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+  visibility: hidden;
+}
+
+.language-switch__option[aria-current] .language-switch__check {
+  visibility: visible;
+}
+
+.language-switch--toggle {
+  gap: 2px;
+  padding: 2px;
+  background: #f3f0ec;
+}
+
+.language-switch__segment {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  padding: 0 10px 0 5px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted-foreground);
+  font: inherit;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.language-switch__segment[aria-pressed="true"] {
+  background: var(--paper);
+  color: var(--foreground);
+  cursor: default;
+  box-shadow: 0 1px 2px rgb(23 19 15 / 0.1), 0 2px 8px rgb(23 19 15 / 0.08);
+}
+
+.language-switch__segment:not([aria-pressed="true"]):hover {
+  color: var(--foreground);
+}
+
+.language-switch__button:focus-visible,
+.language-switch__segment:focus-visible {
+  outline: 2px solid var(--wine);
+  outline-offset: 2px;
 }
 
 .hero {
@@ -2454,14 +2631,8 @@ a {
     box-shadow: 0 0 0 2px var(--paper), 0 0 0 3.5px var(--wine);
   }
 
-  .site-mobile-nav__language {
-    align-self: flex-start;
-    min-height: 44px;
-    margin-top: 20px;
-    color: var(--foreground);
-    font-size: 16px;
-    text-decoration: underline;
-    text-underline-offset: 6px;
+  .site-header__end {
+    gap: 6px;
   }
 
   .hero__grid--homepage,

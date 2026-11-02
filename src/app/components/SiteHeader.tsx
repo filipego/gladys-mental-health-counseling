@@ -37,26 +37,28 @@ export function SiteHeader({ lang = "en-us", settings }: SiteHeaderProps) {
             </PrismicLink>
           ) : null}
 
-          <nav
-            aria-label={text.mainNavigation}
-            className="site-header__nav site-header__nav--desktop"
-          >
-            {navigation.map((item, index) => (
-              <NavLink
-                className={
-                  item.is_call_to_action
-                    ? "site-nav-link site-nav-link--cta"
-                    : "site-nav-link"
-                }
-                field={item.link}
-                key={`${item.label}-${index}`}
-              >
-                {item.label}
-              </NavLink>
-            ))}
-            <LanguageToggle className="site-nav-link" lang={lang} />
-          </nav>
-          <SiteMobileNavigation lang={lang} navigation={navigation} />
+          <div className="site-header__end">
+            <nav
+              aria-label={text.mainNavigation}
+              className="site-header__nav site-header__nav--desktop"
+            >
+              {navigation.map((item, index) => (
+                <NavLink
+                  className={
+                    item.is_call_to_action
+                      ? "site-nav-link site-nav-link--cta"
+                      : "site-nav-link"
+                  }
+                  field={item.link}
+                  key={`${item.label}-${index}`}
+                >
+                  {item.label}
+                </NavLink>
+              ))}
+            </nav>
+            <LanguageToggle lang={lang} />
+            <SiteMobileNavigation lang={lang} navigation={navigation} />
+          </div>
         </Bounded>
       </header>
     </>
