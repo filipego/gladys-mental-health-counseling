@@ -9,10 +9,17 @@ import {
   thankYouSubject,
 } from "@/emails/ConsultationThankYouEmail";
 import { consultationSchema } from "@/lib/consultation-schema";
-import { defaultLocale, isLocale } from "@/lib/i18n";
+import { defaultLocale, isLocale, type Locale } from "@/lib/i18n";
 
-const DEFAULT_FROM = "Gladys Henriquez <info@lovelydayscounseling.com>";
-const DEFAULT_TO = "info@lovelydayscounseling.com";
+/**
+ * Each site language has its own inbox: requests from the English site go to
+ * consultations@ and requests from the Spanish site go to consultas@. The same
+ * address sends the visitor's thank-you email, so their replies land there too.
+ */
+const consultationInbox: Record<Locale, string> = {
+  "en-us": "consultations@lovelydayscounseling.com",
+  "es-us": "consultas@lovelydayscounseling.com",
+};
 
 /**
  * Public origin for email images: an explicit override, else the origin that
@@ -46,11 +53,11 @@ export async function POST(request: Request) {
   }
 
   const data = parsed.data;
-  // The site language the form was sent from, for the visitor's thank-you email
+  // The site language the form was sent from: picks the inbox and the thank-you language
   const requestLang = (payload as { lang?: unknown }).lang;
   const lang = isLocale(requestLang) ? requestLang : defaultLocale;
-  const to = process.env.CONSULTATION_TO_EMAIL || DEFAULT_TO;
-  const from = process.env.CONSULTATION_FROM_EMAIL || DEFAULT_FROM;
+  const to = consultationInbox[lang];
+  const from = `Gladys Henriquez <${to}>`;
   const requesterEmail = data.email || undefined;
   const resend = new Resend(apiKey);
 
