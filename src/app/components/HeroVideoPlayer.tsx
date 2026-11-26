@@ -209,11 +209,12 @@ export function HeroVideoPlayer({
         type="button"
       />
       <button
-        aria-label={labels.playWithSound}
         className="hero-video-player__play"
         onClick={play}
         type="button"
       >
+        {/* Named by its words plus the visible time, so voice control and screen readers agree */}
+        <span className="sr-only">{labels.playWithSound}</span>
         <span className="hero-video-player__play-icon">
           <svg aria-hidden="true" viewBox="0 0 24 24">
             <path d="M8.5 6.2v11.6L18 12 8.5 6.2Z" />

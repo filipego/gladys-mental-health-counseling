@@ -12,10 +12,12 @@ import {
   locales,
   type Locale,
 } from "@/lib/i18n";
+import { siteUrl } from "@/lib/site";
 import { createClient, repositoryName } from "@/prismicio";
 
 import { SiteFooter } from "../components/SiteFooter";
 import { SiteHeader } from "../components/SiteHeader";
+import { StructuredData } from "../components/StructuredData";
 import "../globals.css";
 
 const inter = localFont({
@@ -37,6 +39,7 @@ export async function generateMetadata({
   const { lang } = await params;
 
   return {
+    metadataBase: new URL(siteUrl),
     title: "Gladys Henriquez",
     description: getDictionary(isLocale(lang) ? lang : defaultLocale).siteDescription,
   };
@@ -62,6 +65,7 @@ export default async function RootLayout({
   return (
     <html lang={htmlLang(lang)} className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
+        <StructuredData lang={lang} settings={settings?.data ?? null} />
         <SiteHeader lang={lang} settings={settings?.data ?? null} />
         <main className="flex-1" id="main-content">
           {children}

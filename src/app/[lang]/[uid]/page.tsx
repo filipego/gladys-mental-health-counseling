@@ -39,6 +39,7 @@ export async function generateMetadata({
   return {
     title: page.data.meta_title,
     description: page.data.meta_description,
+    alternates: { canonical: `/${uid}` },
     openGraph: {
       images: [{ url: asImageSrc(page.data.meta_image) ?? "" }],
     },

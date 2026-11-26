@@ -104,6 +104,13 @@ Prismic preview request
 
 The site is in English and Spanish under the same addresses. `src/proxy.ts` picks the language for every page request: the `site-language` cookie set by the English/Español toggle (`LanguageToggle`) wins, otherwise the device language (`Accept-Language`) decides, defaulting to English. It then rewrites internally to `/en-us/...` or `/es-us/...`; typed internal addresses redirect back to the public ones. Pages query Prismic with that locale and fall back to the English document when a Spanish one is missing. Interface text that lives in code (menu labels, form labels and errors, video controls, the thank-you email) is in `src/lib/i18n.ts` and `ConsultationForm.tsx`; everything else is translated in Prismic. Google mostly indexes the English version, since both share one URL. `/api/revalidate` supports Prismic-triggered cache refreshes.
 
+## Search and AI Tools
+
+- `src/lib/site.ts` holds the public address (`https://www.lovelydayscounseling.com`). The layout sets it as `metadataBase`, and each page declares its own address as the canonical link.
+- `src/app/robots.ts` serves `/robots.txt` (everything open except `/api/` and `/slice-simulator`, plus the sitemap link). `src/app/sitemap.ts` serves `/sitemap.xml` from the published English Home and Page documents; it shares the `prismic` cache tag, so publishing refreshes it.
+- `src/app/components/StructuredData.tsx` adds schema.org JSON-LD to every page: the website, Gladys (credential, languages, 55 Broadway), Being Unbound as the practice she works through, and the counseling service (in person and telehealth, New York). The address and service wording come from the Prismic settings footer fields; her name, credential and the practice name are in the component. It holds no fees or insurance, so those stay in one place (the page copy).
+- No analytics are installed. The privacy notice says it will be updated before any are added.
+
 ## Content Modeling Flow
 
 ```text
