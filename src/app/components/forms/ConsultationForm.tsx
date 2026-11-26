@@ -107,7 +107,7 @@ const formText = {
     sending: "Sending your request…",
     options: {
       email: "Email", phone: "Phone",
-      myself: "Myself", teenager: "My teenager", parent: "Me as a parent", unsure: "I'm not sure yet",
+      myself: "Myself", teenager: "My child or teen", parent: "Me as a parent", unsure: "I'm not sure yet",
       inPerson: "In person", online: "Online", meetEither: "Either",
       english: "English", spanish: "Spanish", languageEither: "Either",
     },
@@ -119,7 +119,7 @@ const formText = {
     sending: "Enviando su solicitud…",
     options: {
       email: "Correo electrónico", phone: "Teléfono",
-      myself: "Para mí", teenager: "Mi hijo o hija adolescente", parent: "Para mí como madre o padre", unsure: "Aún no lo sé",
+      myself: "Para mí", teenager: "Mi hijo o hija (niño o adolescente)", parent: "Para mí como madre o padre", unsure: "Aún no lo sé",
       inPerson: "En persona", online: "En línea", meetEither: "Cualquiera",
       english: "Inglés", spanish: "Español", languageEither: "Cualquiera",
     },

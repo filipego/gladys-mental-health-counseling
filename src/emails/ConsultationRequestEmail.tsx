@@ -13,7 +13,7 @@ import type { ConsultationFormData } from "@/lib/consultation-schema";
 const labels = {
   supportFor: {
     myself: "Myself",
-    teenager: "My teenager",
+    teenager: "My child or teen",
     parent: "Me as a parent",
     unsure: "I'm not sure yet",
   },
